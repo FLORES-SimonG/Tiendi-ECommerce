@@ -1,0 +1,29 @@
+.cuadros {
+    background-color: red;
+    display: flex;
+    flex-wrap: wrap;
+    align-content: center;
+    justify-content: center;
+    
+}
+
+.cuadro {
+    background-color: blue;
+    margin: 6px;
+    width: 200px; 
+    height: 25vh;
+}
+
+/* Para tablets (481-786px), tres columnas */
+@media (min-width: 481px) and (max-width: 786px) {
+    .cuadro {
+        width: calc(33.33% - 12px);
+    }
+}
+
+/* Para celu (0 hasta 480), 2 columnas */
+@media (max-width: 480px) {
+    .cuadro {
+        width: calc(50% - 12px);
+    }
+}
