@@ -1,6 +1,7 @@
 import "normalize.css";
 // import styles from "./App.module.css";
 import styled from 'styled-components';
+import NavBar from "../components/Navbar/Navbar";
 
 const Cuadros = styled.div`
     background-color: red;
@@ -32,7 +33,8 @@ function App() {
   
   return (
     <div>
-      <h1>COLUMNAS</h1>
+      <NavBar />
+      <h2>COLUMNAS</h2>
 
 
       
