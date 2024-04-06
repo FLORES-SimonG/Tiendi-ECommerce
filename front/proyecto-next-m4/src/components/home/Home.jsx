@@ -1,15 +1,15 @@
 
 
 
-const HomeContainer = styled.div`
-background-color: red;`
+// const HomeContainer = styled.div`
+// background-color: red;`
 
-function Home() {
+function Homes() {
   return (
-    <HomeContainer>
+    
       <h1>Home 2</h1>
-    </HomeContainer>
+    
   );
 }
 
-export default Home;
+export default Homes;
