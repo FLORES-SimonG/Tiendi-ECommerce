@@ -66,14 +66,15 @@ export const DivEquipo = styled.div`
     width: 50%;
     height: 50%;
     border-radius: 25px;
-    background-color: ${customColorSecondary};
+    background: linear-gradient(180grad, ${customColorSecondary},${customColorTertiary}, ${customColorSecondary}); 
+    /* ${customColorSecondary}; */
     padding: 20px;
 
     &:hover {
       transform: scale(1.05);
       transition: 0.75s;
       cursor: pointer;
-      background-color: ${customColorTertiary};
+      
     }
   }
 `;

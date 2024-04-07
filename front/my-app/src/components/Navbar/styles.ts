@@ -8,7 +8,7 @@ export const NavbarContainer = styled.nav`
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: ${customColorSecondary};
+  background: linear-gradient(to bottom ,${customColorSecondary} 45%, white); ;
   padding: 0.5rem 1rem;
   flex-direction: row;
   flex-wrap: nowrap;
