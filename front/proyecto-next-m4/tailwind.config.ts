@@ -10,8 +10,8 @@ const config: Config = {
     extend: {
       colors: {
         customColorPrimary: 'rgb(173, 172, 217)',
-        customColorTertiary: 'rgb(204, 108, 228)',
         customColorSecondary: 'rgb(199, 199, 199)',
+        customColorTertiary: 'rgb(204, 108, 228)',
         customColorQuaternary: 'rgb(226, 92, 0)',
       },
       backgroundImage: {
