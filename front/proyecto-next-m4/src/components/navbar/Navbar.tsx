@@ -1,5 +1,6 @@
+
 import { LuMenuSquare } from "react-icons/lu";
-// import { IoIosSearch } from "react-icons/io";
+
 
 function Navbar() {
   return (
@@ -8,15 +9,15 @@ function Navbar() {
           <button className="">
             <LuMenuSquare />
           </button>
-          {/* <p>Categorías</p> */}
+         
         </div>
       
-      <img src="Tiendi.svg" alt="Tiendi" className="h-12 cursor-pointer" />
+      <img src="/Tiendi.svg" alt="Tiendi" className="h-12 cursor-pointer" />
      
       <ul className="flex space-x-2 text-white text-sm  items-center">
         <li className="cursor-pointer">Ingresa</li>
         <li className="cursor-pointer ">
-          <img src="carritoBlanco.svg" alt="carrito" />
+          <img src="/carritoBlanco.svg" alt="carrito" />
         </li>
       </ul>
     </nav>

@@ -11,7 +11,7 @@ function Product_card() {
         <div className="px-6 py-2">
             <div className="">
               <h4 className="font-bold text-sm">
-                The Coldest Sunset
+                Xiaomi Example
               </h4>
               <h5 className=" font-bold text-xs">
                 $19.99
@@ -22,9 +22,9 @@ function Product_card() {
             </p>
         </div>
         <div className="px-6 pt-4 pb-2">
-            <span className="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2"><BiCartDownload /></span>
-            <span className="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2"><FaRegShareFromSquare /></span>
-            <span className="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2"><MdFavoriteBorder /></span>
+            <span className="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-black mr-2 mb-2"><BiCartDownload /></span>
+            <span className="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-black mr-2 mb-2"><FaRegShareFromSquare /></span>
+            <span className="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-black mr-2 mb-2"><MdFavoriteBorder /></span>
         </div>
     </div>
   );
