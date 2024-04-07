@@ -1,34 +1,8 @@
 'use client';
-import styled from 'styled-components';
-// import { FooterContainer, FooterContent, FooterText, FooterLink } from './styles';
+
+import { FooterContainer, FooterContent, FooterText, FooterLink } from './styles';
 
 
-const FooterContainer = styled.footer`
-background-color: red;
-color: #fff;
-padding: 1rem;
-position: fixed;
-bottom: 0;
-width: 100%;
-`;
-
-const FooterContent = styled.div`
-display: flex;
-justify-content: space-between;
-align-items: center;
-`;
-
-const FooterText = styled.p`
-font-size: 14px;
-`;
-
-const FooterLink = styled.a`
-color: #fff;
-text-decoration: none;
-&:hover {
-  text-decoration: underline;
-}
-`;
 function Footer() {
   return (
     <FooterContainer>

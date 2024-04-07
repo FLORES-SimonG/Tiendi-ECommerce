@@ -84,7 +84,7 @@ function Header() {
       </NavItem>
       <Logo src="/Tiendi.svg" alt="Tiendi" />
       <StyledUl>
-        <StyledLi>Ingresa</StyledLi>
+        {/* <StyledLi>Ingresa</StyledLi> */}
         <StyledLi>
           <CartIcon src="/carritoBlanco.svg" alt="carrito" />
         </StyledLi>
