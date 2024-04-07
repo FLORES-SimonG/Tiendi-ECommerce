@@ -1,9 +1,11 @@
-import Homes from '../components/Home/Home'
-import Navbar from '../components/navbar/Navbar'
+// import Homes from '../components/Home/Home'
+// import Navbar from '../components/Header/Header'
 // import "tailwindcss/tailwind.css"
 import Link from 'next/link'
 import Product_card from '@/components/product_card/Product_card'
 import Footer from '../components/footer/Footer'
+import Header from '../components/Header/Header'
+import Navbar from '../components/Navbar/Navbar'
 
 
 
@@ -12,18 +14,11 @@ export default function Home() {
 
   return (
     <div>
+      <Header/>
       <Navbar/>
-     <ul>
-      <Link href="/">
-      <li>Home Link</li>
-      </Link>
-      <Link href="/store">
-
-      <li>Store Link</li>
-      </Link>
-     </ul>
+    
       
-      <h1>Home Page</h1>
+      <h1> ESTÁS EN EL Home Page</h1>
       <Product_card />
 
       <Footer/>
