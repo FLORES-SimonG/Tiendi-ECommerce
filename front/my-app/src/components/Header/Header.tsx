@@ -3,11 +3,11 @@ import styled from 'styled-components';
 import { LuMenuSquare } from "react-icons/lu";
 import { customColorPrimary, customColorSecondary, customColorTertiary } from '../../../public/colores';
 
-const Navbar = styled.nav`
+const CustomNavbar = styled.nav`
   height: 3rem;
   padding: 1rem;
   background-color: rgb(173, 172, 217);
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -76,7 +76,7 @@ align-items: center;
 
 function Header() {
   return (
-    <Navbar>
+    <CustomNavbar>
       <NavItem>
         <MenuButton>
           <LuMenuSquare />
@@ -89,7 +89,7 @@ function Header() {
           <CartIcon src="/carritoBlanco.svg" alt="carrito" />
         </StyledLi>
       </StyledUl>
-    </Navbar>
+    </CustomNavbar>
   );
 }
 

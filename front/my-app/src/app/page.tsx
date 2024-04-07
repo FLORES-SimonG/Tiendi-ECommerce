@@ -1,7 +1,4 @@
-// import Homes from '../components/Home/Home'
-// import Navbar from '../components/Header/Header'
-// import "tailwindcss/tailwind.css"
-import Link from 'next/link'
+'use client'
 import Product_card from '@/components/product_card/Product_card'
 import Footer from '../components/footer/Footer'
 import Header from '../components/Header/Header'
