@@ -10,6 +10,7 @@ import {
   Image,
   Price,
   Title,
+  InfoProduct,
 } from "./styles";
 
 function Product_card(producto: any): any {
@@ -21,11 +22,11 @@ function Product_card(producto: any): any {
         alt={producto.data.name}
       />
       <Content>
-        <div>
+        <InfoProduct>
           <Title>{producto.data.name} </Title>
           <Price>${producto.data.price} </Price>
          
-        </div>
+        </InfoProduct>
       </Content>
       <IconContainer>
         <Icon>

@@ -8,7 +8,7 @@ import {
 
 const CardContainer = styled.div`
   border: 2px solid ${customColorPrimary};
-  width: 11rem;
+  width: 12rem;
   height: 17rem;
   margin: 0.5rem;
   border-radius: 0.5rem;
@@ -17,6 +17,7 @@ const CardContainer = styled.div`
   flex-direction: column;
   align-items: center;
   overflow: hidden;
+  padding:1rem;
   cursor: pointer;
 
   &:hover {
@@ -27,9 +28,9 @@ const CardContainer = styled.div`
 `;
 
 const Image = styled.img`
-  width: 6rem;
+  width: 9rem;
 border-radius: 25%;
-  height: 6rem;
+  height: 9rem;
   object-fit: cover;
 `;
 
@@ -37,12 +38,18 @@ const Content = styled.div`
   padding: 0.5rem;
 `;
 
+const InfoProduct = styled.div`
+ width: 12rem;
+`;
+
 const Title = styled.h4`
   text-align: center;
+  margin:0.5rem;
 `;
 
 const Price = styled.h5`
   text-align: center;
+  margin:0.5rem;
 `;
 
 const IconContainer = styled.div`
@@ -76,4 +83,4 @@ const Icon = styled.span`
   }
 `;
 
-export { CardContainer, Image, Content, Title, Price, IconContainer, Icon };
+export { CardContainer, Image, Content, Title, Price, IconContainer, Icon, InfoProduct };
