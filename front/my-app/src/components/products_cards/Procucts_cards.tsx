@@ -6,6 +6,7 @@ import axios from "axios";
 
 export function Products_cards() {
   const APIdesdeBack = "http://localhost:5000/products";
+   // const APIdesdeBack = "https://api.escuelajs.co/api/v1/products";
   const [items, setItems] = useState([]);
 
   useEffect(() => {

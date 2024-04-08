@@ -69,6 +69,7 @@ export const DivEquipo = styled.div`
     background: linear-gradient(180grad, ${customColorSecondary},${customColorTertiary}, ${customColorSecondary}); 
     /* ${customColorSecondary}; */
     padding: 20px;
+    margin: 2rem;
 
     &:hover {
       transform: scale(1.05);

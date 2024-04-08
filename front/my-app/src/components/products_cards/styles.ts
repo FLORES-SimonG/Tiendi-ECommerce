@@ -2,7 +2,7 @@ import styled from 'styled-components';
 
 
 const Fondo = styled.div`
-    background-color: blue;
+    background-color: transparent;
     display: flex;
     align-items: center;
     justify-content: center;

@@ -68,9 +68,9 @@ const Icon = styled.span`
   width: 1rem;
   height: 1rem;
   padding: 0.25rem;
-  font-size: 0.75rem;
+  font-size: 1rem;
   border-radius: 0.25rem;
-  margin: 0.25rem;
+  margin: 0.3rem;
   display: flex;
   flex-direction: row;
   flex-wrap: nowrap;

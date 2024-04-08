@@ -6,6 +6,7 @@ import { customColorPrimary, customColorSecondary, customColorTertiary } from '.
 export const CustomNavbar = styled.nav`
   height: 3rem;
   padding: 1rem;
+  padding-bottom: 1.5rem;
   background: linear-gradient(to bottom, ${customColorPrimary} 75%, ${customColorSecondary});
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
   display: flex;
@@ -35,10 +36,10 @@ export const MenuButton = styled.button`
     height: 2rem;
     width: 2rem;
     &:hover{
-      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    border-radius: 12px;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+    border-radius: 10px;
     transition: 0.5s;
-    padding: 0.5rem;
+    /* padding: 0.5rem; */
     }
   }
   
@@ -48,10 +49,10 @@ export const CartIcon = styled.img`
   height: 2rem;
   cursor: pointer;
   &:hover {
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
     border-radius: 12px;
     transition: 0.5s;
-    padding: 0.5rem;
+    /* padding: 0.5rem; */
   }
 `;
 

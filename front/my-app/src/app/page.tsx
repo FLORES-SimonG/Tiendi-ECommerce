@@ -17,8 +17,9 @@ export default function Home() {
     
       
       <h1> ESTÁS EN EL Home Page</h1>
-      <h2> Aquí se mostrarán los productos</h2>
-      <Products_cards/>
+      {/* <h2> Aquí se mostrarán los productos</h2> */}
+      {/* <Products_cards/> */}
+      
       {/* <Product_card /> */}
 
       <Footer/>
