@@ -1,5 +1,4 @@
 import styled from "styled-components";
-import { LuPin } from "react-icons/lu";
 
 import {
   customColorPrimary,
@@ -22,7 +21,6 @@ const Title = styled.h2`
   );
   text-align: center;
   color: rgba(0, 0, 0, 0.7);
-  /* background-color: #4db86b; */
 `;
 const Contenedor = styled.div`
   background: linear-gradient(
@@ -33,7 +31,7 @@ const Contenedor = styled.div`
   );
 
   border-radius: 15px;
-  /* filter: blur(0.5px); */
+
   margin: 1rem;
   display: flex;
   flex-direction: row;
@@ -43,12 +41,12 @@ const Contenedor = styled.div`
   align-items: center;
 `;
 
-const CardInformation = styled.div`
-  display: grid;
-  justify-content: space-around;
-  align-content: center;
-  align-items: center;
-`;
+// const CardInformation = styled.div`
+//   display: grid;
+//   justify-content: space-around;
+//   align-content: center;
+//   align-items: center;
+// `;
 
 const Texto = styled.ul`
   width: 25rem;
@@ -64,17 +62,20 @@ const Texto = styled.ul`
   align-content: center;
   justify-content: center;
   align-items: center;
+  transition: 0.75s;
 
   .titleText {
     color: whitesmoke;
-    background-color: ${customColorTertiary};
+    background-color: rgba( 0, 0, 0, 0.7);
     padding: 0.75rem;
     margin: 0.5rem;
     display: inline-flex;
     align-items: center;
     border-radius: 15px;
     margin-top: 4px;
+    
   }
+
   img {
     width: 10rem;
     height: 10rem;
@@ -90,38 +91,19 @@ const Texto = styled.ul`
 const StyledLi = styled.li`
   list-style: none;
   padding: 0;
-  margin: 0%.5;
 `;
 
-// const TextoSecundario = styled(Texto)`
-//   text-align: right;
-// `;
-
-const StyledCardInformation = styled(CardInformation)`
+const StyledCardInformation = styled.div`
   background-color: transparent;
-  /* padding: 1rem; */
-  /* margin : 1rem; */
+  
   display: flex;
   flex-direction: column;
-  &:hover {
-    ${Texto} {
-      background-color: ${customColorPrimary};
-      transition: 0.75s;
-      scale: 1.05;
-      color: whitesmoke;
-
-      .titleText {
-        background-color: #323232;
-        color: whitesmoke;
-        transition: 0.9s;
-        padding: 0.4rem;
-      }
-    }
-  }
-
-  &:hover > &:not(:hover) {
-    transform: scale(0.95);
+  :hover {
+    background-color: ${customColorPrimary};
     transition: 0.75s;
+    color: whitesmoke;
+    border-radius: 15px;
+    /* scale: 1.05; */
   }
 `;
 
@@ -138,11 +120,10 @@ const AppDownloader = styled.div`
     ${customColorPrimary} 10%,
     transparent 100%
   );
-  
+
   height: 25dvh;
   width: 100%;
   .information {
-    
     display: flex;
     margin: 1rem;
     flex-direction: column;
@@ -153,10 +134,10 @@ const AppDownloader = styled.div`
     width: 25rem;
     text-align: center;
     /* background-color: red; */
-    p{
+    p {
       margin: 0 2rem;
     }
-    h3{
+    h3 {
       color: whitesmoke;
       background-color: ${customColorSecondary};
       padding: 0.75rem;
@@ -170,7 +151,6 @@ const AppDownloader = styled.div`
         border-radius: 15px;
       }
     }
-    /* color:  */
   }
   .logos {
     display: flex;
@@ -180,7 +160,7 @@ const AppDownloader = styled.div`
     justify-content: center;
     align-items: center;
     width: 25rem;
-    /* background-color: green; */
+
     img {
       width: 3rem;
       height: 3rem;
@@ -192,7 +172,6 @@ const AppDownloader = styled.div`
       transition: 0.75s;
       &:hover {
         box-shadow: 0 0 15px rgba(0, 0, 0, 0.8);
-        /* object-fit: cover; */
       }
     }
   }
@@ -201,10 +180,8 @@ const AppDownloader = styled.div`
 export {
   HomeContainer,
   Title,
-  CardInformation,
   Texto,
   StyledLi,
- 
   Contenedor,
   AppDownloader,
   StyledCardInformation,

@@ -19,6 +19,7 @@ export const CardInformation = styled.div`
     margin: 16px;
     background-color: whitesmoke;
     border-radius: 15px;
+    transition: 0.75s;
     cursor: pointer;
 
     .textTitle {
@@ -29,20 +30,21 @@ export const CardInformation = styled.div`
       align-items: center;
       border-radius: 15px;
       margin-top: 4px;
+      transition: 0.9s;
     }
   }
 
   &:hover {
     .texto {
       background-color: ${customColorPrimary};
-      transition: 0.75s;
+      
       scale: 1.05;
       color: whitesmoke;
 
       .textTitle {
         background-color: #323232;
         color: whitesmoke;
-        transition: 0.9s;
+        
       }
     }
   }
@@ -70,10 +72,11 @@ export const DivEquipo = styled.div`
     /* ${customColorSecondary}; */
     padding: 20px;
     margin: 2rem;
+    transition: 0.3s;
 
     &:hover {
       transform: scale(1.05);
-      transition: 0.75s;
+      /* transition: 0.3s; */
       cursor: pointer;
       
     }
