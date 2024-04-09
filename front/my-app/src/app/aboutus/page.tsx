@@ -28,7 +28,7 @@ export default function AboutUs() {
         </ul>
       </CardInformation>
       <DivEquipo>
-        <img src="https://images.pexels.com/photos/1595385/pexels-photo-1595385.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" alt="equipo" />
+        <img src="https://images.pexels.com/photos/3183150/pexels-photo-3183150.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="equipo" />
       </DivEquipo>
       <CardInformation>
         <ul className="texto textoSecundario">
