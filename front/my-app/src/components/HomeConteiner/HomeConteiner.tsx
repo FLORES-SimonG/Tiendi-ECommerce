@@ -13,7 +13,7 @@ function HomeConteiner() {
   return (
     // esto es una ecommerce que se llama Tiendi
     <HomeContainer>
-      <Title>¡Suscripción a nuestra web con 10% de descuento hasta $750!</Title>
+      <Title>¡Suscripción a nuestra web y obtenrás un cupón de $399!</Title>
       <Contenedor>
         <StyledCardInformation>
           <Texto>
