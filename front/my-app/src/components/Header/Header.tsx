@@ -1,6 +1,6 @@
 'use client'
 import { LuMenuSquare } from "react-icons/lu";
-import { CustomNavbar, MenuButton, Logo, StyledUl, StyledLi, CartIcon, NavItem } from "./styles";
+import { CustomNavbar, MenuButton, Logo, StyledUl, StyledLi, CartIcon, NavItem , NumeroDeProductos} from "./styles";
 function Header() {
   return (
     <CustomNavbar>
@@ -14,6 +14,9 @@ function Header() {
         {/* <StyledLi>Ingresa</StyledLi> */}
         <StyledLi>
           <CartIcon src="/carritoBlanco.svg" alt="carrito" />
+          <NumeroDeProductos>
+            0
+            </NumeroDeProductos>
         </StyledLi>
       </StyledUl>
     </CustomNavbar>
