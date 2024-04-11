@@ -1,6 +1,6 @@
 "use client";
 import Link from "next/link";
-import { NavbarContainer, NavbarList, NavbarListItem } from "./styles";
+import { NavbarContainer, NavbarList, NavbarListItem, NavbarListItemSpecial } from "./styles";
 
 function Navbar() {
   return (
@@ -13,7 +13,7 @@ function Navbar() {
           <NavbarListItem>Registrate</NavbarListItem>
         </Link>
         <Link href="/store">
-          <NavbarListItem>Productos</NavbarListItem>
+          <NavbarListItemSpecial>Productos</NavbarListItemSpecial>
         </Link>
         <Link href="/login">
           <NavbarListItem>Ingresa</NavbarListItem>

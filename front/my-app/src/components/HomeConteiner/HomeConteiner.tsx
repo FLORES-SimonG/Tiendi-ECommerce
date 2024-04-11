@@ -1,161 +1,188 @@
-import {
-  HomeContainer,
-  Contenedor,
-  StyledCardInformation,
-  Texto,
-  AppDownloader,
-  StyledLi,
-  Title,
-} from "./styles";
+'use client';
+import Image from "next/image";
+// import {
+//   HomeContainer,
+//   Contenedor,
+//   div,
+//   ul,
+//   div,
+//   li,
+//   Title,
+// } from "./styles";
 import { LuPin } from "react-icons/lu";
 
 function HomeConteiner() {
   return (
     // esto es una ecommerce que se llama Tiendi
-    <HomeContainer>
-      <Title>¡Suscripción a nuestra web y obtenrás un cupón de $399!</Title>
-      <Contenedor>
-        <StyledCardInformation>
-          <Texto>
-            <StyledLi className="titleText">
+    <div className="bg-gradient-to-b from-transparent  via-customColorSecondary via-10% to-transparent to-100%">
+      <h2 className="p-3 bg-gradient-to-b from-transparent from-5% via-customColorSecondary via-90% to-transparent to-100% text-center shadow-xl text-xl ">¡Suscripción a nuestra web y obtenrás un cupón de $399!</h2>
+      <div className=" m-1 flex flex-row flex-wrap content-center justify-center items-center bg-gradient-to-b from-transparent  via-customColorSecondary via-10% to-transparent to-100% ">
+        <div className="transparent flex flex-col  ">
+          <ul className=" transition w-96 h-40 p-3 m-6 bg-slate-200 rounded-3xl cursor-pointer flex flex-row flex-nowrap content-center justify-center items-center hover:scale-105">
+            <li className="  p-3 m-2 inline-flex items-center rounded-2xl mt-1   text-white bg-black bg-opacity-70 ">
+            {/* <li className="p-3 m-2 inline-flex items-center rounded-2xl mt-1   text-white bg-black bg-opacity-70"> */}
               <LuPin />
-            </StyledLi>
+            </li>
 
-            <StyledLi>
+            <li className="p-1 list-none text-xs">
               Nos preocupamos por el medio ambiente, trae tu telefono viejo y te
               damos un descuento en tu compra.
-            </StyledLi>
-            <img
-              src="https://img.gruporeforma.com/imagenes/960x640/5/443/4442147.jpg"
+            </li>
+            <Image
+              src="https://images.pexels.com/photos/3850587/pexels-photo-3850587.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
               alt="celu"
+              height={300}
+              width={300}
+              className="w-36 h-36 object-cover rounded-full transition-all"
             />
-          </Texto>
-        </StyledCardInformation>
+          </ul>
+        </div>
 
-        <StyledCardInformation>
-          <Texto>
-            <StyledLi className="titleText">
+        <div>
+          <ul className=" transition w-96 h-40 p-3 m-6 bg-slate-200 rounded-3xl cursor-pointer flex flex-row flex-nowrap content-center justify-center items-center hover:scale-105" >
+            <li className="p-3 m-2 inline-flex items-center rounded-2xl mt-1   text-white bg-black bg-opacity-70">
               <LuPin />
-            </StyledLi>
+            </li>
 
-            <StyledLi>
+            <li className="p-1 list-none text-xs">
               Compras en cuotas sin interes con tarjeta de Crédito MasterCard,
               Visa y American Express.
-            </StyledLi>
-            <img
+            </li>
+            <Image
               src="https://images.pexels.com/photos/164501/pexels-photo-164501.jpeg?auto=compress&cs=tinysrgb&w=600"
               alt="TarjetaDeCrédito"
+              height={300}
+              width={300}
+              className="w-36 h-36 object-cover rounded-full transition-all"
             />
-          </Texto>
-        </StyledCardInformation>
+          </ul>
+        </div>
 
-        <StyledCardInformation>
-          <Texto>
-            <StyledLi className="titleText">
+        <div>
+          <ul className=" transition w-96 h-40 p-3 m-6 bg-slate-200 rounded-3xl cursor-pointer flex flex-row flex-nowrap content-center justify-center items-center hover:scale-105">
+            <li className="p-3 m-2 inline-flex items-center rounded-2xl mt-1   text-white bg-black bg-opacity-70">
               <LuPin />
-            </StyledLi>
+            </li>
 
-            <StyledLi>
+            <li className="p-1 list-none text-xs">
               Aceptamos pagos con Bitcoin, Ethereum y Litecoin.
-            </StyledLi>
-            <img
+            </li>
+            <Image
               src="https://images.pexels.com/photos/844124/pexels-photo-844124.jpeg?auto=compress&cs=tinysrgb&w=300"
               alt="cripto"
+              height={300}
+              width={300}
+              className=" w-36 h-36 object-cover rounded-full transition-all"
             />
-          </Texto>
-        </StyledCardInformation>
+          </ul>
+        </div>
 
-        <StyledCardInformation>
-          <Texto>
-            <StyledLi className="titleText">
+        <div>
+          <ul className=" transition w-96 h-40 p-3 m-6 bg-slate-200 rounded-3xl cursor-pointer flex flex-row flex-nowrap content-center justify-center items-center hover:scale-105">
+            <li className="p-3 m-2 inline-flex items-center rounded-2xl mt-1   text-white bg-black bg-opacity-70">
               <LuPin />
-            </StyledLi>
+            </li>
 
-            <StyledLi>
+            <li className="p-1 list-none text-xs">
               Vendemos tecnologías usadas en optimas condiciones con garantía de
               6 meses posteriores a la compra.
-            </StyledLi>
-            <img
+            </li>
+            <Image
               src="https://images.pexels.com/photos/2582931/pexels-photo-2582931.jpeg?auto=compress&cs=tinysrgb&w=300"
               alt="reparacion"
+              height={300}
+              width={300}
+              className="w-36 h-36 object-cover rounded-full transition-all"
             />
-          </Texto>
-        </StyledCardInformation>
+          </ul>
+        </div>
 
-        <StyledCardInformation>
-          <Texto>
-            <StyledLi className="titleText">
+        <div>
+          <ul className=" transition w-96 h-40 p-3 m-6 bg-slate-200 rounded-3xl cursor-pointer flex flex-row flex-nowrap content-center justify-center items-center hover:scale-105">
+            <li className="p-3 m-2 inline-flex items-center rounded-2xl mt-1   text-white bg-black bg-opacity-70">
               <LuPin />
-            </StyledLi>
+            </li>
 
-            <StyledLi>
+            <li className="p-1 list-none text-xs">
               Contamos con la atención personalizada de nuestros vendedores,
               para que puedas elegir el producto que mejor se adapte a tus
               necesidades.
-            </StyledLi>
-            <img
-              src="https://images.pexels.com/photos/8867434/pexels-photo-8867434.jpeg?auto=compress&cs=tinysrgb&w=300"
+            </li>
+            <Image
+              src="https://images.pexels.com/photos/8867262/pexels-photo-8867262.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
               alt="service"
+              height={300}
+              width={300}
+              className=" w-36 h-36 object-cover rounded-full transition-all"
             />
-          </Texto>
-        </StyledCardInformation>
+          </ul>
+        </div>
 
-        <StyledCardInformation>
-          <Texto>
-            <StyledLi className="titleText">
+        <div>
+          <ul className=" transition w-96 h-40 p-3 m-6 bg-slate-200 rounded-3xl cursor-pointer flex flex-row flex-nowrap content-center justify-center items-center hover:scale-105">
+            <li className="p-3 m-2 inline-flex items-center rounded-2xl mt-1   text-white bg-black bg-opacity-70">
               <LuPin />
-            </StyledLi>
+            </li>
 
-            <StyledLi>
+            <li className="p-1 list-none text-xs">
               Envío gratis a todo el país en compras mayores a $5000.
-            </StyledLi>
-            <img
+            </li>
+            <Image
               src="https://media.istockphoto.com/id/1218449770/es/foto/obtenci%C3%B3n-de-paquete-s-desde-el-concepto-de-oficina-de-correos-perfil-lateral-foto-de-cerca-de.jpg?b=1&s=612x612&w=0&k=20&c=t5Pb9iyTjPUWssEoYZCatrN1HxEQpy8dxDp-tlJ-yaQ="
               alt="celu"
+              height={300}
+              width={300}
+              className="w-36 h-36 object-cover rounded-full transition-all"
             />
-          </Texto>
-        </StyledCardInformation>
-      </Contenedor>
-      <AppDownloader>
-        <div className="logos">
-          <img
-            width="64"
-            height="64"
+          </ul>
+        </div>
+      </div>
+      <div className="flex py-2 flex-row items-center justify-center bg-gradient-to-b from-transparent  via-customColorPrimary via-10% to-transparent to-100% h-60  w-full">
+        <div className="flex flex-row flex-wrap justify-evenly items-center w-60  content-center">
+          <Image
+          className='transition bg-slate-200 w-12 h-12 m-4 p-1 rounded-3xl  cursor-pointer hover:scale-110  '
+            width={60}
+            height={60}
             src="https://img.icons8.com/nolan/64/1A6DFF/C822FF/facebook-messenger.png"
             alt="facebook-messenger"
           />
-          <img
-            width="64"
-            height="64"
+          <Image
+          className='transition bg-slate-200 w-12 h-12 m-4 p-1 rounded-3xl  cursor-pointer hover:scale-110  '
+            width={60}
+            height={60}
             src="https://img.icons8.com/nolan/64/1A6DFF/C822FF/whatsapp.png"
             alt="whatsapp"
           />
         </div>
-        <div className="information">
-          <h2>¡Descarga nuestra aplicación!</h2>
-          <p>
-            Descarga nuestra aplicación para poder comprar desde tu celular de
-            forma más rápida y segura. ¡No te lo pierdas! ¡Cupones exlusivos
-            semanales!
+        <div className="flex m-0 flex-col flex-nowrap content-center text-center items-center w-96 justify-center">
+          <h2 className="text-xl font-bold m-2">¡Descarga nuestra aplicación!</h2>
+          <p className=" mx-6">
+            Explora la App y descubre todas las ofertas y promociones que tenemos para vos.
           </p>
-          <h3>¡Quiero mis cupones!</h3>
+            <p>¡No te lo pierdas!</p>
+            <p className="font-bold">¡Cupones exlusivos
+            semanales!</p>
+            
+          
         </div>
-        <div className="logos">
-          <img
-            width="64"
-            height="64"
+        <div className="flex flex-row flex-wrap justify-evenly items-center w-60  content-center">
+        <Image
+        className='transition bg-slate-200 w-12 h-12 m-4 p-1 rounded-3xl  cursor-pointer hover:scale-110  '
+            width={60}
+            height={60}
             src="https://img.icons8.com/nolan/64/apple-app-store--v2.png"
             alt="apple-app-store--v2"
           />
-          <img
-            width="64"
-            height="64"
+          <Image
+          className='transition bg-slate-200 w-12 h-12 m-4 p-1 rounded-3xl  cursor-pointer hover:scale-110  '
+            width={60}
+            height={60}
             src="https://img.icons8.com/nolan/64/1A6DFF/C822FF/google-play.png"
             alt="google-play"
           />
         </div>
-      </AppDownloader>
-    </HomeContainer>
+      </div>
+    </div>
   );
 }
 
