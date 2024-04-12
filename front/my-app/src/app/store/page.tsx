@@ -11,8 +11,8 @@ export default function Store() {
     return (
         <div>
       <Header/>
-      <Navbar/>
         <ProductDetails/>
+      <Navbar/>
         <h1>Store</h1>
         <Products_cards/>
         <Products_cards/>

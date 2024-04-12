@@ -3,7 +3,7 @@ import {
     customColorPrimary,
     customColorSecondary,
     customColorTertiary,
-  } from "../../../public/colores";
+  } from "../../../public/variablesGlobales";
 
 
 export const CardInformation = styled.div`

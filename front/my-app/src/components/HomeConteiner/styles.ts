@@ -4,7 +4,7 @@ import {
   customColorPrimary,
   customColorSecondary,
   customColorTertiary,
-} from "../../../public/colores";
+} from "../../../public/variablesGlobales";
 
 const HomeContainer = styled.div`
   background-color: transparent;

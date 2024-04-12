@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-import { customColorPrimary, customColorSecondary, customColorTertiary } from '../../../public/colores';
+import { customColorPrimary, customColorSecondary, customColorTertiary } from '../../../public/variablesGlobales';
 
 
 export const CustomNavbar = styled.nav`

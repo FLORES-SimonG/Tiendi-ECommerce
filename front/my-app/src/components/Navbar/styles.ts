@@ -4,7 +4,7 @@ import {
   customColorSecondary,
   customColorTertiary,
   customColorQuaternary
-} from "../../../public/colores";
+} from "../../../public/variablesGlobales";
 
 export const NavbarContainer = styled.nav`
   display: flex;
