@@ -3,6 +3,7 @@ import Footer from "@/components/footer/Footer";
 import Header from "@/components/Header/Header";
 import Navbar from "@/components/Navbar/Navbar";
 import { CardInformation, DivEquipo, ListItem } from "./aboutUs";
+import PreFooter from "@/components/PreFooter/PreFooter";
 //MI EMPRESA SE LLAMA "TIENDI"
 
 export default function AboutUs() {
@@ -51,6 +52,7 @@ export default function AboutUs() {
           </ListItem>
         </ul>
       </CardInformation>
+      <PreFooter />
       <Footer />
     </>
     );

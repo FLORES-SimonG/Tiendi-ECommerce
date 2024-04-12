@@ -21,11 +21,12 @@ export default function Welcome() {
 
       <div className="p-8  border border-customColorSecondary 
       bg-gradient-to-b from-customColorPrimary from-10%  via-customColorPrimary via-30% to-transparent to-100% 
+    
       rounded-lg flex flex-col items-center">
       
         <Image src="/firma.png" alt="Tiendi" width={100} height={100} className="mb-2" />
         <div className="w-full flex justify-center items-center">
-          <div className="w-24 h-24 m-2 cursor-pointer rounded-full bg-gradient-to-b from-transparent from-10%  via-customColorPrimary via-30% to-transparent to-100% flex justify-center items-center text-white font-bold text-2xl transition duration-500 hover:scale-105 shadow-md">
+          <div className="w-24 h-24 m-2 cursor-pointer rounded-full bg-gradient-to-b from-customColorPrimary from-10%  via-customColorPrimary via-30% to-transparent to-100% flex justify-center items-center text-white font-bold text-2xl transition duration-500 hover:scale-105 hover:bg-customColorTertiary shadow-md">
           <FiShoppingCart />
           </div>
         </div>
