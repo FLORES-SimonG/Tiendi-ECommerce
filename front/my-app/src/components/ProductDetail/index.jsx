@@ -13,6 +13,7 @@ import { imagenDeEjemplo } from "../../../public/variablesGlobales";
 const ProductDetail = ()=>{
     const context = useContext(ShoppingCartContext);
     console.log(context.productToShow)
+    // alert('se ejecuto')
     return(
         <aside 
         className={`${context.isProductDetailOpen? 'flex':'hidden'}  
