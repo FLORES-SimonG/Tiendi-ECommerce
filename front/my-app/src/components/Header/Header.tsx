@@ -1,26 +1,29 @@
-'use client'
+"use client";
 import { LuMenuSquare } from "react-icons/lu";
 import { ShoppingCart } from "../cart/ShoppingCart";
-import { CustomNavbar, MenuButton, Logo, StyledUl, StyledLi, CartIcon, NavItem , NumeroDeProductos} from "./styles";
+
 function Header() {
   return (
-    <CustomNavbar>
-      <NavItem>
-        <MenuButton>
-          <LuMenuSquare />
-        </MenuButton>
-      </NavItem>
-      <Logo src="/Tiendi.svg" alt="Tiendi" />
-      <StyledUl>
-        {/* <StyledLi>Ingresa</StyledLi> */}
-        <StyledLi>
-          <CartIcon src="/carritoBlanco.svg" alt="carrito" />
-          <NumeroDeProductos>
+    <nav
+      className="h-3 p-8 bg-gradient-to-b from-customColorPrimary via-customColorPrimary to-gray-300 
+    flex justify-between items-center flex-row flex-nowrap "
+    >
+      <div className="flex  items-center">
+        <button className="flex justify-center items-center border-none cursor-pointer hover:shadow-xl hover:rounded-xl w-12 h-12 bg-transparent text-white">
+          <LuMenuSquare size={30} />
+        </button>
+      </div>
+      <img className=" h-12 cursor-pointer m-16" src="/Tiendi.svg" alt="Tiendi"  />
+      <div className="flex justify-center items-center m-0 p-0 list-none">
+        
+        <div className="flex justify-center  m-0 bg-transparent w-12 h-12 flex-row flex-nowrap content-center items-center">
+          <img className=" h-7 hover:shadow-xl  cursor-pointer " src="/carritoBlanco.svg" alt="carrito"   />
+          <span className=" absolute   top-2 right-10  p-0.5 rounded-full text-xs bg-customColorTertiary text-white">
             <ShoppingCart />
-            </NumeroDeProductos>
-        </StyledLi>
-      </StyledUl>
-    </CustomNavbar>
+          </span>
+        </div>
+      </div>
+    </nav>
   );
 }
 

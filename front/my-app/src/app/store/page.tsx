@@ -7,24 +7,19 @@ import ProductDetail from "../../components/ProductDetail/index";
 import MenuCheckoutProductsDetail from "../../components/MenuCheckoutProductsDetail/index";
 import PreFooter from "@/components/PreFooter/PreFooter";
 
-
-
 export default function Store() {
-    return (
-        <div>
-      <Header/>
+  return (
+    <div>
+      <Header />
 
-        <ProductDetail/>
-        <MenuCheckoutProductsDetail/>
-      <Navbar/>
-        <h1>Store</h1>
-        <Products_cards/>
-        <Products_cards/>
-        <Products_cards/>
-        <Products_cards/>
-        <Products_cards/>
-        <PreFooter/>
-        <Footer/>
-        </div>
-    );
-    }
+      <ProductDetail />
+      <MenuCheckoutProductsDetail />
+      <Navbar />
+      <h2>Store</h2>
+      <Products_cards />
+
+      <PreFooter />
+      <Footer />
+    </div>
+  );
+}

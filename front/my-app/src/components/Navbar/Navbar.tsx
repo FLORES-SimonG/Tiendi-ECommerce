@@ -1,31 +1,30 @@
 "use client";
 import Link from "next/link";
-import { NavbarContainer, NavbarList, NavbarListItem, NavbarListItemSpecial } from "./styles";
+
 
 function Navbar() {
   return (
-    <NavbarContainer>
-      <NavbarList>
-        {/* <Link href="/">
-          <NavbarListItem>Bienvenida</NavbarListItem>
-        </Link> */}
+    <nav className=" flex justify-center items-center bg-gradient-to-b from-customColorSecondary to-white
+     px-4 pb-4 flex-row flex-nowrap content-center ">
+      <ul className="flex list-none p-0 gap-4 flex-row flex-nowrap content-center justify-center items-center">
+       
         <Link href="/home">
-          <NavbarListItem>Home</NavbarListItem>
+          <li className="cursor-pointer m-2 p-2 rounded-3xl text-gray-100 bg-customColorPrimary transition-colors hover:bg-customColorTertiary  font-semibold">Home</li>
         </Link>
         <Link href="/register">
-          <NavbarListItem>Registrate</NavbarListItem>
+          <li className="cursor-pointer m-2 p-2 rounded-3xl text-gray-100 bg-customColorPrimary transition-colors hover:bg-customColorTertiary  font-semibold">Registrate</li>
         </Link>
         <Link href="/store">
-          <NavbarListItem>Productos</NavbarListItem>
+          <li className="cursor-pointer m-2 p-2 rounded-3xl text-gray-100 bg-customColorPrimary transition-colors hover:bg-customColorTertiary  font-semibold">Productos</li>
         </Link>
         <Link href="/login">
-          <NavbarListItem>Ingresa</NavbarListItem>
+          <li className="cursor-pointer m-2 p-2 rounded-3xl text-gray-100 bg-customColorPrimary transition-colors hover:bg-customColorTertiary  font-semibold">Ingresa</li>
         </Link>
         <Link href="/aboutus">
-          <NavbarListItem>Nosotros</NavbarListItem>
+          <li className="cursor-pointer m-2 p-2 rounded-3xl text-gray-100 bg-customColorPrimary transition-colors hover:bg-customColorTertiary  font-semibold">Nosotros</li>
         </Link>
-      </NavbarList>
-    </NavbarContainer>
+      </ul>
+    </nav>
   );
 }
 

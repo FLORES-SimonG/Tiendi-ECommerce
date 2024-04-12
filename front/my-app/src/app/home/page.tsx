@@ -19,12 +19,9 @@ export default function Home() {
     <Navbar/>
     
   
-    
-    {/* <h1> ESTÁS EN EL Home Page</h1>
-   <h2>ESTE ES EL HOME CONTEINER:</h2> */}
    <HomeContainer/>
    <PreFooter/>
-    <Footer/>
+    <Footer/> 
 
   </div>
   );
