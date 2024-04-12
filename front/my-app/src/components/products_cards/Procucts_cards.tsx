@@ -27,7 +27,7 @@ export function Products_cards() {
     <Fondo>
       {/* <h1>ProductsCards</h1> */}
       {items?.map((item: { id: number }) => {
-        console.log(item);
+        // console.log(item);
 
         return <Product_card key={item.id} data={item} />;
       })}

@@ -22,9 +22,9 @@ function Product_card(producto: any): any {
    
     context.setCount(context.count + 1);
     context.setCartProducts([...context.cartProducts, productoData]);
-    alert("Producto agregado al carrito")
+    // alert("Producto agregado al carrito")
     context.openMenuCheckoutProducts();
-    console.log("CART:", context.cartProducts);
+    // console.log("CART:", context.cartProducts);
   };
 
   return (
