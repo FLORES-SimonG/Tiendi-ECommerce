@@ -1,15 +1,19 @@
-'use client';
+import { useContext } from "react";
+import { ShoppingCartContext } from "../../Context/index";
 
-import { useState } from "react";
+
 
 export const ShoppingCart = () => {
-    const [countItems, setCountItems] = useState(0);
+    const context=useContext(ShoppingCartContext);
+    
+
+    
 
     return (
 
-        <div className="cursor-pointer" onClick={() => setCountItems(countItems + 1)}>
+        <div >
             
-            <span >{countItems}</span>
+            <span >{context.count}</span>
             
         </div>
     );
