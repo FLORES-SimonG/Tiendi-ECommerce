@@ -1,8 +1,11 @@
 "use client";
 import { LuMenuSquare } from "react-icons/lu";
 import { ShoppingCart } from "../cart/ShoppingCart";
+import { useContext } from "react";
+import { ShoppingCartContext } from "../../Context/index";
 
 function Header() {
+  const context:any = useContext(ShoppingCartContext);
   return (
     <nav
       className="h-3 p-8 bg-gradient-to-b from-customColorPrimary via-customColorPrimary to-gray-300 
@@ -16,9 +19,9 @@ function Header() {
       <img className=" h-12 cursor-pointer m-16" src="/Tiendi.svg" alt="Tiendi"  />
       <div className="flex justify-center items-center m-0 p-0 list-none">
         
-        <div className="flex justify-center  m-0 bg-transparent w-12 h-12 flex-row flex-nowrap content-center items-center">
-          <img className=" h-7 hover:shadow-xl  cursor-pointer " src="/carritoBlanco.svg" alt="carrito"   />
-          <span className=" absolute   top-2 right-10  p-0.5 rounded-full text-xs bg-customColorTertiary text-white">
+        <div onClick={()=>context.openMenuCheckoutProducts()} className="flex justify-center cursor-pointer m-0 bg-transparent w-12 h-12 flex-row flex-nowrap content-center items-center">
+          <img className=" h-7 hover:shadow-xl  " src="/carritoBlanco.svg" alt="carrito"   />
+          <span  className=" absolute   top-2 right-10  p-0.5 rounded-full text-xs bg-customColorTertiary text-white">
             <ShoppingCart />
           </span>
         </div>

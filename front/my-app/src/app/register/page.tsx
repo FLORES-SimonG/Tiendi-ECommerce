@@ -9,7 +9,7 @@ export default function Register() {
       <Header/>
       <Navbar/>
         <h1>Register</h1>
-        <Footer/>
+        {/* <Footer/> */}
         </div>
     );
     }

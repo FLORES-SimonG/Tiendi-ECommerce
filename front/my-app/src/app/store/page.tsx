@@ -13,13 +13,13 @@ export default function Store() {
       <Header />
 
       <ProductDetail />
-      <MenuCheckoutProductsDetail />
+      {/* <MenuCheckoutProductsDetail /> */}
       <Navbar />
       <h2>Store</h2>
       <Products_cards />
 
       <PreFooter />
-      <Footer />
+      
     </div>
   );
 }

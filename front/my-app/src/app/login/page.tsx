@@ -10,7 +10,7 @@ export default function Login() {
       <Header/>
       <Navbar/>
         <h1 className="text-sm text-red-500">Login</h1>
-        <Footer/>
+        {/* <Footer/> */}
         </div>
     );
     }
