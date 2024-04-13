@@ -22,7 +22,7 @@ export async function Products_cards() {
 
   return (
     <>
-    <h2>PRODUCTS CARDS</h2>
+    {/* <h2>PRODUCTS CARDS</h2> */}
     <div className="bg-transparent flex items-center justify-center content-center justify-items-center flex-row flex-wrap">
       {/* <h1>ProductsCards</h1> */}
       {items?.map((item: { id: number }) => {
