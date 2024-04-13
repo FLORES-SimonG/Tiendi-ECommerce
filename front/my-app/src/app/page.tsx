@@ -27,7 +27,7 @@ export default function Welcome() {
     
       rounded-lg flex flex-col items-center">
       
-        <Image src="/firma.png" alt="Tiendi" width={100} height={100} className="mb-2" />
+        <Image src="/firma.png" alt="Tiendi" width={100} height={100} className="mb-2 w-28 h-10" priority />
         <div className="w-full flex justify-center items-center">
           <div className="w-24 h-24 m-2 cursor-pointer rounded-full bg-gradient-to-b from-customColorPrimary from-10%  via-customColorPrimary via-30% to-transparent to-100% flex justify-center items-center text-white font-bold text-2xl transition duration-500 hover:scale-105 hover:bg-customColorTertiary shadow-md">
           <FiShoppingCart />

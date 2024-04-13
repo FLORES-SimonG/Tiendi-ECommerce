@@ -6,7 +6,7 @@ import Products_cards from "@/components/products_cards/Procucts_cards";
 import ProductDetail from "../../components/ProductDetail/index";
 // import MenuCheckoutProductsDetail from "../../components/MenuCheckoutProductsDetail/index";
 import PreFooter from "@/components/PreFooter/PreFooter";
-import CarouselBanner from "@/components/Carousel/index";
+import CarouselFilter from "@/components/CarouselFilter/index";
 
 
 // import Carousel from "@/components/Carousel/Carousel";
@@ -17,8 +17,8 @@ export default function Store() {
       <Header />
       <ProductDetail />
       <Navbar />
-      <CarouselBanner/>
-      <h2>Store</h2>
+      <CarouselFilter/>
+      <h2>Nuestros Productos</h2>
       <Products_cards />
       
       <PreFooter />
