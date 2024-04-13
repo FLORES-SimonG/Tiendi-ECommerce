@@ -19,6 +19,7 @@ export default function RootLayout({
 }>) {
   return (
     <ShoppingCartProvider>
+      
     <html lang="en">
       <body className={inter.className}>
       <MenuCheckoutProductsDetail />

@@ -13,10 +13,13 @@ import { FiShoppingCart } from "react-icons/fi";
 
 
 
+
 export default function Welcome() {
 
   
   return (
+
+    
     <div className="flex justify-center items-center flex-col h-screen w-screen transition duration-200 bg-gradient-to-b from-customColorPrimary from-10%  via-customColorPrimary via-30% to-transparent to-100%">
 
       <div className="p-8  border border-customColorSecondary 

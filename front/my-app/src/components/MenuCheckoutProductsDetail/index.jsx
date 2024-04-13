@@ -67,10 +67,13 @@ export const MenuCheckoutProductsDetail = () => {
           </div>
         ))}
       </div>
-      <div className="flex flex-row justify-between mx-6 my-2">
+      <Link href={"/checkout"}>
+
+      <div className="flex flex-row justify-between mx-6 my-2  transition-transform hover:scale-105 ">
         <p className="text-black text-base font-semibold ">TOTAL</p>
         <p className="text-black text-base font-semibold">$ {total}</p>
       </div>
+      </Link>
      
     </aside>
   );
