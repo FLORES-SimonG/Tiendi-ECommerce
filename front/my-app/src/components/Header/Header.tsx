@@ -16,7 +16,7 @@ function Header() {
           <LuMenuSquare size={30} />
         </button>
       </div>
-      <img className=" h-12 cursor-pointer m-16" src="/Tiendi.svg" alt="Tiendi"  />
+      <img className=" h-12 cursor-pointer m-0" src="/Tiendi.svg" alt="Tiendi"  />
       <div className="flex justify-center items-center m-0 p-0 list-none">
         
         <div onClick={()=>context.openMenuCheckoutProducts()} className="flex justify-center cursor-pointer m-0 bg-transparent w-12 h-12 flex-row flex-nowrap content-center items-center">

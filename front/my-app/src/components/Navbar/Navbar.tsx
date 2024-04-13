@@ -5,7 +5,7 @@ import Link from "next/link";
 function Navbar() {
   return (
     <nav className=" flex justify-center items-center bg-gradient-to-b from-customColorSecondary to-white
-     px-4 py-4 flex-row flex-nowrap content-center ">
+     px-4 py-4 flex-row flex-nowrap content-center">
       <ul className="flex list-none p-0 mt-1 gap-4 flex-row flex-nowrap content-center justify-center items-center">
        
         <Link href="/home">
