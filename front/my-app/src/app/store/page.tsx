@@ -13,16 +13,16 @@ import CarouselFilter from "@/components/CarouselFilter/index";
 
 export default function Store() {
   return (
-    <div>
+    <>
       <Header />
       <ProductDetail />
       <Navbar />
       <CarouselFilter/>
-      <h2>Nuestros Productos</h2>
+     
       <Products_cards />
       
       <PreFooter />
       
-    </div>
+    </>
   );
 }
