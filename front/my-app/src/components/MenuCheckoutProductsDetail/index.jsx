@@ -7,7 +7,7 @@ import { IoIosRemove } from "react-icons/io";
 
 import { IoIosCard } from "react-icons/io";
 
-// import { imagenDeEjemplo } from "../../../public/variablesGlobales"; // !NO BORRAR
+// import { imagenDeEjemplo } from "../../../public/variablesGlobales"; // ! NO BORRAR
 
 export const MenuCheckoutProductsDetail = () => {
   const context = useContext(ShoppingCartContext);
@@ -20,10 +20,10 @@ export const MenuCheckoutProductsDetail = () => {
   return (
     <aside
       className={`${context.isMenuCheckoutProductsOpen ? "flex" : "hidden"}  
-        m-4 w-96 flex flex-col fixed right-0 rounded-xl
-        bg-gradient-to-b from-customColorPrimary from-10%  via-white via-50% to-customColorPrimary to-100%
+        lg:m-4 md:m-4 lg:w-96 md:w-96 w-80 flex flex-col fixed right-0 rounded-xl
+        bg-gradient-to-b m-1 from-customColorPrimary from-10%  via-white via-50% to-customColorPrimary to-100%
          z-50
-         border-customColorPrimary border
+         border-white border-2
           max-h-96 overflow-y-auto
           flex-stretch
         `}
@@ -58,17 +58,17 @@ export const MenuCheckoutProductsDetail = () => {
         <div className="flex flex-row justify-between mx-6 my-2  items-center transition-transform hover:scale-105 ">
           <div className="flex flex-row items-center gap-2 ">
             <IoIosCard
-              className="text-white text-3xl transition-colors  font-bold cursor-pointer hover:text-green-600"
+              className="md:text-white lg:text-white text-green-600 text-3xl transition-colors  font-bold cursor-pointer hover:text-green-600"
               onClick={() => {
                 context.closeMenuCheckoutProducts();
               }}
             />
 
-            <p className="text-black text-lg font-semibold  hover:text-green-600">
+            <p className="text-black md:text-md lg:text-md text-sm font-semibold  hover:text-green-600">
               Finalizar compra
             </p>
           </div>
-          <p className="text-black text-base font-semibold hover:bg-green-500 hover:rounded-lg hover:p-1">
+          <p className="text-black md:text-lg p-1 lg:text-lg text-md bg-customColorTertiary rounded-xl md:bg-transparent   lg:bg-transparent font-semibold hover:bg-customColorTertiary hover:rounded-lg hover:p-1">
             Total: $ {total}
           </p>
         </div>

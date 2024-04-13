@@ -25,10 +25,10 @@ return (
         </div>
         <div className="flex m-0 flex-col flex-nowrap content-center text-center items-center w-96 justify-center">
           <h2 className="text-xl font-bold m-2">¡Descarga nuestra aplicación!</h2>
-          <p className=" mx-6">
+          <p className=" mx-6 hidden md:block lg:block ">
             Explora la App y descubre todas las ofertas y promociones que tenemos para vos.
           </p>
-            <p>¡No te lo pierdas!</p>
+            <p className="hidden md:block lg:block">¡No te lo pierdas!</p>
             <p className="font-bold">¡Cupones exlusivos
             semanales!</p>
             

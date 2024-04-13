@@ -5,23 +5,33 @@ import { useContext } from "react";
 import { ShoppingCartContext } from "../../Context/index";
 
 function Header() {
-  const context:any = useContext(ShoppingCartContext);
+  const context: any = useContext(ShoppingCartContext);
   return (
     <nav
       className="h-3 p-8 bg-gradient-to-b from-customColorPrimary via-customColorPrimary to-gray-300 
     flex justify-between items-center flex-row flex-nowrap "
     >
-      <div className="flex  items-center">
-        <button className="flex justify-center items-center border-none cursor-pointer hover:shadow-xl hover:rounded-xl w-12 h-12 bg-transparent text-white">
+      <div className=" flex md:hidden lg:hidden  items-center">
+        <button className="flex  justify-center items-center border-none cursor-pointer hover:shadow-xl hover:rounded-xl w-12 h-12 bg-transparent text-white">
           <LuMenuSquare size={30} />
         </button>
       </div>
-      <img className=" h-12 cursor-pointer m-0" src="/Tiendi.svg" alt="Tiendi"  />
+      <img
+        className=" h-11 cursor-pointer  m-0"
+        src="/Tiendi.svg"
+        alt="Tiendi"
+      />
       <div className="flex justify-center items-center m-0 p-0 list-none">
-        
-        <div onClick={()=>context.openMenuCheckoutProducts()} className="flex justify-center cursor-pointer m-0 bg-transparent w-12 h-12 flex-row flex-nowrap content-center items-center">
-          <img className=" h-7 hover:shadow-xl  " src="/carritoBlanco.svg" alt="carrito"   />
-          <span  className=" absolute   top-2 right-10  p-0.5 rounded-full text-xs bg-customColorTertiary text-white">
+        <div
+          onClick={() => context.openMenuCheckoutProducts()}
+          className="flex justify-center cursor-pointer m-0 bg-transparent w-12 h-12 flex-row flex-nowrap content-center items-center"
+        >
+          <img
+            className=" h-7 hover:shadow-xl  "
+            src="/carritoBlanco.svg"
+            alt="carrito"
+          />
+          <span className=" absolute   top-2 right-10  p-0.5 rounded-full text-xs bg-customColorTertiary text-white">
             <ShoppingCart />
           </span>
         </div>

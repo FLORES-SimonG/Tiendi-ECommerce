@@ -6,7 +6,7 @@ import { IoIosSearch } from "react-icons/io";
 
 export function CarouselTransition() {
   return (
-    <div className="flex w-7/8 h-48 bg-customColorPrimary mx-10 mb-10 border border-white rounded-full  cursor-pointer shadow-lg shadow-customColorPrimary">
+    <div className=" hidden md:flex lg:flex w-7/8 h-48 bg-customColorPrimary mx-10 mb-10 border border-white rounded-full  cursor-pointer shadow-lg shadow-customColorPrimary">
       
       
       
