@@ -1,28 +1,26 @@
 "use client";
-import { IoIosCloseCircleOutline } from "react-icons/io";
+
 import { useContext } from "react";
 import { ShoppingCartContext } from "../../Context/index.jsx";
 import Link from "next/link.js";
-import { FaRegCheckCircle } from "react-icons/fa";
-import { IoIosCheckmarkCircleOutline } from "react-icons/io";
+import { IoIosRemove } from "react-icons/io";
 
-// import { imagenDeEjemplo } from "../../../public/variablesGlobales";
+import { IoIosCard } from "react-icons/io";
+
+// import { imagenDeEjemplo } from "../../../public/variablesGlobales"; // !NO BORRAR
 
 export const MenuCheckoutProductsDetail = () => {
-  
   const context = useContext(ShoppingCartContext);
-  
 
   let total = 0;
   for (let i = 0; i < context.cartProducts.length; i++) {
     total += context.cartProducts[i].price;
   }
-  
 
   return (
     <aside
       className={`${context.isMenuCheckoutProductsOpen ? "flex" : "hidden"}  
-        m-4 w-80 flex flex-col fixed right-0 rounded-xl
+        m-4 w-96 flex flex-col fixed right-0 rounded-xl
         bg-gradient-to-b from-customColorPrimary from-10%  via-white via-50% to-customColorPrimary to-100%
          z-50
          border-customColorPrimary border
@@ -31,25 +29,14 @@ export const MenuCheckoutProductsDetail = () => {
         `}
     >
       <div className="flex justify-between items-center p-4  ">
-        <h2 className="text-2xl font-bold text-black">
-          Mis Ordenes
-        </h2>
-        <IoIosCloseCircleOutline
+        <h2 className="text-2xl font-bold text-black">Mis Ordenes</h2>
+
+        <IoIosRemove
           className="text-white text-3xl transition-colors  font-bold cursor-pointer hover:text-customColorTertiary"
           onClick={() => {
             context.closeMenuCheckoutProducts();
-          }}/>
-         <Link href={"/checkout"}>
-        
-          <IoIosCheckmarkCircleOutline className="text-white text-3xl transition-colors  font-bold cursor-pointer hover:text-green-600"
-           onClick={() => {
-            context.closeMenuCheckoutProducts();
-            
-            // context.openMenuCheckoutProducts();
-          }}/>
-          
-       
-      </Link>
+          }}
+        />
       </div>
       <hr className="border-b-2 border-black border-opacity-10" />
       <div className="flex flex-col justify-between content-center items-stretch">
@@ -67,14 +54,25 @@ export const MenuCheckoutProductsDetail = () => {
           </div>
         ))}
       </div>
-      <Link href={"/checkout"}>
+      <Link href={"/checkout"} onClick={context.closeMenuCheckoutProducts}>
+        <div className="flex flex-row justify-between mx-6 my-2  items-center transition-transform hover:scale-105 ">
+          <div className="flex flex-row items-center gap-2 ">
+            <IoIosCard
+              className="text-white text-3xl transition-colors  font-bold cursor-pointer hover:text-green-600"
+              onClick={() => {
+                context.closeMenuCheckoutProducts();
+              }}
+            />
 
-      <div className="flex flex-row justify-between mx-6 my-2  transition-transform hover:scale-105 ">
-        <p className="text-black text-base font-semibold ">TOTAL</p>
-        <p className="text-black text-base font-semibold">$ {total}</p>
-      </div>
+            <p className="text-black text-lg font-semibold  hover:text-green-600">
+              Finalizar compra
+            </p>
+          </div>
+          <p className="text-black text-base font-semibold hover:bg-green-500 hover:rounded-lg hover:p-1">
+            Total: $ {total}
+          </p>
+        </div>
       </Link>
-     
     </aside>
   );
 };

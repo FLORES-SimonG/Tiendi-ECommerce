@@ -13,7 +13,7 @@ function Footer() {
     <div className="flex justify-center">
       <a href="#!" className="me-6 [&>svg]:h-4 [&>svg]:w-4">
         <svg
-          //xmlns="http://www.w3.org/2000/svg"
+          
           fill="currentColor"
           viewBox="0 0 320 512"> 
            
@@ -24,7 +24,7 @@ function Footer() {
       </a>
       <a href="#!" className="me-6 [&>svg]:h-4 [&>svg]:w-4 ">
         <svg
-          //xmlns="http://www.w3.org/2000/svg"
+        
           fill="currentColor"
           viewBox="0 0 512 512">
           
@@ -34,7 +34,7 @@ function Footer() {
       </a>
       <a href="#!" className="me-6 [&>svg]:h-4 [&>svg]:w-4">
         <svg
-          //xmlns="http://www.w3.org/2000/svg"
+          
           fill="currentColor"
           viewBox="0 0 488 512">
          
@@ -44,7 +44,7 @@ function Footer() {
       </a>
       <a href="#!" className="me-6 [&>svg]:h-4 [&>svg]:w-4">
         <svg
-          //xmlns="http://www.w3.org/2000/svg"
+         
           fill="currentColor"
           viewBox="0 0 448 512">
         
@@ -54,7 +54,7 @@ function Footer() {
       </a>
       <a href="#!" className="me-6 [&>svg]:h-4 [&>svg]:w-4">
         <svg
-          //xmlns="http://www.w3.org/2000/svg"
+         
           fill="currentColor"
           viewBox="0 0 448 512">
          
@@ -64,7 +64,7 @@ function Footer() {
       </a>
       <a href="#!" className="[&>svg]:h-4 [&>svg]:w-4">
         <svg
-          //xmlns="http://www.w3.org/2000/svg"
+        
           fill="currentColor"
           viewBox="0 0 496 512">
         
@@ -84,7 +84,7 @@ function Footer() {
           className="mb-4 flex items-center justify-center font-semibold uppercase md:justify-start">
           <span className="me-3 [&>svg]:h-4 [&>svg]:w-4">
             <svg
-              //xmlns="http://www.w3.org/2000/svg"
+             
               viewBox="0 0 24 24"
               fill="currentColor">
               <path
@@ -144,7 +144,7 @@ function Footer() {
         <p className="mb-4 flex items-center justify-center md:justify-start">
           <span className="me-3 [&>svg]:h-5 [&>svg]:w-5">
             <svg
-              //xmlns="http://www.w3.org/2000/svg"
+              
               viewBox="0 0 24 24"
               fill="currentColor">
               <path
@@ -158,7 +158,7 @@ function Footer() {
         <p className="mb-4 flex items-center justify-center md:justify-start">
           <span className="me-3 [&>svg]:h-5 [&>svg]:w-5">
             <svg
-              //xmlns="http://www.w3.org/2000/svg"
+              
               viewBox="0 0 24 24"
               fill="currentColor">
               <path
@@ -172,7 +172,7 @@ function Footer() {
         <p className="mb-4 flex items-center justify-center md:justify-start">
           <span className="me-3 [&>svg]:h-5 [&>svg]:w-5">
             <svg
-              //xmlns="http://www.w3.org/2000/svg"
+              
               viewBox="0 0 24 24"
               fill="currentColor">
               <path
@@ -187,7 +187,7 @@ function Footer() {
         <p className="flex items-center justify-center md:justify-start">
           <span className="me-3 [&>svg]:h-5 [&>svg]:w-5">
             <svg
-              //xmlns="http://www.w3.org/2000/svg"
+              
               viewBox="0 0 24 24"
               fill="currentColor">
               <path

@@ -21,6 +21,8 @@ function Product_card(producto: any): any {
     context.openMenuCheckoutProducts();
   };
 
+  
+
   return (
     <div className="border-2 border-customColorPrimary w-52 h-72 m-2 rounded-lg flex flex-col justify-center items-center overflow-hidden | transition duration-200 ease-in-out transform hover:shadow-lg hover:bg-customColorPrimary">
       <div className="w-36 h-36 rounded-full overflow-hidden">
