@@ -4,12 +4,14 @@ import Header from "@/components/Header/Header";
 import Navbar from "@/components/Navbar/Navbar";
 import { CardInformation, DivEquipo, ListItem } from "./aboutUs";
 import PreFooter from "@/components/PreFooter/PreFooter";
+import BurgerMenu from "@/components/BurgerMenu";
 //MI EMPRESA SE LLAMA "TIENDI"
 
 export default function AboutUs() {
     return (
       <>
       <Header />
+      <BurgerMenu />
       <Navbar />
       <CardInformation>
         <ul className="texto">

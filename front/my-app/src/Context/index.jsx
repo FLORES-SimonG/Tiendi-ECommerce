@@ -26,6 +26,12 @@ export const ShoppingCartProvider = ({ children }) => {
   const openMenuCheckoutProducts = () => {setIsMenuCheckoutProductsOpen(true)};
   const closeMenuCheckoutProducts = () => {setIsMenuCheckoutProductsOpen(false);};
 
+  //* Contexto del BurgerMenu
+  const [isBurgerMenuOpen, setIsBurgerMenuOpen] = useState(false);
+  const openBurgerMenu = () => {setIsBurgerMenuOpen(true);};
+  const closeBurgerMenu = () => {setIsBurgerMenuOpen(false);};
+
+
   return (
     <ShoppingCartContext.Provider
       value={{
@@ -41,6 +47,9 @@ export const ShoppingCartProvider = ({ children }) => {
         isMenuCheckoutProductsOpen,
         openMenuCheckoutProducts,
         closeMenuCheckoutProducts,
+        isBurgerMenuOpen,
+        openBurgerMenu,
+        closeBurgerMenu
       }}
     >
       {children}

@@ -6,7 +6,7 @@ import { IoIosSearch } from "react-icons/io";
 
 export function CarouselTransition() {
   return (
-    <div className=" hidden md:flex lg:flex w-7/8 h-48 bg-customColorPrimary mx-10 mb-10 border border-white rounded-full  cursor-pointer shadow-lg shadow-customColorPrimary">
+    <div className=" hidden md:flex lg:flex w-7/8 h-48  mx-10 mb-10 border border-white rounded-full  cursor-pointer shadow-lg shadow-customColorPrimary">
       
       
       
@@ -20,8 +20,10 @@ export function CarouselTransition() {
           title="Iphone"
           className="rounded-s-full w-64 h-48 object-cover opacity-80 duration-100 cursor-pointer group-hover:opacity-100 group-hover:w-96 group-hover:filter group-hover:contrast-125 transition-all"
         />
-        <div className="absolute rounded-s-full inset-0 flex items-center justify-center opacity-0 transition-opacity duration-300 group-hover:opacity-100 bg-black bg-opacity-50 text-white">
-          iPhone
+        <div className="absolute rounded-s-full inset-0 flex flex-col items-center justify-center opacity-0 transition-opacity duration-300 group-hover:opacity-100 bg-black bg-opacity-50 text-white">
+          <div>
+            iPhone 
+            </div>          
           <IoIosSearch className=" text-xl"/>
         </div>
       </div>
@@ -36,8 +38,10 @@ export function CarouselTransition() {
           title="MacBook"
           className=" w-64 h-48 object-cover opacity-80 transition-opacity duration-100 cursor-pointer group-hover:opacity-100 group-hover:w-96 group-hover:filter group-hover:contrast-125"
         />
-        <div className="absolute inset-0 flex items-center justify-center opacity-0 transition-opacity duration-300 group-hover:opacity-100 bg-black bg-opacity-50 text-white">
-          MacBook
+        <div className="absolute  inset-0 flex flex-col items-center justify-center opacity-0 transition-opacity duration-300 group-hover:opacity-100 bg-black bg-opacity-50 text-white">
+          <div>
+            MacBook 
+            </div>          
           <IoIosSearch className=" text-xl"/>
         </div>
       </div>
@@ -52,8 +56,10 @@ export function CarouselTransition() {
           title="Ipad"
           className="w-64 h-48 object-cover opacity-80 transition-opacity duration-100 cursor-pointer group-hover:opacity-100 group-hover:w-96 group-hover:filter group-hover:contrast-125"
         />
-        <div className="absolute inset-0 flex items-center justify-center opacity-0 transition-opacity duration-300 group-hover:opacity-100 bg-black bg-opacity-50 text-white">
-          iPad
+        <div className="absolute  inset-0 flex flex-col items-center justify-center opacity-0 transition-opacity duration-300 group-hover:opacity-100 bg-black bg-opacity-50 text-white">
+          <div>
+            iPad 
+            </div>          
           <IoIosSearch className=" text-xl"/>
         </div>
       </div>
@@ -68,8 +74,10 @@ export function CarouselTransition() {
           title="Apple Watch"
           className=" w-64 h-48 object-cover opacity-80 duration-100 cursor-pointer group-hover:opacity-100 group-hover:w-96 group-hover:filter group-hover:contrast-125 transition-all"
         />
-        <div className="absolute inset-0 flex items-center justify-center opacity-0 transition-opacity duration-300 group-hover:opacity-100 bg-black bg-opacity-50 text-white">
-          Apple Watch
+        <div className="absolute  inset-0 flex flex-col items-center justify-center opacity-0 transition-opacity duration-300 group-hover:opacity-100 bg-black bg-opacity-50 text-white">
+          <div>
+            Apple Watch 
+            </div>          
           <IoIosSearch className=" text-xl"/>
         </div>
       </div>
@@ -84,8 +92,10 @@ export function CarouselTransition() {
           title="AirPods"
           className=" w-64 h-48 object-cover opacity-80 transition-opacity duration-100 cursor-pointer group-hover:opacity-100 group-hover:w-96 group-hover:filter group-hover:contrast-125"
         />
-        <div className="absolute inset-0 flex items-center justify-center opacity-0 transition-opacity duration-300 group-hover:opacity-100 bg-black bg-opacity-50 text-white">
-          AirPods
+        <div className="absolute  inset-0 flex flex-col items-center justify-center opacity-0 transition-opacity duration-300 group-hover:opacity-100 bg-black bg-opacity-50 text-white">
+          <div>
+            AirPods 
+            </div>          
           <IoIosSearch className=" text-xl"/>
         </div>
       </div>
@@ -100,8 +110,10 @@ export function CarouselTransition() {
           title="HomePod Mini"
           className=" w-64 h-48 object-cover opacity-80 transition-opacity duration-100 cursor-pointer group-hover:opacity-100 group-hover:w-96 group-hover:filter group-hover:contrast-125 rounded-e-full"
         />
-        <div className="rounded-e-full absolute inset-0 flex items-center justify-center opacity-0 transition-opacity duration-300 group-hover:opacity-100 bg-black bg-opacity-50 text-white">
-          HomePod Mini
+        <div className="absolute rounded-e-full inset-0 flex flex-col items-center justify-center opacity-0 transition-opacity duration-300 group-hover:opacity-100 bg-black bg-opacity-50 text-white">
+          <div>
+            HomePod 
+            </div>          
           <IoIosSearch className=" text-xl"/>
         </div>
       </div>

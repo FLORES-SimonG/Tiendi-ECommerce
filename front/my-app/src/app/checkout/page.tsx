@@ -1,4 +1,5 @@
 "use client";
+import BurgerMenu from "@/components/BurgerMenu";
 import Header from "../../components/Header/Header";
 import Navbar from "../../components/Navbar/Navbar";
 
@@ -24,6 +25,7 @@ export default function Checkout() {
     <div>
       <div><Toaster/></div>
       <Header />
+      <BurgerMenu />
       <Navbar />
 
       <div className="flex flex-row flex-nowrap content-center justify-center items-center ">

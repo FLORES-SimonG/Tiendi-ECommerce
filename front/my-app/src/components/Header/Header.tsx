@@ -1,5 +1,5 @@
 "use client";
-import { LuMenuSquare } from "react-icons/lu";
+// import { LuMenuSquare } from "react-icons/lu";
 import { ShoppingCart } from "../cart/ShoppingCart";
 import { useContext } from "react";
 import { ShoppingCartContext } from "../../Context/index";
@@ -11,10 +11,8 @@ function Header() {
       className="h-3 p-8 bg-gradient-to-b from-customColorPrimary via-customColorPrimary to-gray-300 
     flex justify-between items-center flex-row flex-nowrap "
     >
-      <div className=" flex md:hidden lg:hidden  items-center">
-        <button className="flex  justify-center items-center border-none cursor-pointer hover:shadow-xl hover:rounded-xl w-12 h-12 bg-transparent text-white">
-          <LuMenuSquare size={30} />
-        </button>
+      <div className=" flex md:hidden lg:hidden  absolute left-36 top-9">
+        <p className="text-black font-bold text-xs">v 2.0.24</p>
       </div>
       <img
         className=" h-11 cursor-pointer  m-0"

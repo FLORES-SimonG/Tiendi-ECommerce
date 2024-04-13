@@ -6,6 +6,7 @@ import Products_cards from "@/components/products_cards/Procucts_cards";
 import ProductDetail from "../../components/ProductDetail/index";
 // import MenuCheckoutProductsDetail from "../../components/MenuCheckoutProductsDetail/index";
 import PreFooter from "@/components/PreFooter/PreFooter";
+import BurgerMenu from "@/components/BurgerMenu/index";
 import CarouselFilter from "@/components/CarouselFilter/index";
 
 
@@ -15,6 +16,7 @@ export default function Store() {
   return (
     <>
       <Header />
+      <BurgerMenu />
       <ProductDetail />
       <Navbar />
       <CarouselFilter/>

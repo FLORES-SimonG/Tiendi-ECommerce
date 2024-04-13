@@ -6,6 +6,7 @@ import Navbar from '../../components/Navbar/Navbar'
 // import Products_cards from '@/components/products_cards/Procucts_cards'
 import HomeContainer from '../../components/HomeConteiner/HomeConteiner';
 import PreFooter from '@/components/PreFooter/PreFooter';
+import BurgerMenu from '@/components/BurgerMenu';
 
 
 
@@ -16,6 +17,7 @@ export default function Home() {
 
       
     <Header/>
+    <BurgerMenu/>
     <Navbar/>
     
   
