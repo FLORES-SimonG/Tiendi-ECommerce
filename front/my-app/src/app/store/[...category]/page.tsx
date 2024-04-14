@@ -1,4 +1,5 @@
 
+import BurgerMenu from "@/components/BurgerMenu";
 import Header from "@/components/Header/Header";
 import Navbar from "@/components/Navbar/Navbar";
 import Footer from "@/components/footer/Footer";
@@ -14,6 +15,7 @@ export default function Category(props: CategoryProps) {
         <div>
             <Header/>
             <Navbar/>
+            <BurgerMenu/>
             <h1>Categoria Dinámica: {category}</h1>
             <Footer/>
         </div>

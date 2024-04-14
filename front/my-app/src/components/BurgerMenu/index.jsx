@@ -26,7 +26,7 @@ const BurgerMenu = ()=>{
     return(
         <div>
 
-        <div onClick={actionMenuBurger} className="md:hidden lg:hidden flex flex-col items-center justify-center bg-customColorPrimary w-16 h-16 rounded-full fixed bottom-4 right-4 z-10 ">
+        <div onClick={actionMenuBurger} className="md:hidden cursor-pointer lg:hidden flex flex-col items-center justify-center bg-customColorPrimary w-16 h-16 rounded-full fixed bottom-4 right-4 z-10 ">
             <div className="w-8 h-1 bg-white rounded-full mb-1"></div>
             <div className="w-8 h-1 bg-white rounded-full mb-1"></div>
             <div className="w-8 h-1 bg-white rounded-full mb-1"></div>
