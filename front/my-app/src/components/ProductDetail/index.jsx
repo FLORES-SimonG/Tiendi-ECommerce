@@ -5,7 +5,6 @@ import { ShoppingCartContext } from "../../Context/index.jsx";
 
 import Image from 'next/image';
 import { imagenDeEjemplo } from "../../../public/variablesGlobales";
-import Link from 'next/link';
 
 
 
@@ -17,13 +16,7 @@ const ProductDetail = ()=>{
     // console.log("este es context.productToShow",context.productToShow)
     // console.log("este es context",context)
     // alert('se ejecuto')
-  
-    const nombreConGuiones = (linkDirection = false) => {
-        if (linkDirection && context.productToShow && context.productToShow.name) {
-          return context.productToShow.name.replace(/\s/g, '-');
-        }
-        return '';
-      };
+    
     return(
         <aside 
         className={`${context.isProductDetailOpen? 'flex':'hidden'}  
@@ -45,10 +38,6 @@ const ProductDetail = ()=>{
                <p className="text-black text-balance  text-sm">{context.productToShow.description}</p>
                
            </div>
-           <Link href={"/store/"+nombreConGuiones(true)}>
-           {/* <Link href={`/store/${nombreConGuiones}`}> */}
-              <button className="bg-customColorTertiary text-white p-2 rounded-lg m-2" onClick={()=>{ nombreConGuiones(true) }}>Ver más detalles</button>
-           </Link>
 
         </aside>
     );

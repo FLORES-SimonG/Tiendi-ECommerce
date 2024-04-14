@@ -26,7 +26,7 @@ const BurgerMenu = ()=>{
     return(
         <div>
 
-        <div onClick={actionMenuBurger} className="md:hidden cursor-pointer lg:hidden flex flex-col items-center justify-center bg-customColorPrimary w-16 h-16 rounded-full fixed bottom-4 right-4 z-10 ">
+        <div onClick={actionMenuBurger} className="md:hidden lg:hidden flex flex-col items-center justify-center bg-customColorPrimary w-16 h-16 rounded-full fixed bottom-4 right-4 z-10 ">
             <div className="w-8 h-1 bg-white rounded-full mb-1"></div>
             <div className="w-8 h-1 bg-white rounded-full mb-1"></div>
             <div className="w-8 h-1 bg-white rounded-full mb-1"></div>
@@ -40,7 +40,7 @@ const BurgerMenu = ()=>{
             <div className="flex flex-col items-center p-6">
                 
                 <Link href="/home" className="text-xl font-bold text-black m-2">Home</Link>
-                <Link href="/aboutus" className="text-xl font-bold text-black m-2">Nosotros</Link>
+                <Link href="/about" className="text-xl font-bold text-black m-2">Nosotros</Link>
                 <Link href="/login" className="text-xl font-bold text-black m-2">Ingresa</Link>
                 <Link href="/register" className="text-xl font-bold text-black m-2">Registrate</Link>
                 <Link href="/store" className="text-xl font-bold text-black m-2">Productos</Link>

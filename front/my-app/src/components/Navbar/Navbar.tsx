@@ -20,7 +20,7 @@ function Navbar() {
         <Link href="/login">
           <li className="cursor-pointer  p-2 rounded-3xl text-gray-100 bg-customColorPrimary transition-colors hover:bg-customColorTertiary  font-semibold">Ingresa</li>
         </Link>
-        <Link href="/aboutus">
+        <Link href="/about">
           <li className="cursor-pointer  p-2 rounded-3xl text-gray-100 bg-customColorPrimary transition-colors hover:bg-customColorTertiary  font-semibold">Nosotros</li>
         </Link>
       </ul>
