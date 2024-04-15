@@ -22,6 +22,11 @@ export default function Category(props: any) {
   const context = useContext(ShoppingCartContext);
   const detalleIndividualDelProucto = context.productData;
   console.log(detalleIndividualDelProucto);
+  const paraCheckout = ()=>{
+    
+    context.setProductsToDispatch([...context.productsToDispatch, detalleIndividualDelProucto])
+    
+  }
 
   return (
     <div>
@@ -55,11 +60,12 @@ export default function Category(props: any) {
           <div className="p-6 pt-0 flex flex-row flex-nowrap items-center justify-around content-center">
             <Link href={"/checkout"}>
               <button
+              onClick={paraCheckout}
                 data-ripple-light="true"
                 type="button"
                 className="select-none rounded-lg bg-customColorTertiary py-3 px-6 text-center align-middle font-sans text-xs font-bold uppercase text-white shadow-md shadow-purple-400 transition-all hover:shadow-lg hover:shadow-purple-500/40 focus:opacity-[0.85] focus:shadow-none active:opacity-[0.85] active:shadow-none disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none"
               >
-                Comprar
+                Adquirir
               </button>
             </Link>
             <Link href={"/store"}>

@@ -33,6 +33,9 @@ export const ShoppingCartProvider = ({ children }) => {
 
   //* Capturador de los datos del Producto:
    let [productData, setProductData] = useState({});
+
+   //* Productos a despachar
+    const [productsToDispatch, setProductsToDispatch] = useState([]);
   
 
 
@@ -55,7 +58,9 @@ export const ShoppingCartProvider = ({ children }) => {
         openBurgerMenu,
         closeBurgerMenu,
         setProductData,
-        productData
+        productData,
+        productsToDispatch,
+        setProductsToDispatch
       }}
     >
       {children}
