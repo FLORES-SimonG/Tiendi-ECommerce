@@ -11,7 +11,7 @@ import Link from "next/link";
 export default function Checkout() {
   const cancelar = () => {
     toast.error("Compra Cancelada");
-    context.setProductsToDispatch([]);
+    context.setCartProducts([]);
   }
   const comprar = () => toast.success("COMPRADO! 🎉🎉🎉");
 

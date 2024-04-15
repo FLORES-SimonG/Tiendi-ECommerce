@@ -12,15 +12,18 @@ import { IoIosCard } from "react-icons/io";
 export const MenuCheckoutProductsDetail = () => {
   const context = useContext(ShoppingCartContext);
 
+  const productosParaFinalizarCompra = context.cartProducts
+  ;
   let total = 0;
-  for (let i = 0; i < context.cartProducts.length; i++) {
-    total += context.cartProducts[i].price;
-  }
+  productosParaFinalizarCompra.forEach((producto) => {
+    total += (producto.price * (10-producto.stock));
+  });
 
   return (
     <aside
       className={`${context.isMenuCheckoutProductsOpen ? "flex" : "hidden"}  
-        lg:m-4 md:m-4 lg:w-96 md:w-96 w-80 flex flex-col fixed right-0 rounded-xl
+      transition-all  
+      lg:m-4 md:m-4 lg:w-96 md:w-96 w-80 flex flex-col fixed right-0 top-12 rounded-xl
         bg-gradient-to-b m-1 from-customColorPrimary from-10%  via-white via-50% to-customColorPrimary to-100%
          z-50
          border-white border-2
@@ -40,7 +43,7 @@ export const MenuCheckoutProductsDetail = () => {
       </div>
       <hr className="border-b-2 border-black border-opacity-10" />
       <div className="flex flex-col justify-between content-center items-stretch">
-        {context.cartProducts.map((productoEnElCarrito) => (
+        {productosParaFinalizarCompra.map((productoEnElCarrito) => (
           <div
             className="flex flex-row justify-between items-center p-6 border-b-2 border-black border-opacity-10"
             key={productoEnElCarrito.id}
@@ -48,9 +51,23 @@ export const MenuCheckoutProductsDetail = () => {
             <p className="text-black text-balance  text-sm">
               {productoEnElCarrito.name}
             </p>
+            <div className="flex flex-row items-center gap-3">
+                {/* <input type="number" max={productoEnElCarrito.stock} min={10-productoEnElCarrito.stock} className="w-9 bg-customColorSecondary text-end rounded-lg" placeholder={10-productoEnElCarrito.stock} inputMode="numeric" ></input> */}
+                <p className=" text-gray-400 font-semibold"  >{productoEnElCarrito.quantity} u.</p>
+                <p className="text-gray-400">
+                  x
+                </p>
+                
+                {/* <p className="text-black font-semibold  text-sm ">
+                  $ {productoEnElCarrito.price }
+                </p> */}
             <p className="text-black text-balance  text-sm ">
               $ {productoEnElCarrito.price}
             </p>
+                </div>
+
+
+
           </div>
         ))}
       </div>
