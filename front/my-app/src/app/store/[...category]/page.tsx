@@ -21,11 +21,38 @@ export default function Category(props: any) {
   const { category } = props.params;
   const context = useContext(ShoppingCartContext);
   const detalleIndividualDelProucto = context.productData;
-  console.log(detalleIndividualDelProucto);
+  console.log('DETALLE INDIVIDUAL DEL PRODUCTO: ',detalleIndividualDelProucto);
   
-  const paraCheckout = ()=>{
-    context.setCartProducts([...context.cartProducts, detalleIndividualDelProucto])
-  }
+  const paraCheckout = () => {
+    const { id, name, stock, price } = detalleIndividualDelProucto;
+  
+    
+    const existingProductIndex = context.cartProducts.findIndex(
+      (product: any) => product.id === id
+    );
+  
+    if (existingProductIndex !== -1) {
+     
+      const updatedCartProducts = [...context.cartProducts];
+      const existingProduct = updatedCartProducts[existingProductIndex];
+      existingProduct.quantity += 1; // Aumentar la cantidad en 1
+      existingProduct.stock -= 1; // Restar 1 al stock
+      // actualizo el estado del carrito
+      context.setCartProducts(updatedCartProducts);
+    } else {
+     
+      context.setCartProducts([
+        ...context.cartProducts,
+        {
+          id,
+          name,
+          price,
+          stock: stock - 1, 
+          quantity: 1, 
+        },
+      ]);
+    }
+  };
 
   return (
     <div>

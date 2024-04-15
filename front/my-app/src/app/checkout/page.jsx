@@ -21,8 +21,9 @@ export default function Checkout() {
   ;
   let total = 0;
   productosParaFinalizarCompra.forEach((producto) => {
-    total += producto.price;
+    total += (producto.price * (10-producto.stock));
   });
+  console.log("contexto en el checkout: ",context)
   
 
     
@@ -54,11 +55,12 @@ export default function Checkout() {
                 </p>
                 
                 <div className="flex flex-row items-center gap-3">
-                <input type="number" max={productoEnElCarrito.stock} min={0} className="w-9 bg-customColorSecondary text-end rounded-lg" placeholder="0" inputMode="numeric" ></input>
-                <p>x</p>
+                {/* <input type="number" max={productoEnElCarrito.stock} min={10-productoEnElCarrito.stock} className="w-9 bg-customColorSecondary text-end rounded-lg" placeholder={10-productoEnElCarrito.stock} inputMode="numeric" ></input> */}
+                <p className=" text-gray-400">{productoEnElCarrito.quantity}</p>
+                <p className="text-gray-400">x</p>
                 
                 <p className="text-black text-balance  text-sm ">
-                  $ {productoEnElCarrito.price}
+                  $ {productoEnElCarrito.price * productoEnElCarrito.quantity}
                 </p>
                 </div>
               </div>
@@ -71,21 +73,21 @@ export default function Checkout() {
           <div className="flex flex-row ">
             <button
               onClick={cancelar}
-              className="px-4 py-2 m-2 border-b-4 border rounded-xl bg-gradient-to-b from-white from-10%  via-white via-20% to-customColorPrimary to-100%  text-black hover:text-red-600 hover:bg-red-600 hover:border-red-300 transition-all duration-200"
+              className="px-4 py-2 m-2 border-b-4 border rounded-xl bg-gradient-to-b from-white from-10%  via-white via-35% to-customColorTertiary to-100%  text-black hover:text-red-600 hover:bg-red-600 hover:border-red-300 transition-all duration-200"
             >
               Cancelar
             </button>
             <Link href={"/store"}>
             <button
               
-              className="px-4 py-2 m-2 border-b-4 border rounded-xl bg-gradient-to-b from-white from-10%  via-white via-20% to-customColorPrimary to-100%  text-black hover:text-blue-500 hover:bg-blue-600 transition-all hover:border-customColorPrimary duration-200"
+              className="px-4 py-2 m-2 border-b-4 border rounded-xl bg-gradient-to-b from-white from-10%  via-white via-35% to-customColorTertiary to-100%  text-black hover:text-blue-500 hover:bg-blue-600 transition-all hover:border-customColorPrimary duration-200"
               >
               Volver a Productos
             </button>
               </Link> 
             <button
               onClick={comprar}
-              className="px-4 py-2 m-2 border-b-4 border rounded-xl bg-gradient-to-b from-white from-10%  via-white via-20% to-customColorPrimary to-100%   text-black hover:text-green-500 hover:bg-green-500 transition-all hover:border-green-300 duration-200"
+              className="px-4 py-2 m-2 border-b-4 border rounded-xl bg-gradient-to-b from-white from-10%  via-white via-35% to-customColorTertiary to-100%   text-black hover:text-green-500 hover:bg-green-500 transition-all hover:border-green-300 duration-200"
             >
               Comprar
             </button>
