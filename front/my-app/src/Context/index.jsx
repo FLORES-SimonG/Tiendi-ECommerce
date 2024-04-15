@@ -31,6 +31,10 @@ export const ShoppingCartProvider = ({ children }) => {
   const openBurgerMenu = () => {setIsBurgerMenuOpen(true);};
   const closeBurgerMenu = () => {setIsBurgerMenuOpen(false);};
 
+  //* Capturador de los datos del Producto:
+   let [productData, setProductData] = useState({});
+  
+
 
   return (
     <ShoppingCartContext.Provider
@@ -49,7 +53,9 @@ export const ShoppingCartProvider = ({ children }) => {
         closeMenuCheckoutProducts,
         isBurgerMenuOpen,
         openBurgerMenu,
-        closeBurgerMenu
+        closeBurgerMenu,
+        setProductData,
+        productData
       }}
     >
       {children}
