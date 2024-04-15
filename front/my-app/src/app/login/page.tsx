@@ -12,7 +12,7 @@ export default function Login() {
   console.log("este es el context=>", context);
   // console.log("este es el context=>", context);
     return (
-        <div>
+        <div className="font-sans">
       <Header/>
       <BurgerMenu/>
       <Navbar/>

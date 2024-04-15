@@ -6,7 +6,7 @@ import Navbar from "@/components/Navbar/Navbar";
 
 export default function Register() {
     return (
-        <div>
+        <div className="font-sans leading-relaxed">
       <Header/>
       <BurgerMenu/>
       <Navbar/>

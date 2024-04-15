@@ -15,7 +15,7 @@ import CarouselFilter from "@/components/CarouselFilter/index";
 
 export default function Store() {
   return (
-    <>
+    <div className="font-sans">
       <Header />
       <BurgerMenu />
       <ProductDetail />
@@ -26,6 +26,6 @@ export default function Store() {
       
       <PreFooter />
       
-    </>
+    </div>
   );
 }

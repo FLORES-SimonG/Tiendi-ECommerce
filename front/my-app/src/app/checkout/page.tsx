@@ -5,13 +5,11 @@ import Navbar from "../../components/Navbar/Navbar";
 
 import { ShoppingCartContext } from "../../Context/index";
 import { useContext } from "react";
-import toast, { Toaster } from 'react-hot-toast';
+import toast, { Toaster } from "react-hot-toast";
 
 export default function Checkout() {
-
-  const cancelar = () => toast.success('Compra Cancelada ⛔');
-  const comprar = () => toast.success('COMPRADO! 🎉🎉🎉');
-
+  const cancelar = () => toast.error("Compra Cancelada");
+  const comprar = () => toast.success("COMPRADO! 🎉🎉🎉");
 
   const context = useContext(ShoppingCartContext);
   console.log(context);
@@ -21,22 +19,17 @@ export default function Checkout() {
   }
 
   return (
-
-    <div>
-      <div><Toaster/></div>
+    <div className=" font-sans leading-relaxed">
+      <div>
+        <Toaster />
+      </div>
       <Header />
       <BurgerMenu />
       <Navbar />
 
-      <div className="flex flex-row flex-nowrap content-center justify-center items-center ">
-       <div
-          className="flex   
-        m-4 w-80  flex-col justify-center items-center 
-        bg-gradient-to-b from-customColorPrimary from-10%  via-white via-50% to-customColorPrimary to-100%
+      <div className="flex flex-row flex-nowrap content-center justify-center items-center my-6 ">
+      <div className="relative  w-80 flex-row flex-nowrap content-center justify-center items-center rounded-xl bg-white bg-clip-border text-gray-700 shadow-md">
         
-        h-fit
-        rounded-lg"
-        >
           <div className="flex justify-between items-center p-4  ">
             <h2 className="text-2xl font-bold text-black">Mis Ordenes</h2>
           </div>
@@ -61,9 +54,18 @@ export default function Checkout() {
             <p className="text-black text-xl font-semibold">$ {total}</p>
           </div>
           <div className="flex flex-row ">
-            
-          <button onClick={cancelar} className="px-4 py-2 m-2 border-b-4 border rounded-xl bg-gradient-to-b from-white from-10%  via-white via-50% to-customColorPrimary to-100% border-red-500 text-black hover:text-red-600 hover:bg-red-600 transition-all duration-200">Cancelar</button>
-          <button onClick={comprar} className="px-4 py-2 m-2 border-b-4 border rounded-xl bg-gradient-to-b from-white from-10%  via-white via-50% to-customColorPrimary to-100% border-green-500  text-black hover:text-green-400 hover:bg-green-400 transition-all duration-200">Comprar</button>
+            <button
+              onClick={cancelar}
+              className="px-4 py-2 m-2 border-b-4 border rounded-xl bg-gradient-to-b from-white from-10%  via-white via-50% to-customColorPrimary to-100% border-red-500 text-black hover:text-red-600 hover:bg-red-600 transition-all duration-200"
+            >
+              Cancelar
+            </button>
+            <button
+              onClick={comprar}
+              className="px-4 py-2 m-2 border-b-4 border rounded-xl bg-gradient-to-b from-white from-10%  via-white via-50% to-customColorPrimary to-100% border-green-500  text-black hover:text-green-400 hover:bg-green-400 transition-all duration-200"
+            >
+              Comprar
+            </button>
           </div>
         </div>
       </div>

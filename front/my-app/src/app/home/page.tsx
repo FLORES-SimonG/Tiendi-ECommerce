@@ -13,7 +13,7 @@ import BurgerMenu from '@/components/BurgerMenu';
 
 export default function Home() {
   return (
-    <div>
+    <div className=' font-sans leading-relaxed'>
 
       
     <Header/>
