@@ -37,17 +37,17 @@ export default function Checkout() {
       <BurgerMenu />
       <Navbar />
 
-      <div className="flex flex-row flex-nowrap content-center justify-center items-center my-6 ">
-      <div className="relative  w-96 flex-row flex-nowrap content-center justify-center items-center rounded-xl bg-white bg-clip-border text-gray-700 shadow-md">
+      <div className="flex flex-row flex-nowrap content-center justify-center items-center my-6">
+      <div className="relative  w-96 flex-row flex-nowrap content-center justify-center items-center rounded-xl bg-gray-100 bg-clip-border text-gray-700 shadow-md">
         
-          <div className="flex justify-between items-center p-4  ">
+          <div className="flex justify-between items-center p-4 ">
             <h2 className="text-2xl font-bold text-black">Mis Ordenes</h2>
           </div>
 
           <div className="flex flex-col justify-between content-center items-stretch">
           {productosParaFinalizarCompra.map((productoEnElCarrito) => (
               <div
-                className="flex flex-row bg-customColorSecondary gap-12 justify-between items-center p-4 border-b-2 border-black border-opacity-10"
+                className="flex flex-row bg-customColorSecondary last:rounded-b-xl gap-12 justify-between items-center p-4 border-b-2 border-black border-opacity-10"
                 key={productoEnElCarrito.id}
               >
                 <p className="text-black text-balance  text-sm">
@@ -56,11 +56,13 @@ export default function Checkout() {
                 
                 <div className="flex flex-row items-center gap-3">
                 {/* <input type="number" max={productoEnElCarrito.stock} min={10-productoEnElCarrito.stock} className="w-9 bg-customColorSecondary text-end rounded-lg" placeholder={10-productoEnElCarrito.stock} inputMode="numeric" ></input> */}
-                <p className=" text-gray-400">{productoEnElCarrito.quantity}</p>
-                <p className="text-gray-400">x</p>
+                <p className=" text-gray-400 font-semibold"  >{productoEnElCarrito.quantity} unid.</p>
+                <p className="text-gray-400">
+                  x
+                </p>
                 
-                <p className="text-black text-balance  text-sm ">
-                  $ {productoEnElCarrito.price * productoEnElCarrito.quantity}
+                <p className="text-black font-semibold  text-sm ">
+                  $ {productoEnElCarrito.price }
                 </p>
                 </div>
               </div>
