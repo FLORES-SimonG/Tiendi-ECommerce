@@ -3,6 +3,7 @@
 import { ShoppingCart } from "../cart/ShoppingCart";
 import { useContext } from "react";
 import { ShoppingCartContext } from "../../Context/index";
+import Link from "next/link";
 
 function Header() {
   const context: any = useContext(ShoppingCartContext);
@@ -14,11 +15,13 @@ function Header() {
       <div className=" flex md:hidden lg:hidden  absolute left-36 top-9">
         <p className="text-black font-bold text-xs">v 2.0.24</p>
       </div>
+      <Link href="/store">
       <img
         className=" h-11 cursor-pointer  m-0"
         src="/Tiendi.svg"
         alt="Tiendi"
       />
+      </Link>
       <div className="flex justify-center items-center m-0 p-0 list-none">
         <div
           onClick={() => context.openMenuCheckoutProducts()}

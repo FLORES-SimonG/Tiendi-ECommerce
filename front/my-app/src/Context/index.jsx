@@ -36,6 +36,8 @@ export const ShoppingCartProvider = ({ children }) => {
 
    //* Productos a despachar
     const [productsToDispatch, setProductsToDispatch] = useState([]);
+
+    const [productsFromBackend, setProductsFromBackend] = useState([]);
   
 
 
@@ -59,6 +61,8 @@ export const ShoppingCartProvider = ({ children }) => {
         closeBurgerMenu,
         setProductData,
         productData,
+        productsFromBackend,
+        setProductsFromBackend,
         productsToDispatch,
         setProductsToDispatch
       }}

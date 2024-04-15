@@ -16,11 +16,11 @@ export default function Checkout() {
   const comprar = () => toast.success("COMPRADO! 🎉🎉🎉");
 
   const context = useContext(ShoppingCartContext);
-  console.log("estoy desde checkout el contexto es=>",context);
-  const productDataDispatch = context.productsToDispatch
+
+  const productosParaFinalizarCompra = context.cartProducts
   ;
   let total = 0;
-  productDataDispatch.forEach((producto) => {
+  productosParaFinalizarCompra.forEach((producto) => {
     total += producto.price;
   });
   
@@ -44,7 +44,7 @@ export default function Checkout() {
           </div>
 
           <div className="flex flex-col justify-between content-center items-stretch">
-          {productDataDispatch.map((productoEnElCarrito) => (
+          {productosParaFinalizarCompra.map((productoEnElCarrito) => (
               <div
                 className="flex flex-row bg-customColorSecondary gap-12 justify-between items-center p-4 border-b-2 border-black border-opacity-10"
                 key={productoEnElCarrito.id}
@@ -71,21 +71,21 @@ export default function Checkout() {
           <div className="flex flex-row ">
             <button
               onClick={cancelar}
-              className="px-4 py-2 m-2 border-b-4 border rounded-xl bg-gradient-to-b from-white from-10%  via-white via-50% to-customColorPrimary to-100% border-red-500 text-black hover:text-red-600 hover:bg-red-600 transition-all duration-200"
+              className="px-4 py-2 m-2 border-b-4 border rounded-xl bg-gradient-to-b from-white from-10%  via-white via-20% to-customColorPrimary to-100%  text-black hover:text-red-600 hover:bg-red-600 hover:border-red-300 transition-all duration-200"
             >
               Cancelar
             </button>
             <Link href={"/store"}>
             <button
               
-              className="px-4 py-2 m-2 border-b-4 border rounded-xl bg-gradient-to-b from-white from-10%  via-white via-50% to-customColorPrimary to-100% border-customColorPrimary text-black hover:text-blue-500 hover:bg-blue-600 transition-all duration-200"
+              className="px-4 py-2 m-2 border-b-4 border rounded-xl bg-gradient-to-b from-white from-10%  via-white via-20% to-customColorPrimary to-100%  text-black hover:text-blue-500 hover:bg-blue-600 transition-all hover:border-customColorPrimary duration-200"
               >
               Volver a Productos
             </button>
               </Link> 
             <button
               onClick={comprar}
-              className="px-4 py-2 m-2 border-b-4 border rounded-xl bg-gradient-to-b from-white from-10%  via-white via-50% to-customColorPrimary to-100% border-green-500  text-black hover:text-green-400 hover:bg-green-400 transition-all duration-200"
+              className="px-4 py-2 m-2 border-b-4 border rounded-xl bg-gradient-to-b from-white from-10%  via-white via-20% to-customColorPrimary to-100%   text-black hover:text-green-500 hover:bg-green-500 transition-all hover:border-green-300 duration-200"
             >
               Comprar
             </button>

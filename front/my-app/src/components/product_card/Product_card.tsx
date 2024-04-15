@@ -5,7 +5,6 @@ import { TbListDetails } from "react-icons/tb";
 import { useContext } from "react";
 import { ShoppingCartContext } from "../../Context/index";
 import { imagenDeEjemplo } from "../../../public/variablesGlobales";
-// import ProductoSeleccionado from "../ProductoSeleccionado/ProductoSeleccionado";
 import Link from "next/link";
 
 
@@ -14,24 +13,14 @@ function Product_card(producto: any): any {
   // console.log('este es producto: ',producto); //! PRODUCTO me trae el un OBJETO de OBJETO.... OBJETO.DATA ES MI PUNTO DE INTERES
   const objetoIndividual = producto.data;
   const nombreProductoSinEspacios = objetoIndividual.name.replace(/\s/g, '-');
+  // console.log(context);
   
-  // const showProductDetail = (infoProduct: any) => {
-  //   context.openProductDetail();
-  //   context.setProductToShow(infoProduct);
-  // };
+
 
   const masDetalles = (productoDataIndividual: any) => {
-    console.log('este es productoDataIndividual: ',productoDataIndividual);
-    console.log('este es el producto guardado en el context: ',context.productData);
-    context.setProductData(()=>productoDataIndividual);
-    // context.setCount(context.count + 1);
-    // context.setCartProducts([...context.cartProducts, productoData]);
-
-// console.log('este el mismo pero CON ID: ',productoDataIndividual.id);
-
-
-// context.openMenuCheckoutProducts();
-// productoDataIndividual?.filter((item:any)=>{return <ProductoSeleccionado key={item.id} data={item}/>})
+   
+    context.setProductData(productoDataIndividual);
+    
   };
 
   
@@ -43,7 +32,7 @@ function Product_card(producto: any): any {
           src={imagenDeEjemplo}
           alt={objetoIndividual.name}
           className="w-full h-full object-cover cursor-pointer"
-          // onClick={() => showProductDetail(objetoIndividual)}
+         
         />
       </div>
       <div className="py-2 text-center w-40">
