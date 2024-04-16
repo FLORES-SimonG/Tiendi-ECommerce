@@ -5,20 +5,9 @@ import { useState } from "react";
 export const ShoppingCartContext = createContext();
 
 export const ShoppingCartProvider = ({ children }) => {
-  //* Contexto de la aplicación
-  const [count, setCount] = useState(0);
-  // console.log('CLICK N°: '+count);
-
-  //* Contexto de la funcionalidad de los productos
-  const [isProductDetailOpen, setIsProductDetailOpen] = useState(false);
-  const openProductDetail = () => {setIsProductDetailOpen(true);};
-  const closeProductDetail = () => {setIsProductDetailOpen(false);};
 
   //* Contexto del Carrito
   const [cartProducts, setCartProducts] = useState([]);
-
-  //* Contexto de los productos para ver en detalle
-  const [productToShow, setProductToShow] = useState({});
 
 
   //* Contexto de la funcionalidad de los productos
@@ -34,23 +23,15 @@ export const ShoppingCartProvider = ({ children }) => {
   //* Capturador de los datos del Producto:
    let [productData, setProductData] = useState({});
 
-   //* Productos a despachar
-    const [productsToDispatch, setProductsToDispatch] = useState([]);
 
-    const [productsFromBackend, setProductsFromBackend] = useState([]);
+    // const [productsFromBackend, setProductsFromBackend] = useState([]); //! No borrar, puede ser de ayuda futura
   
 
 
   return (
     <ShoppingCartContext.Provider
       value={{
-        count,
-        setCount,
-        openProductDetail,
-        closeProductDetail,
-        isProductDetailOpen,
-        setProductToShow,
-        productToShow,
+       
         cartProducts,
         setCartProducts,
         isMenuCheckoutProductsOpen,
@@ -61,10 +42,9 @@ export const ShoppingCartProvider = ({ children }) => {
         closeBurgerMenu,
         setProductData,
         productData,
-        productsFromBackend,
-        setProductsFromBackend,
-        productsToDispatch,
-        setProductsToDispatch
+        // productsFromBackend, //! No borrar, puede ser de ayuda futura
+        // setProductsFromBackend, //! No borrar, puede ser de ayuda futura
+       
       }}
     >
       {children}
