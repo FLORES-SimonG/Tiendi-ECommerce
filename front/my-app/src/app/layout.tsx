@@ -26,7 +26,7 @@ export default function RootLayout({
        
       <MenuCheckoutProductsDetail />
         {children}
-        <Footer />
+        {/* <Footer /> */}
         </body>
     </html>
     </ShoppingCartProvider>

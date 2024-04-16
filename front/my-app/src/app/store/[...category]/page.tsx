@@ -23,6 +23,10 @@ export default function Category(props: any) {
   const context = useContext(ShoppingCartContext);
   const detalleIndividualDelProucto = context.productData;
   // console.log('DETALLE INDIVIDUAL DEL PRODUCTO: ',detalleIndividualDelProucto);
+  const llaverDelDetalle = Object.keys(detalleIndividualDelProucto);
+  if (llaverDelDetalle.length === 0) {
+    return new Error;
+  }
 
   const paraCheckout = () => {
     const { id, name, stock, price } = detalleIndividualDelProucto;
@@ -58,6 +62,9 @@ export default function Category(props: any) {
       <Header />
       <Navbar />
       <BurgerMenu />
+      
+
+
       <h2>Categoria Dinámica: {category}</h2>
       <div className="flex  flex-row flex-nowrap content-center justify-center items-center m-6  ">
         <div className="relative  w-80 flex-row flex-nowrap content-center justify-center items-center rounded-xl bg-white bg-clip-border text-gray-700 shadow-md">
