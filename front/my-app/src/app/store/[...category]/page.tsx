@@ -4,15 +4,13 @@ import Image from "next/image";
 import BurgerMenu from "@/components/BurgerMenu";
 import Header from "@/components/Header/Header";
 import Navbar from "@/components/Navbar/Navbar";
-// import { BiCartDownload } from "react-icons/bi";
-// import { MdFavoriteBorder } from "react-icons/md";
-// import { TbListDetails } from "react-icons/tb";
-
 import Link from "next/link";
 
 import Footer from "@/components/footer/Footer";
 import { useContext } from "react";
 import { imagenDeEjemplo } from "../../../../public/variablesGlobales";
+import Error from "../../Error"
+import PreFooter from "@/components/PreFooter/PreFooter";
 
 // interface CategoryProps {
 //     params:{category: string;}
@@ -20,12 +18,12 @@ import { imagenDeEjemplo } from "../../../../public/variablesGlobales";
 
 export default function Category(props: any) {
   const { category } = props.params;
+
   const context = useContext(ShoppingCartContext);
   const detalleIndividualDelProucto = context.productData;
-  // console.log('DETALLE INDIVIDUAL DEL PRODUCTO: ',detalleIndividualDelProucto);
   const llaverDelDetalle = Object.keys(detalleIndividualDelProucto);
   if (llaverDelDetalle.length === 0) {
-    return new Error;
+    return <div><Error/></div>;
   }
 
   const paraCheckout = () => {
@@ -65,8 +63,8 @@ export default function Category(props: any) {
       
 
 
-      <h2>Categoria Dinámica: {category}</h2>
-      <div className="flex  flex-row flex-nowrap content-center justify-center items-center m-6  ">
+      {/* <h2>Categoria Dinámica: {category}</h2> */}
+      <div className="flex  flex-row flex-nowrap content-center justify-center items-center my-12  ">
         <div className="relative  w-80 flex-row flex-nowrap content-center justify-center items-center rounded-xl bg-white bg-clip-border text-gray-700 shadow-md">
           <div className="relative  mx-4 -mt-6 h-40 flex flex-row items-center overflow-hidden rounded-xl bg-blue-gray-500 bg-clip-border text-white shadow-lg bg-gradient-to-r from-customColorPrimary via-customColorPrimary to-gray-300">
             <Image 
@@ -113,7 +111,7 @@ export default function Category(props: any) {
           </div>
         </div>
       </div>
-
+      <PreFooter />
       <Footer />
     </div>
   );

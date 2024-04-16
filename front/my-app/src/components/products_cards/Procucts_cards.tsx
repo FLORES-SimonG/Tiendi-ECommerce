@@ -1,36 +1,62 @@
+import React, { useState, useEffect } from "react";
 import Product_card from "../product_card/Product_card";
-import axios from "axios";
+import { fetchProducts } from "./../../Context/BaseDeDatos"; // Asegúrate de importar el método correcto
 
-export async function Products_cards() {
-  const APIdesdeBack = "http://localhost:5000/products";
+function ProductsCards() {
+  const [items, setItems] = useState([]);
 
-  const nuevaFuncion = async () => {
-    return axios
-      .get(APIdesdeBack)
-      .then((response) => {
-        return response.data;
-      })
-      .catch((error) => {
-        console.error("Hubo un error al obtener los datos:", error);
-      });
-  };
-  const items = await nuevaFuncion();
+  useEffect(() => {
+    const fetchData = async () => {
+      const products = await fetchProducts();
+      setItems(products);
+    };
+
+    fetchData();
+  }, []);
+
+
 
   return (
     <>
-      <h2
-        className=" mb-4 text-white text-ssxl font-bold px-6 py-3
-        bg-gradient-to-r from-customColorPrimary via-customColorPrimary via-10% to-transparent"
-      >
+      <h2 className="mb-4 text-white text-ssxl font-bold px-6 py-3 bg-gradient-to-r from-customColorPrimary via-customColorPrimary via-10% to-transparent">
         NUESTROS PRODUCTOS
       </h2>
-      <div className="bg-transparent grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 items-stretch justify-center content-center justify-items-center mb-8 ">
-        {items?.map((item: { id: number }) => {
-          return <Product_card key={item.id} data={item} />;
-        })}
+      <div className="bg-transparent grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 items-stretch justify-center content-center justify-items-center mb-8">
+        {items.map((item: { id: number }) => (
+          <Product_card key={item.id} data={item} />
+        ))}
       </div>
     </>
   );
 }
 
-export default Products_cards;
+export default ProductsCards;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  // const APIdesdeBack = "http://localhost:5000/products";
+
+  // const nuevaFuncion = async () => {
+  //   return axios
+  //     .get(APIdesdeBack)
+  //     .then((response) => {
+  //       return response.data;
+  //     })
+  //     .catch((error) => {
+  //       console.error("Hubo un error al obtener los datos:", error);
+  //     });
+  // };
+  // const items = await nuevaFuncion();

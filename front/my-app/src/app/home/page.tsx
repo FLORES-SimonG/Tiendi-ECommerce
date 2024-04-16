@@ -23,7 +23,7 @@ export default function Home() {
   
    <HomeContainer/>
    <PreFooter/>
-    {/* <Footer/>  */}
+    <Footer/> 
 
   </div>
   );
