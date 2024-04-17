@@ -8,77 +8,54 @@ import { useContext, useState, useEffect } from "react";
 import { ShoppingCartContext } from "@/Context";
 import Link from "next/link";
 
-// import { useRouter } from "next/router";
 import { validateLogin } from "../../helpers/validateLogin";
 import axios from "axios";
-// import { useNavigate } from "react-router-dom";
-
-
-
-
-
-
-
 
 export default function Login() {
-
   //! http://localhost:5000/users/login => POST
-
-  // const router = useRouter();
-
 
   const context = useContext(ShoppingCartContext);
 
-  
-  useEffect(() => {
-    // console.log('Usuario Logueado con Effect=>', context.userData);
-  }, [context.userData]);
+  useEffect(() => {}, [context.userData]);
 
-  // console.log("este es el context=>", context);
-
- 
-const handlerInputChangeFromLogin = (evento:any) => {
-  const { name, value } = evento.target;
-  context.setItemsFromLogin({ ...context.itemsFromLogin, [name]: value });
-  const itemsActualizadoFromLogin = { ...context.itemsFromLogin, [name]: value };
-  const newErrors = validateLogin(itemsActualizadoFromLogin);
-  context.setErrors(newErrors);
-}
-
-const handlerSubmitFromLogin = async (evento:any) => {
-  evento.preventDefault();
-
-  const newErrors = validateLogin(context.itemsFromLogin);
-  if (Object.keys(newErrors).length > 0) {
+  const handlerInputChangeFromLogin = (evento) => {
+    const { name, value } = evento.target;
+    context.setItemsFromLogin({ ...context.itemsFromLogin, [name]: value });
+    const itemsActualizadoFromLogin = {
+      ...context.itemsFromLogin,
+      [name]: value,
+    };
+    const newErrors = validateLogin(itemsActualizadoFromLogin);
     context.setErrors(newErrors);
-    console.log("Hay errores en el formulario, completa correctamente", newErrors)
-    return alert("Hay errores en el formulario, completa correctamente");
-  }
-  try {
-    const response = await axios.post('http://localhost:5000/users/login',{
-      email: context.itemsFromLogin.email,
-      password: context.itemsFromLogin.password
-    });
+  };
 
-    // context.setUser(response.data);
-    // navigate.push("/");
-    // console.log("Usuario a loguear", response.data); // esto es un objeto
-    context.setUserData(response.data);
-    console.log("Bienvenido a la tienda");
-    // router.push("/store");
-    
-  } catch (error) {
-    console.error("Error al iniciar sesion", error);
-    alert("Error al iniciar sesion");
-    
-  }
-  // console.log("Usuario Logueado sin Effect =>", context.userData);
-}
+  const handlerSubmitFromLogin = async (evento) => {
+    evento.preventDefault();
 
+    const newErrors = validateLogin(context.itemsFromLogin);
+    if (Object.keys(newErrors).length > 0) {
+      context.setErrors(newErrors);
+      console.log(
+        "Hay errores en el formulario, completa correctamente",
+        newErrors
+      );
+      return alert("Hay errores en el formulario, completa correctamente");
+    }
+    try {
+      const response = await axios.post("http://localhost:5000/users/login", {
+        email: context.itemsFromLogin.email,
+        password: context.itemsFromLogin.password,
+      });
 
-
-
-
+      console.log("Usuario a loguear", response.data);
+      context.setUserData(response.data);
+      console.log("Bienvenido a la tienda");
+    } catch (error) {
+      console.error("Error al iniciar sesion", error);
+      alert("Error al iniciar sesion");
+    }
+    console.log("Usuario Logueado sin Effect =>", context.userData);
+  };
 
   return (
     <div className="font-sans">
@@ -105,11 +82,11 @@ const handlerSubmitFromLogin = async (evento:any) => {
                     name="email"
                     placeholder="Tu Correo Electronico"
                     onChange={handlerInputChangeFromLogin}
-                    className={` ${context.errors.email===true?"bg-errorColor":"bg-passColor"} w-full px-3 py-3 rounded-md bg-slate-50 focus:outline-none focus:bg-white transition-colors sm:text-sm`}
-                  
-                    // required
-                    
-                    // id="email"
+                    className={` ${
+                      context.errors.email === true
+                        ? "bg-errorColor"
+                        : "bg-passColor"
+                    } w-full px-3 py-3 rounded-md bg-slate-50 focus:outline-none focus:bg-white transition-colors sm:text-sm`}
                   />
                 </div>
                 <div className="mt-4">
@@ -119,8 +96,11 @@ const handlerSubmitFromLogin = async (evento:any) => {
                     name="password"
                     placeholder="Contraseña"
                     onChange={handlerInputChangeFromLogin}
-                    className={` ${context.errors.email===true?"bg-errorColor":"bg-passColor"} w-full px-3 py-3 rounded-md bg-slate-50 focus:outline-none focus:bg-white transition-colors sm:text-sm`}
-                    
+                    className={` ${
+                      context.errors.email === true
+                        ? "bg-errorColor"
+                        : "bg-passColor"
+                    } w-full px-3 py-3 rounded-md bg-slate-50 focus:outline-none focus:bg-white transition-colors sm:text-sm`}
                   />
                 </div>
               </div>
