@@ -7,16 +7,20 @@ import Navbar from "@/components/Navbar/Navbar";
 import { useContext, useState, useEffect } from "react";
 import { ShoppingCartContext } from "@/Context";
 import Link from "next/link";
-
+import toast, { Toaster } from "react-hot-toast";
 import { validateLogin } from "../../helpers/validateLogin";
 import axios from "axios";
+import { useRouter } from "next/navigation";
 
 export default function Login() {
   //! http://localhost:5000/users/login => POST
 
   const context = useContext(ShoppingCartContext);
+  const router = useRouter()
 
-  // useEffect(() => {}, [context.userData]);
+  useEffect(() => {}, [context.userData]);
+
+  console.log("Usuario Logueado =>", context.userData);
 
   const handlerInputChangeFromLogin = (evento) => {
     const { name, value } = evento.target;
@@ -32,8 +36,7 @@ export default function Login() {
     if (newErrors[name] === true) {
       context.setErrors({ ...context.errors, [name]: newErrors[name] });
       console.log("Errores en el formulario", context.errors);
-    }
-    else{
+    } else {
       const { [name]: value, ...restErrors } = context.errors;
       context.setErrors(restErrors);
       console.log("Errores en el formulario", context.errors);
@@ -41,31 +44,35 @@ export default function Login() {
   };
 
   const handlerSubmitFromLogin = async (evento) => {
+
     evento.preventDefault();
 
     const newErrors = validateLogin(context.itemsFromLogin);
+
     if (Object.keys(newErrors).length > 0) {
       context.setErrors(newErrors);
-      console.log(
-        "Hay errores en el formulario, completa correctamente",
-        newErrors
-      );
+      // console.log(
+      //   "Hay errores en el formulario, completa correctamente",
+      //   newErrors
+      // );
       return alert("Hay errores en el formulario, completa correctamente");
     }
+
     try {
       const response = await axios.post("http://localhost:5000/users/login", {
         email: context.itemsFromLogin.email,
         password: context.itemsFromLogin.password,
       });
 
-      console.log("Usuario a loguear", response.data);
+      // console.log("Usuario a loguear", response.data.login);
       context.setUserData(response.data);
-      console.log("Bienvenido a la tienda");
+      //? console.log("Bienvenido a la tienda",context.userData);
+      router.push('/store')
     } catch (error) {
-      console.error("Error al iniciar sesion", error);
-      alert("Error al iniciar sesion");
+      // console.error("Error al iniciar sesion", error);
+      alert("Error al iniciar sesion, usuario o contraseña incorrectos.");
     }
-    console.log("Usuario Logueado sin Effect =>", context.userData);
+    // console.log("Usuario Logueado con Effect =>", context.userData);
   };
 
   return (
