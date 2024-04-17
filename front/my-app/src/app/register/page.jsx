@@ -9,11 +9,14 @@ import { ShoppingCartContext } from "@/Context";
 import Link from "next/link";
 import { validateRegister } from "../../helpers/validateRegister";
 import axios from "axios";
+import { useRouter } from "next/navigation";
+
 
 export default function Register() {
    //! http://localhost:5000/users/login => POST
   
   const context = useContext(ShoppingCartContext);
+  const router = useRouter();
  
   const handlerInputChangeFromRegister = (evento) => {
     const { name, value } = evento.target;
@@ -52,6 +55,7 @@ export default function Register() {
         phone: context.itemsFromRegister.phone,
       });
       alert("Usuario registrado correctamente");
+      router.push('/login')
     
       
     } catch (error) {
@@ -75,7 +79,7 @@ export default function Register() {
         >
           <div className="pt-8 px-8">
             <h2 className="text-center text-3xl font-bold text-white">
-              ¡ Bienvenido/a !
+              Registrate
             </h2>
 
             <form className="mt-8 space-y-6 "onSubmit={handleOnSubmitFromRegister}>
