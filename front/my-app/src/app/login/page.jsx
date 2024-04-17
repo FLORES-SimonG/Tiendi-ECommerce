@@ -16,17 +16,28 @@ export default function Login() {
 
   const context = useContext(ShoppingCartContext);
 
-  useEffect(() => {}, [context.userData]);
+  // useEffect(() => {}, [context.userData]);
 
   const handlerInputChangeFromLogin = (evento) => {
     const { name, value } = evento.target;
     context.setItemsFromLogin({ ...context.itemsFromLogin, [name]: value });
+
     const itemsActualizadoFromLogin = {
       ...context.itemsFromLogin,
       [name]: value,
     };
     const newErrors = validateLogin(itemsActualizadoFromLogin);
     context.setErrors(newErrors);
+
+    if (newErrors[name] === true) {
+      context.setErrors({ ...context.errors, [name]: newErrors[name] });
+      console.log("Errores en el formulario", context.errors);
+    }
+    else{
+      const { [name]: value, ...restErrors } = context.errors;
+      context.setErrors(restErrors);
+      console.log("Errores en el formulario", context.errors);
+    }
   };
 
   const handlerSubmitFromLogin = async (evento) => {
@@ -77,16 +88,16 @@ export default function Login() {
               <div className="rounded-md shadow-sm">
                 <div>
                   <input
-                    type="email"
+                    type="text"
                     value={context.itemsFromLogin.email}
                     name="email"
-                    placeholder="Tu Correo Electronico"
+                    placeholder="Usuario@email.com"
                     onChange={handlerInputChangeFromLogin}
-                    className={` ${
+                    className={`${
                       context.errors.email === true
                         ? "bg-errorColor"
-                        : "bg-passColor"
-                    } w-full px-3 py-3 rounded-md bg-slate-50 focus:outline-none focus:bg-white transition-colors sm:text-sm`}
+                        : "bg-white"
+                    } w-full px-3 py-3 rounded-md  focus:outline-none  transition-colors sm:text-sm`}
                   />
                 </div>
                 <div className="mt-4">
@@ -97,10 +108,10 @@ export default function Login() {
                     placeholder="Contraseña"
                     onChange={handlerInputChangeFromLogin}
                     className={` ${
-                      context.errors.email === true
+                      context.errors.password === true
                         ? "bg-errorColor"
-                        : "bg-passColor"
-                    } w-full px-3 py-3 rounded-md bg-slate-50 focus:outline-none focus:bg-white transition-colors sm:text-sm`}
+                        : "bg-white"
+                    } w-full px-3 py-3 rounded-md  focus:outline-none  transition-colors sm:text-sm`}
                   />
                 </div>
               </div>
