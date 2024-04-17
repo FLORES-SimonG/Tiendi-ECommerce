@@ -33,6 +33,14 @@ export const ShoppingCartProvider = ({ children }) => {
   const [errors, setErrors] = useState({});
   
   const [userData, setUserData] = useState({}); 
+  const [itemsFromRegister, setItemsFromRegister] = useState({
+    name:"",
+    email:"",
+    password:"",
+    address:"",
+    phone:""
+  });
+
 
 
   return (
@@ -56,7 +64,9 @@ export const ShoppingCartProvider = ({ children }) => {
         errors,
         setErrors,
         userData,
-        setUserData
+        setUserData,
+        itemsFromRegister,
+        setItemsFromRegister,
 
        
       }}
