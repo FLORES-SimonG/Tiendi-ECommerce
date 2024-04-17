@@ -26,6 +26,13 @@ export const ShoppingCartProvider = ({ children }) => {
 
     // const [productsFromBackend, setProductsFromBackend] = useState([]); //! No borrar, puede ser de ayuda futura
   
+    const [itemsFromLogin, setItemsFromLogin] = useState({
+      email: "",
+      password: ""
+    });
+  const [errors, setErrors] = useState({});
+  
+  const [userData, setUserData] = useState({}); 
 
 
   return (
@@ -44,6 +51,13 @@ export const ShoppingCartProvider = ({ children }) => {
         productData,
         // productsFromBackend, //! No borrar, puede ser de ayuda futura
         // setProductsFromBackend, //! No borrar, puede ser de ayuda futura
+        itemsFromLogin,
+        setItemsFromLogin,
+        errors,
+        setErrors,
+        userData,
+        setUserData
+
        
       }}
     >

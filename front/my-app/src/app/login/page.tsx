@@ -4,14 +4,81 @@ import BurgerMenu from "@/components/BurgerMenu";
 import Footer from "@/components/footer/Footer";
 import Header from "@/components/Header/Header";
 import Navbar from "@/components/Navbar/Navbar";
-import { useContext } from "react";
+import { useContext, useState, useEffect } from "react";
 import { ShoppingCartContext } from "@/Context";
 import Link from "next/link";
 
+// import { useRouter } from "next/router";
+import { validateLogin } from "../../helpers/validateLogin";
+import axios from "axios";
+// import { useNavigate } from "react-router-dom";
+
+
+
+
+
+
+
+
 export default function Login() {
+
+  //! http://localhost:5000/users/login => POST
+
+  // const router = useRouter();
+
+
   const context = useContext(ShoppingCartContext);
 
-  console.log("este es el context=>", context);
+  
+  useEffect(() => {
+    // console.log('Usuario Logueado con Effect=>', context.userData);
+  }, [context.userData]);
+
+  // console.log("este es el context=>", context);
+
+ 
+const handlerInputChangeFromLogin = (evento:any) => {
+  const { name, value } = evento.target;
+  context.setItemsFromLogin({ ...context.itemsFromLogin, [name]: value });
+  const itemsActualizadoFromLogin = { ...context.itemsFromLogin, [name]: value };
+  const newErrors = validateLogin(itemsActualizadoFromLogin);
+  context.setErrors(newErrors);
+}
+
+const handlerSubmitFromLogin = async (evento:any) => {
+  evento.preventDefault();
+
+  const newErrors = validateLogin(context.itemsFromLogin);
+  if (Object.keys(newErrors).length > 0) {
+    context.setErrors(newErrors);
+    console.log("Hay errores en el formulario, completa correctamente", newErrors)
+    return alert("Hay errores en el formulario, completa correctamente");
+  }
+  try {
+    const response = await axios.post('http://localhost:5000/users/login',{
+      email: context.itemsFromLogin.email,
+      password: context.itemsFromLogin.password
+    });
+
+    // context.setUser(response.data);
+    // navigate.push("/");
+    // console.log("Usuario a loguear", response.data); // esto es un objeto
+    context.setUserData(response.data);
+    console.log("Bienvenido a la tienda");
+    // router.push("/store");
+    
+  } catch (error) {
+    console.error("Error al iniciar sesion", error);
+    alert("Error al iniciar sesion");
+    
+  }
+  // console.log("Usuario Logueado sin Effect =>", context.userData);
+}
+
+
+
+
+
 
   return (
     <div className="font-sans">
@@ -29,28 +96,31 @@ export default function Login() {
               ¡ Hola de nuevo !
             </h2>
 
-            <form className="mt-8 space-y-6">
+            <form className="mt-8 space-y-6" onSubmit={handlerSubmitFromLogin}>
               <div className="rounded-md shadow-sm">
                 <div>
                   <input
-                    placeholder="Tu Correo Electronico"
-                    className="  w-full px-3 py-3 rounded-md bg-slate-50 focus:outline-none focus:bg-white transition-colors sm:text-sm"
-                    required
-                    
                     type="email"
+                    value={context.itemsFromLogin.email}
                     name="email"
-                    id="email"
+                    placeholder="Tu Correo Electronico"
+                    onChange={handlerInputChangeFromLogin}
+                    className={` ${context.errors.email===true?"bg-errorColor":"bg-passColor"} w-full px-3 py-3 rounded-md bg-slate-50 focus:outline-none focus:bg-white transition-colors sm:text-sm`}
+                  
+                    // required
+                    
+                    // id="email"
                   />
                 </div>
                 <div className="mt-4">
                   <input
-                    placeholder="Contraseña"
-                    className="w-full px-3 py-3 borde bg-slate-50 focus:outline-none focus:bg-white transition-colors rounded-md  sm:text-sm"
-                    required
-                    
                     type="password"
+                    value={context.itemsFromLogin.password}
                     name="password"
-                    id="password"
+                    placeholder="Contraseña"
+                    onChange={handlerInputChangeFromLogin}
+                    className={` ${context.errors.email===true?"bg-errorColor":"bg-passColor"} w-full px-3 py-3 rounded-md bg-slate-50 focus:outline-none focus:bg-white transition-colors sm:text-sm`}
+                    
                   />
                 </div>
               </div>

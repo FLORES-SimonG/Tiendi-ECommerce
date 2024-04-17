@@ -19,6 +19,9 @@ const config: Config = {
         customColorSecondary: 'rgb(199, 199, 199)',
         customColorTertiary: 'rgb(204, 108, 228)',
         customColorQuaternary: 'rgb(226, 92, 85)',
+        errorColor: "#ff000026",
+        passColor: "#00e10026",
+
       },
      
       
