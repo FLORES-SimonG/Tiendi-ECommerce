@@ -1,5 +1,5 @@
 'use client';
-// import Footer from "@/components/footer/Footer";
+import Footer from "@/components/footer/Footer";
 import Header from "@/components/Header/Header";
 // import Navbar from "@/components/Header/Header";
 import Navbar from "@/components/Navbar/Navbar";
@@ -9,6 +9,7 @@ import Products_cards from "@/components/products_cards/Procucts_cards";
 import PreFooter from "@/components/PreFooter/PreFooter";
 import BurgerMenu from "@/components/BurgerMenu/index";
 import CarouselFilter from "@/components/CarouselFilter/index";
+
 
 
 // import Carousel from "@/components/Carousel/Carousel";
@@ -25,6 +26,7 @@ export default function Store() {
       <Products_cards />
       
       <PreFooter />
+      <Footer />
       
     </div>
   );

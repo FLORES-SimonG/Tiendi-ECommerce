@@ -1,11 +1,12 @@
 "use client";
-"use client";
+
 import BurgerMenu from "@/components/BurgerMenu";
 import Footer from "@/components/footer/Footer";
 import Header from "@/components/Header/Header";
 import Navbar from "@/components/Navbar/Navbar";
 import { useContext } from "react";
 import { ShoppingCartContext } from "@/Context";
+import Link from "next/link";
 
 export default function Login() {
   const context = useContext(ShoppingCartContext);
@@ -66,12 +67,12 @@ export default function Login() {
           </div>
           <div className="px-8 py-4 text-center">
             <span className="text-gray-400">No tienes usuario? </span>
-            <a
+            <Link
               className="font-medium text-indigo-500 hover:text-indigo-400"
-              href="#"
+              href="/register"
             >
               Regístrate 😎
-            </a>
+            </Link>
           </div>
         </div>
       </div>

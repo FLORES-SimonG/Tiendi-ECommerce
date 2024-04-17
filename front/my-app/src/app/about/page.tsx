@@ -55,7 +55,7 @@ export default function About() {
         </ul>
       </CardInformation>
       <PreFooter />
-      {/* <Footer /> */}
+      <Footer />
     </>
     );
     }
