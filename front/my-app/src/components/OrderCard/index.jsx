@@ -10,8 +10,8 @@ function OrderCard(historialDeCompras) {
     const context = useContext(ShoppingCartContext);
     const objetoHistorialDeCompras = historialDeCompras;
     const objetoHistorialDeComprasConOrder = historialDeCompras;
-    console.log(" ObjetoHistorialDeCompras CON ORDER=>",objetoHistorialDeComprasConOrder);
-    console.log(" ObjetoHistorialDeCompras SIN ORDER=>",objetoHistorialDeCompras);
+    // console.log(" ObjetoHistorialDeCompras CON ORDER=>",objetoHistorialDeComprasConOrder);
+    // console.log(" ObjetoHistorialDeCompras SIN ORDER=>",objetoHistorialDeCompras);
 
     return(
         <div>

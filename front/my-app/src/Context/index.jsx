@@ -48,6 +48,8 @@ export const ShoppingCartProvider = ({ children }) => {
     phone: "",
   });
 
+  const [token, setToken] = useState("");
+
   return (
     <ShoppingCartContext.Provider
       value={{
@@ -73,6 +75,8 @@ export const ShoppingCartProvider = ({ children }) => {
         setItemsFromRegister,
         loginDelUsuario,
         setLoginDelUsuario,
+        token,
+        setToken
       }}
     >
       {children}

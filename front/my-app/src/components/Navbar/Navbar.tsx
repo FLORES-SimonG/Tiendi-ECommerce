@@ -8,7 +8,7 @@ import { useRouter } from "next/navigation";
 
 function Navbar() {
   const context = useContext(ShoppingCartContext);
-  console.log(context.userData.login);
+  // console.log(context.userData.login);
   const router = useRouter()
   const logOutUser = () => {
     router.push("/")

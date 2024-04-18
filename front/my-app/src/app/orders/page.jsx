@@ -1,28 +1,26 @@
-"use client";
+'use client';
+import React, { useContext } from "react";
 import { ShoppingCartContext } from "@/Context";
-import Image from "next/image";
-import BurgerMenu from "@/components/BurgerMenu";
 import Header from "@/components/Header/Header";
 import Navbar from "@/components/Navbar/Navbar";
-import Link from "next/link";
-
-import Footer from "@/components/footer/Footer";
-import { useContext } from "react";
-// import { imagenDeEjemplo } from "../../../../public/variablesGlobales";
+import BurgerMenu from "@/components/BurgerMenu";
 import Error from "../Error";
 import PreFooter from "@/components/PreFooter/PreFooter";
-import OrdersComponent from "../../components/Orders/index";
+import OrdersComponent from "../../components/Orders/index"; // Corregido el camino de importación
+import { getOrders } from "@/Context/BaseDeDatos";
 
-// interface CategoryProps {
-//     params:{category: string;}
-//   }
-
-export default function Orders() {
+function Orders() {
   const context = useContext(ShoppingCartContext);
+  // console.log("VAMOS A VER SI FUNCA",context.userData.token)
+  const token = context.userData.token; // Tu token aquí
+  let orders = [];
 
+  if (token) {
+    orders =  getOrders(token); // Pasar el token como parámetro
+  }
   const isUserActive = context.userData.login;
 
-  if (isUserActive !== true) {
+  if (!isUserActive) { // Simplificado a !isUserActive
     return (
       <div>
         <Error />
@@ -34,13 +32,11 @@ export default function Orders() {
         <Header />
         <Navbar />
         <BurgerMenu />
-
-        {/* <h1> ESTAS EN MIS ORDENES</h1> */}
         <OrdersComponent />
-
         <PreFooter />
-        <Footer />
       </div>
     );
   }
 }
+
+export default Orders;

@@ -1,3 +1,4 @@
+'use client';
 import axios from "axios";
 
 export async function fetchProducts() {
@@ -12,12 +13,15 @@ export async function fetchProducts() {
   }
 }
 
-
-export async function fetchOrders() {
-  const APIdesdeBack = "http://localhost:5000/users/orders";
-
+export async function getOrders(token) {
+  const APIdesdeBackDos = "http://localhost:5000/users/orders";
+  
   try {
-    const response = await axios.get(APIdesdeBack);
+    const response = await axios.get(APIdesdeBackDos, {
+      headers: {
+        Authorization: token,
+      },
+    })
     return response.data;
   } catch (error) {
     console.error("Hubo un error al obtener los datos:", error);
@@ -25,20 +29,17 @@ export async function fetchOrders() {
   }
 }
 
-
-
-
 //! Otra forma de hacerlo pero me siento más comodo con try-catch.
 // const APIdesdeBack = "http://localhost:5000/products";
 
-  // const nuevaFuncion = async () => {
-  //   return axios
-  //     .get(APIdesdeBack)
-  //     .then((response) => {
-  //       return response.data;
-  //     })
-  //     .catch((error) => {
-  //       console.error("Hubo un error al obtener los datos:", error);
-  //     });
-  // };
-  // const items = await nuevaFuncion();
+// const nuevaFuncion = async () => {
+//   return axios
+//     .get(APIdesdeBack)
+//     .then((response) => {
+//       return response.data;
+//     })
+//     .catch((error) => {
+//       console.error("Hubo un error al obtener los datos:", error);
+//     });
+// };
+// const items = await nuevaFuncion();

@@ -1,33 +1,35 @@
-const { useEffect } = require("react");
-const { useState } = require("react");
-const { fetchOrders } = require("../../Context/BaseDeDatos");
+import React, { useEffect, useState } from "react";
+import { getOrders } from "../../Context/BaseDeDatos";
+import { useContext } from "react";
+import { ShoppingCartContext } from "../../Context";
 
 function OrdersComponent() {
   const [orders, setOrders] = useState([]);
 
+  const context = useContext(ShoppingCartContext);
+  const token = context.userData.token;
+
+
+
   useEffect(() => {
     const fetchDataOrders = async () => {
-      const responseOrders = await fetchOrders();
+      const responseOrders = await getOrders(token);
       setOrders(responseOrders);
     };
     fetchDataOrders();
   }, []);
 
 
-//   console.log(orders);
+
+  // console.log("ESTE ES EL CONTEXTO=> ",context);
+  console.log("ESTAS SON LAS ORDENES PAPÁ=> ",orders);
 
 
-  return(
+  return (
     <div>
-        <h1> ESTAS EN MIS ORDENES</h1>
-        {/* <div>
-            {orders.map(map((orderIndividual)=>(
-                <OrderCard key={orderIndividual.id} order={orderIndividual}/>
-            )))}
-        </div> */}
+      {/* Tu contenido JSX para mostrar los pedidos */}
     </div>
-  )
+  );
 }
-
 
 export default OrdersComponent;

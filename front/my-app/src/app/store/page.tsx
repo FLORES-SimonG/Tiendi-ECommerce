@@ -9,12 +9,16 @@ import Products_cards from "@/components/products_cards/Procucts_cards";
 import PreFooter from "@/components/PreFooter/PreFooter";
 import BurgerMenu from "@/components/BurgerMenu/index";
 import CarouselFilter from "@/components/CarouselFilter/index";
+import { useContext } from "react";
+import { ShoppingCartContext } from "../../Context/index"
 
 
 
 // import Carousel from "@/components/Carousel/Carousel";
 
 export default function Store() {
+  const context = useContext(ShoppingCartContext);
+  // console.log("el token furioso=>",context.userData.token)
   return (
     <div className="font-sans">
       <Header />

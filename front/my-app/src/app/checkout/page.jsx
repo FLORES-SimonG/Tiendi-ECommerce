@@ -23,7 +23,7 @@ export default function Checkout() {
   productosParaFinalizarCompra.forEach((producto) => {
     total += (producto.price * (10-producto.stock));
   });
-  console.log("contexto en el checkout: ",context)
+  // console.log("contexto en el checkout: ",context)
   
 
     
