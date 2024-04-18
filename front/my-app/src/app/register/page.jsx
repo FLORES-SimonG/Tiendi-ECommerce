@@ -55,6 +55,7 @@ export default function Register() {
         phone: context.itemsFromRegister.phone,
       });
       alert("Usuario registrado correctamente");
+      
       router.push('/login')
     
       

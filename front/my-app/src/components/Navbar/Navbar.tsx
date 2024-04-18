@@ -3,10 +3,18 @@ import Link from "next/link";
 import { useContext } from "react";
 import { ShoppingCartContext } from "../../Context/index";
 import { GiExitDoor } from "react-icons/gi";
+import { useRouter } from "next/navigation";
+
 
 function Navbar() {
   const context = useContext(ShoppingCartContext);
   console.log(context.userData.login);
+  const router = useRouter()
+  const logOutUser = () => {
+    router.push("/")
+    context.setUserData({})
+
+  }
 
   return (
     <nav
@@ -44,11 +52,11 @@ function Navbar() {
             Mis Compras
           </li>
         </Link>
-        <Link href="/orders " className={`${context.userData.login == true ? "block" : "hidden"}`}>
-          <li className="cursor-pointer text-xl  p-3 rounded-3xl text-gray-100 bg-gradient-to-b from-transparent from-5% to-customColorTertiary to-60% hover:scale-105 transition-all  font-semibold">
+        {/* <Link href="/ " className={`${context.userData.login == true ? "block" : "hidden"}`} onClick={logOutUser}> */}
+          <li className={`${context.userData.login == true ? "block" : "hidden"} cursor-pointer text-xl  p-3 rounded-3xl text-gray-100 bg-gradient-to-b from-transparent from-5% to-customColorTertiary to-60% hover:scale-105 transition-all  font-semibold`} onClick={logOutUser}>
             <GiExitDoor />
           </li>
-        </Link>
+        {/* </Link> */}
       </ul>
     </nav>
   );
