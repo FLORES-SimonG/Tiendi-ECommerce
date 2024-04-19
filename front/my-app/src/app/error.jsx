@@ -14,7 +14,7 @@ import Navbar from './../components/Navbar/Navbar';
 export default function Error() {
     return (
         <main>
-            <Header />
+            {/* <Header /> */}
           
             <div className="container flex flex-col  items-center  bg-gradient-to-r from-customColorPrimary via-customColorPrimary to-gray-300 rounded-e-full  ">
             <div className="flex flex-col items-center gap-6 max-w-md text-center">

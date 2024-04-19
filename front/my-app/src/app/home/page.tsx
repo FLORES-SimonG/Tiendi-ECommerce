@@ -16,14 +16,14 @@ export default function Home() {
     <div className=' font-sans leading-relaxed'>
 
       
-    <Header/>
+    {/* <Header/> */}
     <BurgerMenu/>
     <Navbar/>
     
   
    <HomeContainer/>
-   <PreFooter/>
-    <Footer/> 
+   {/* <PreFooter/> */}
+    {/* <Footer/>  */}
 
   </div>
   );

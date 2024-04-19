@@ -5,6 +5,9 @@ import { ShoppingCartProvider } from "@/Context";
 import MenuCheckoutProductsDetail from "@/components/MenuCheckoutProductsDetail";
 import Footer from "@/components/footer/Footer";
 import Products_cards from "@/components/products_cards/Procucts_cards";
+import Navbar from "../components/Navbar/Navbar";
+import Header from "@/components/Header/Header";
+import PreFooter from "@/components/PreFooter/PreFooter";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -25,8 +28,11 @@ export default function RootLayout({
       <body className={inter.className}>
        
       <MenuCheckoutProductsDetail />
+      <Header />
+      {/* <Navbar /> */}
         {children}
-        {/* <Footer /> */}
+        <PreFooter />
+        <Footer />
         </body>
     </html>
     </ShoppingCartProvider>

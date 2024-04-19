@@ -69,7 +69,7 @@ export default function Register() {
 
   return (
     <div className="font-sans">
-      <Header />
+      {/* <Header /> */}
       <BurgerMenu />
       <Navbar />
       <div className=" flex flex-row items-center content-center justify-center my-6">
@@ -170,7 +170,7 @@ export default function Register() {
           </div>
         </div>
       </div>
-      <Footer />
+      {/* <Footer /> */}
     </div>
   );
 }

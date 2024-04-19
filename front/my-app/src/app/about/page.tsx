@@ -5,12 +5,12 @@ import Navbar from "@/components/Navbar/Navbar";
 import { CardInformation, DivEquipo, ListItem } from "./about";
 import PreFooter from "@/components/PreFooter/PreFooter";
 import BurgerMenu from "@/components/BurgerMenu";
-//MI EMPRESA SE LLAMA "TIENDI"
+
 
 export default function About() {
     return (
       <>
-      <Header />
+      {/* <Header /> */}
       <BurgerMenu />
       <Navbar />
       <CardInformation>
@@ -54,8 +54,8 @@ export default function About() {
           </ListItem>
         </ul>
       </CardInformation>
-      <PreFooter />
-      <Footer />
+      {/* <PreFooter /> */}
+      {/* <Footer /> */}
     </>
     );
     }

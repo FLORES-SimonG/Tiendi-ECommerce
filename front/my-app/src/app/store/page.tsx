@@ -21,7 +21,7 @@ export default function Store() {
   // console.log("el token furioso=>",context.userData.token)
   return (
     <div className="font-sans">
-      <Header />
+      {/* <Header /> */}
       <BurgerMenu />
       {/* <ProductDetail /> */}
       <Navbar />
@@ -29,8 +29,8 @@ export default function Store() {
      
       <Products_cards />
       
-      <PreFooter />
-      <Footer />
+      {/* <PreFooter /> */}
+      {/* <Footer /> */}
       
     </div>
   );

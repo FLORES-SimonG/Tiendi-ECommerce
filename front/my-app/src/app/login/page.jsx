@@ -79,7 +79,7 @@ export default function Login() {
   
   return (
     <div className="font-sans">
-      <Header />
+      {/* <Header /> */}
       <BurgerMenu />
       <Navbar />
       <div className=" flex flex-row items-center content-center justify-center my-6">
@@ -146,7 +146,7 @@ export default function Login() {
           </div>
         </div>
       </div>
-      <Footer />
+      {/* <Footer /> */}
     </div>
   );
 }

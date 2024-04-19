@@ -57,7 +57,7 @@ export default function Checkout() {
       <div>
         <Toaster />
       </div>
-      <Header />
+      {/* <Header /> */}
       <BurgerMenu />
       <Navbar />
      

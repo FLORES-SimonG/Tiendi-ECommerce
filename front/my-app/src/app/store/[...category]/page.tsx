@@ -57,7 +57,7 @@ export default function Category(props: any) {
 
   return (
     <div>
-      <Header />
+      {/* <Header /> */}
       <Navbar />
       <BurgerMenu />
       
@@ -111,8 +111,8 @@ export default function Category(props: any) {
           </div>
         </div>
       </div>
-      <PreFooter />
-      <Footer />
+      {/* <PreFooter /> */}
+      {/* <Footer /> */}
     </div>
   );
 }

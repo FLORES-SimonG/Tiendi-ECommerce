@@ -30,12 +30,12 @@ function Orders() {
   } else {
     return (
       <div>
-        <Header />
+        {/* <Header /> */}
         <Navbar />
         <BurgerMenu />
         <OrdersComponent/>
-        <PreFooter />
-        <Footer />
+        {/* <PreFooter /> */}
+        {/* <Footer /> */}
       </div>
     );
   }
