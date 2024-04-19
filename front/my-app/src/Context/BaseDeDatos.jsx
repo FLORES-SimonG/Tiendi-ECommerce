@@ -1,4 +1,4 @@
-'use client';
+// 'use client';
 import axios from "axios";
 
 export async function fetchProducts() {
@@ -26,6 +26,25 @@ export async function getOrders(token) {
   } catch (error) {
     console.error("Hubo un error al obtener los datos:", error);
     return [];
+  }
+}
+
+
+export async function funcionParaEnviarAlBackend(productosParaBack,token) {
+  const APIdesdeBackTres = "http://localhost:5000/orders";
+
+  try {
+    const response =await axios.post(APIdesdeBackTres, {
+      products: productosParaBack,
+    }, {
+      headers: {
+        Authorization: token,
+      },
+    });
+    console.log(response.data);
+  }
+  catch (error) {
+    console.error("Hubo un error al enviar los datos:", error);
   }
 }
 

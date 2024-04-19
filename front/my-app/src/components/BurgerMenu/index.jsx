@@ -63,7 +63,10 @@ const BurgerMenu = () => {
             Productos
           </Link>
           <Link href="/orders" className={`${context.userData.login == true ? "block" : "hidden"} cursor-pointer  p-2 rounded-3xl text-gray-100 bg-gradient-to-b from-transparent from-5% to-customColorTertiary to-60% hover:scale-105 transition-all  font-semibold`}>
-            Mis Compras
+            Comprobantes
+          </Link>
+          <Link href="/checkout" className={`${context.userData.login == true ? "block" : "hidden"} cursor-pointer  p-2 rounded-3xl text-gray-100 bg-gradient-to-b from-transparent from-5% to-customColorTertiary to-60% hover:scale-105 transition-all  font-semibold`}>
+            Carrito de Compras
           </Link>
         </div>
         <div className=" justify-center">

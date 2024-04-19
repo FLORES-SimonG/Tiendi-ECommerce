@@ -50,7 +50,12 @@ function Navbar() {
         </Link>
         <Link href="/orders" className={`${context.userData.login == true ? "block" : "hidden"}`}> 
           <li className="cursor-pointer  p-2 rounded-3xl text-gray-100 bg-gradient-to-b from-transparent from-5% to-customColorTertiary to-60% hover:scale-105 transition-all  font-semibold">
-            Mis Compras
+            Comprobantes
+          </li>
+        </Link>
+        <Link href="/checkout" className={`${context.userData.login == true ? "block" : "hidden"}`}> 
+          <li className="cursor-pointer  p-2 rounded-3xl text-gray-100 bg-gradient-to-b from-transparent from-5% to-customColorTertiary to-60% hover:scale-105 transition-all  font-semibold">
+            Carrito de Compras
           </li>
         </Link>
         <Link href="/ " className={`${context.userData.login == true ? "block" : "hidden"}`} onClick={logOutUser}>

@@ -7,23 +7,39 @@ import { ShoppingCartContext } from "../../Context/index";
 import { useContext } from "react";
 import toast, { Toaster } from "react-hot-toast";
 import Link from "next/link";
+import { funcionParaEnviarAlBackend } from "../../Context/BaseDeDatos";
 
 export default function Checkout() {
   const context = useContext(ShoppingCartContext);
   console.log("contexto en el checkout: ",context)
+  const token = context.userData.token;
   const cancelar = () => {
     toast.error("Compra Cancelada");
     context.setCartProducts([]);
   }
 
   const chequeoDeUsuario = () => {
-    if (context.userData.login === true) {
-    context.setCartProducts([]);
-      toast.success("COMPRADO! 🎉🎉🎉");}
 
-  else {
-  toast.error("Compra Denegada, necesitas estar logueado");
-  }}
+    if (context.cartProducts.length === 0) {
+      toast.error("No hay productos en el carrito");
+    } else{
+      
+      if (context.userData.login === true) {
+      // context.setCartProducts([]);
+      let productosParaBack = context.cartProducts.map((producto) => {
+        return producto.id;
+      });
+
+      console.log("este es el token desde Checkout",context.userData.token)
+      funcionParaEnviarAlBackend(productosParaBack,token);
+      console.log("productosParaBack",productosParaBack)
+        toast.success("COMPRADO! 🎉🎉🎉");}
+  
+    else {
+    toast.error("Compra Denegada, necesitas estar logueado");
+    }
+  }
+}
 
   const productosParaFinalizarCompra = context.cartProducts
   ;
@@ -44,12 +60,12 @@ export default function Checkout() {
       <Header />
       <BurgerMenu />
       <Navbar />
-
+     
       <div className="flex flex-row flex-nowrap content-center justify-center items-center my-6">
       <div className="relative  w-96 flex-row flex-nowrap content-center justify-center items-center rounded-xl bg-gray-100 bg-clip-border text-gray-700 shadow-md">
         
           <div className="flex justify-between items-center p-4 ">
-            <h2 className="text-2xl font-bold text-black">Mis Ordenes</h2>
+            <h2 className="text-2xl font-bold text-black">Mis Productos a Comprar</h2>
           </div>
 
           <div className="flex flex-col justify-between content-center items-stretch">
