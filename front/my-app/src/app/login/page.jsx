@@ -68,7 +68,7 @@ export default function Login() {
         context.setUserData(response.data);
         //  console.log("Bienvenido a la tienda",context.userData);
         context.setToken(context.userData.token);
-      router.push('/store')
+      router.push('/orders')
     } catch (error) {
       // console.error("Error al iniciar sesion", error);
       alert("Error al iniciar sesion, usuario o contraseña incorrectos.");

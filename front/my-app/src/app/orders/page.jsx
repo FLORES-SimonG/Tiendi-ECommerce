@@ -6,8 +6,9 @@ import Navbar from "@/components/Navbar/Navbar";
 import BurgerMenu from "@/components/BurgerMenu";
 import Error from "../Error";
 import PreFooter from "@/components/PreFooter/PreFooter";
-import OrdersComponent from "../../components/Orders/index"; // Corregido el camino de importación
+import OrdersComponent from "../../components/OrdersComponent/index";
 import { getOrders } from "@/Context/BaseDeDatos";
+import Footer from "../../components/footer/Footer";
 
 function Orders() {
   const context = useContext(ShoppingCartContext);
@@ -32,8 +33,9 @@ function Orders() {
         <Header />
         <Navbar />
         <BurgerMenu />
-        <OrdersComponent />
+        <OrdersComponent/>
         <PreFooter />
+        <Footer />
       </div>
     );
   }
