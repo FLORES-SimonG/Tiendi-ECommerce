@@ -21,7 +21,7 @@ function Product_card(producto: any): any {
   };
 
   return (
-    <div className="border-2 border-customColorPrimary w-42 md:w-48 lg:w-52 h-72 m-2 rounded-lg flex flex-col justify-center items-center overflow-hidden transition-all duration-300 ease-in-out transform hover:shadow-lg hover:bg-customColorPrimary">
+    <div className="border-2 border-customColorPrimary w-44 md:w-48 lg:w-52 h-72 m-2 rounded-lg flex flex-col justify-center items-center overflow-hidden transition-all duration-300 ease-in-out transform hover:shadow-lg hover:bg-customColorPrimary">
       <div className="w-36 h-36  rounded-full overflow-hidden">
         <img
           src={imagenDeEjemplo}
@@ -30,8 +30,8 @@ function Product_card(producto: any): any {
         />
       </div>
       <div className="py-2 text-center w-40">
-        <h4 className="text-lg font-bold">{objetoIndividual.name}</h4>
-        <h5 className="text-sm font-semibold">${objetoIndividual.price}</h5>
+        <p className="text-base font-bold">{objetoIndividual.name}</p>
+        <p className="mt-1 text-md font-semibold">${objetoIndividual.price}</p>
       </div>
 
       <div className="flex justify-center space-x-3">

@@ -9,13 +9,21 @@ import toast, { Toaster } from "react-hot-toast";
 import Link from "next/link";
 
 export default function Checkout() {
+  const context = useContext(ShoppingCartContext);
+  console.log("contexto en el checkout: ",context)
   const cancelar = () => {
     toast.error("Compra Cancelada");
     context.setCartProducts([]);
   }
-  const comprar = () => toast.success("COMPRADO! 🎉🎉🎉");
 
-  const context = useContext(ShoppingCartContext);
+  const chequeoDeUsuario = () => {
+    if (context.userData.login === true) {
+    context.setCartProducts([]);
+      toast.success("COMPRADO! 🎉🎉🎉");}
+
+  else {
+  toast.error("Compra Denegada, necesitas estar logueado");
+  }}
 
   const productosParaFinalizarCompra = context.cartProducts
   ;
@@ -88,7 +96,7 @@ export default function Checkout() {
             </button>
               </Link> 
             <button
-              onClick={comprar}
+              onClick={chequeoDeUsuario}
               className="px-4 py-2 m-2 border-b-4 border rounded-xl bg-gradient-to-b from-white from-10%  via-white via-35% to-customColorTertiary to-100%   text-black hover:text-green-500 hover:bg-green-500 transition-all hover:border-green-300 duration-200"
             >
               Comprar
