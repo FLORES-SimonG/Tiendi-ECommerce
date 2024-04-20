@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { getOrders } from "../../Context/BaseDeDatos";
-import { useContext } from "react";
+
 import { ShoppingCartContext } from "../../Context";
 import Image from "next/image";
 import Link from "next/link";
@@ -8,8 +8,7 @@ import Link from "next/link";
 function OrdersComponent() {
   const [orders, setOrders] = useState([]);
 
-  const context = useContext(ShoppingCartContext);
-  const token = context.userData.token;
+  const token = localStorage.getItem("token");
 
   useEffect(() => {
     const fetchDataOrders = async () => {
@@ -19,30 +18,27 @@ function OrdersComponent() {
     fetchDataOrders();
   }, []);
 
-  // console.log("ESTE ES EL CONTEXTO=> ",context);
-  // console.log("ESTAS SON LAS ORDENES PAPÁ=> ",orders);
-
   return (
     <div className=" font-sans">
       <h2 className="mb-4 text-white text-ssxl font-bold px-6 py-3 bg-gradient-to-r from-customColorPrimary via-customColorPrimary via-10% to-transparent">
         TUS COMPROBANTES DE COMPRA
       </h2>
       {orders.length === 0 ? (
-        
-          <div className="flex flex-col justify-center items-center mb-10 ">
+        <div className="flex flex-col justify-center items-center mb-10 w-full h-full">
           <Link href={"/store"}>
-          <p 
-          className="relative top-14 text-white font-bold hover:scale-105 cursor-pointer transition-all ">NO HAY ORDENES DISPONIBLES PARA MOSTRAR</p>
+            <p className="relative top-14 text-white font-bold hover:scale-105 cursor-pointer transition-all ">
+              NO HAY ORDENES DISPONIBLES PARA MOSTRAR
+            </p>
           </Link>
 
           <Image
             src="https://images.pexels.com/photos/5632403/pexels-photo-5632403.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
             alt="No hay ordenes"
-            width={500}
-            height={500}
-            className="rounded-lg shadow-xl "
-            />
-            
+            loading="lazy"
+            width={1260}
+            height={750}
+            className="rounded-lg shadow-xl w-96 h-56 object-cover"
+          />
         </div>
       ) : (
         <div className="flex flex-row row flex-wrap items-center justify-center leading-relaxed  gap-8 m-8  ">
@@ -73,7 +69,6 @@ function OrdersComponent() {
                   {order.status}
                 </p>
               </div>
-              {/* <h1>{order.products}</h1> */}
             </div>
           ))}
         </div>

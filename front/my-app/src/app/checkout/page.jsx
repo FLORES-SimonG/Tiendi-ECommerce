@@ -11,46 +11,36 @@ import { funcionParaEnviarAlBackend } from "../../Context/BaseDeDatos";
 
 export default function Checkout() {
   const context = useContext(ShoppingCartContext);
-  console.log("contexto en el checkout: ",context)
-  const token = context.userData.token;
+
+  const token = localStorage.getItem("token");
   const cancelar = () => {
     toast.error("Compra Cancelada");
     context.setCartProducts([]);
-  }
+  };
 
   const chequeoDeUsuario = () => {
-
     if (context.cartProducts.length === 0) {
       toast.error("No hay productos en el carrito");
-    } else{
-      
-      if (context.userData.login === true) {
-      // context.setCartProducts([]);
-      let productosParaBack = context.cartProducts.map((producto) => {
-        return producto.id;
-      });
+    } else {
+      if (localStorage.getItem("token") !== null) {
+        let productosParaBack = context.cartProducts.map((producto) => {
+          return producto.id;
+        });
 
-      console.log("este es el token desde Checkout",context.userData.token)
-      funcionParaEnviarAlBackend(productosParaBack,token);
-      console.log("productosParaBack",productosParaBack)
-        toast.success("COMPRADO! 🎉🎉🎉");}
-  
-    else {
-    toast.error("Compra Denegada, necesitas estar logueado");
+        funcionParaEnviarAlBackend(productosParaBack, token);
+        context.setCartProducts([]);
+        toast.success("COMPRADO! 🎉🎉🎉");
+      } else {
+        toast.error("Compra Denegada, necesitas estar logueado");
+      }
     }
-  }
-}
+  };
 
-  const productosParaFinalizarCompra = context.cartProducts
-  ;
+  const productosParaFinalizarCompra = context.cartProducts;
   let total = 0;
   productosParaFinalizarCompra.forEach((producto) => {
-    total += (producto.price * (10-producto.stock));
+    total += producto.price * (10 - producto.stock);
   });
-  // console.log("contexto en el checkout: ",context)
-  
-
-    
 
   return (
     <div className=" font-sans leading-relaxed">
@@ -60,16 +50,17 @@ export default function Checkout() {
       {/* <Header /> */}
       <BurgerMenu />
       <Navbar />
-     
+
       <div className="flex flex-row flex-nowrap content-center justify-center items-center my-6">
-      <div className="relative  w-96 flex-row flex-nowrap content-center justify-center items-center rounded-xl bg-gray-100 bg-clip-border text-gray-700 shadow-md">
-        
+        <div className="relative  w-96 flex-row flex-nowrap content-center justify-center items-center rounded-xl bg-gray-100 bg-clip-border text-gray-700 shadow-md">
           <div className="flex justify-between items-center p-4 ">
-            <h2 className="text-2xl font-bold text-black">Mis Productos a Comprar</h2>
+            <h2 className="text-2xl font-bold text-black">
+              Mis Productos a Comprar
+            </h2>
           </div>
 
           <div className="flex flex-col justify-between content-center items-stretch">
-          {productosParaFinalizarCompra.map((productoEnElCarrito) => (
+            {productosParaFinalizarCompra.map((productoEnElCarrito) => (
               <div
                 className="flex flex-row bg-customColorSecondary last:rounded-b-xl gap-12 justify-between items-center p-4 border-b-2 border-black border-opacity-10"
                 key={productoEnElCarrito.id}
@@ -77,17 +68,16 @@ export default function Checkout() {
                 <p className="text-black text-balance  text-sm">
                   {productoEnElCarrito.name}
                 </p>
-                
+
                 <div className="flex flex-row items-center gap-3">
-                {/* <input type="number" max={productoEnElCarrito.stock} min={10-productoEnElCarrito.stock} className="w-9 bg-customColorSecondary text-end rounded-lg" placeholder={10-productoEnElCarrito.stock} inputMode="numeric" ></input> */}
-                <p className=" text-gray-400 font-semibold"  >{productoEnElCarrito.quantity} unid.</p>
-                <p className="text-gray-400">
-                  x
-                </p>
-                
-                <p className="text-black font-semibold  text-sm ">
-                  $ {productoEnElCarrito.price }
-                </p>
+                  <p className=" text-gray-400 font-semibold">
+                    {productoEnElCarrito.quantity} unid.
+                  </p>
+                  <p className="text-gray-400">x</p>
+
+                  <p className="text-black font-semibold  text-sm ">
+                    $ {productoEnElCarrito.price}
+                  </p>
                 </div>
               </div>
             ))}
@@ -104,13 +94,10 @@ export default function Checkout() {
               Cancelar
             </button>
             <Link href={"/store"}>
-            <button
-              
-              className="px-4 py-2 m-2 border-b-4 border rounded-xl bg-gradient-to-b from-white from-10%  via-white via-35% to-customColorTertiary to-100%  text-black hover:text-blue-500 hover:bg-blue-600 transition-all hover:border-customColorPrimary duration-200"
-              >
-              Volver a Productos
-            </button>
-              </Link> 
+              <button className="px-4 py-2 m-2 border-b-4 border rounded-xl bg-gradient-to-b from-white from-10%  via-white via-35% to-customColorTertiary to-100%  text-black hover:text-blue-500 hover:bg-blue-600 transition-all hover:border-customColorPrimary duration-200">
+                Volver a Productos
+              </button>
+            </Link>
             <button
               onClick={chequeoDeUsuario}
               className="px-4 py-2 m-2 border-b-4 border rounded-xl bg-gradient-to-b from-white from-10%  via-white via-35% to-customColorTertiary to-100%   text-black hover:text-green-500 hover:bg-green-500 transition-all hover:border-green-300 duration-200"

@@ -36,9 +36,9 @@ export default function Category(props: any) {
     if (existingProductIndex !== -1) {
       const updatedCartProducts = [...context.cartProducts];
       const existingProduct = updatedCartProducts[existingProductIndex];
-      existingProduct.quantity += 1; // Aumentar la cantidad en 1
+      existingProduct.quantity += 1; // Aumento la cantidad en 1
       existingProduct.stock -= 1; // Restar 1 al stock
-      // actualizo el estado del carrito
+      //  y actualizo el estado del carrito
       context.setCartProducts(updatedCartProducts);
     } else {
       context.setCartProducts([

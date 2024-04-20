@@ -19,7 +19,7 @@ function Orders() {
   if (token) {
     orders =  getOrders(token); // Pasar el token como parámetro
   }
-  const isUserActive = context.userData.login;
+  const isUserActive = localStorage.getItem("token");
 
   if (!isUserActive) { // Simplificado a !isUserActive
     return (

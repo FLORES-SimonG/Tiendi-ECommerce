@@ -1,8 +1,7 @@
 "use client";
 
 import BurgerMenu from "@/components/BurgerMenu";
-import Footer from "@/components/footer/Footer";
-import Header from "@/components/Header/Header";
+
 import Navbar from "@/components/Navbar/Navbar";
 import { useContext, useState, useEffect } from "react";
 import { ShoppingCartContext } from "@/Context";
@@ -16,23 +15,21 @@ export default function Login() {
   //! http://localhost:5000/users/login => POST
 
   const context = useContext(ShoppingCartContext);
-  const router = useRouter()
+  const router = useRouter();
 
   useEffect(() => {}, [context.userData]);
 
-  console.log("Usuario Logueado =>", context.userData);
-  
   const handlerInputChangeFromLogin = (evento) => {
     const { name, value } = evento.target;
     context.setItemsFromLogin({ ...context.itemsFromLogin, [name]: value });
-    
+
     const itemsActualizadoFromLogin = {
       ...context.itemsFromLogin,
       [name]: value,
     };
     const newErrors = validateLogin(itemsActualizadoFromLogin);
     context.setErrors(newErrors);
-    
+
     if (newErrors[name] === true) {
       context.setErrors({ ...context.errors, [name]: newErrors[name] });
       console.log("Errores en el formulario", context.errors);
@@ -42,41 +39,33 @@ export default function Login() {
       console.log("Errores en el formulario", context.errors);
     }
   };
-  
+
   const handlerSubmitFromLogin = async (evento) => {
-    
     evento.preventDefault();
-    
+
     const newErrors = validateLogin(context.itemsFromLogin);
-    
+
     if (Object.keys(newErrors).length > 0) {
       context.setErrors(newErrors);
-      // console.log(
-        //   "Hay errores en el formulario, completa correctamente",
-        //   newErrors
-        // );
-        return alert("Hay errores en el formulario, completa correctamente");
-      }
-      
-      try {
-        const response = await axios.post("http://localhost:5000/users/login", {
-          email: context.itemsFromLogin.email,
-          password: context.itemsFromLogin.password,
-        });
-        
-        // console.log("Usuario a loguear", response.data.login);
-        context.setUserData(response.data);
-        //  console.log("Bienvenido a la tienda",context.userData);
-        context.setToken(context.userData.token);
-      router.push('/orders')
+
+      return alert("Hay errores en el formulario, completa correctamente");
+    }
+
+    try {
+      const response = await axios.post("http://localhost:5000/users/login", {
+        email: context.itemsFromLogin.email,
+        password: context.itemsFromLogin.password,
+      });
+
+      context.setUserData(response.data);
+
+      localStorage.setItem("token", response.data.token); //! Guardé token en el localstorage y no en context
+      router.push("/orders");
     } catch (error) {
-      // console.error("Error al iniciar sesion", error);
       alert("Error al iniciar sesion, usuario o contraseña incorrectos.");
     }
-    // console.log("Usuario Logueado con Effect =>", context.userData);
-    // console.log("Token =>", context.token);
   };
-  
+
   return (
     <div className="font-sans">
       {/* <Header /> */}
