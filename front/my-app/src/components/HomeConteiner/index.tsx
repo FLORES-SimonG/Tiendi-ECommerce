@@ -1,14 +1,6 @@
 "use client";
 import Image from "next/image";
-// import {
-//   HomeContainer,
-//   Contenedor,
-//   div,
-//   ul,
-//   div,
-//   li,
-//   Title,
-// } from "./styles";
+
 import { LuPin } from "react-icons/lu";
 
 function HomeConteiner() {
