@@ -2,10 +2,10 @@
 import axios from "axios";
 
 export async function getProducts() {
-  const APIdesdeBack = "http://localhost:5000/products";
+  const APIdesdeBackProducts = "http://localhost:5000/products";
 
   try {
-    const response = await axios.get(APIdesdeBack);
+    const response = await axios.get(APIdesdeBackProducts);
     return response.data;
   } catch (error) {
     console.error("Hubo un error al obtener los datos:", error);
@@ -14,10 +14,10 @@ export async function getProducts() {
 }
 
 export async function getUsersOrders(token) {
-  const APIdesdeBackDos = "http://localhost:5000/users/orders";
+  const APIdesdeBackUsersOrders = "http://localhost:5000/users/orders";
 
   try {
-    const response = await axios.get(APIdesdeBackDos, {
+    const response = await axios.get(APIdesdeBackUsersOrders, {
       headers: {
         Authorization: token,
       },
@@ -30,11 +30,11 @@ export async function getUsersOrders(token) {
 }
 
 export async function postOrders(productosParaBack, token) {
-  const APIdesdeBackTres = "http://localhost:5000/orders";
+  const APIdesdeBackOrders = "http://localhost:5000/orders";
 
   try {
     const response = await axios.post(
-      APIdesdeBackTres,
+      APIdesdeBackOrders,
       {
         products: productosParaBack,
       },
@@ -51,10 +51,10 @@ export async function postOrders(productosParaBack, token) {
 }
 
 export async function postUsersLogin(email, password) {
-  const APIdesdeBackCuatro = "http://localhost:5000/users/login";
+  const APIdesdeBackUsersLogin = "http://localhost:5000/users/login";
 
   try {
-    const response = await axios.post(APIdesdeBackCuatro, {
+    const response = await axios.post(APIdesdeBackUsersLogin, {
       email,
       password,
     });
@@ -67,8 +67,9 @@ export async function postUsersLogin(email, password) {
 
 
 export async function postUsersRegister(userData) {
+  const APIdesdeBackUsersRegister = "http://localhost:5000/users/register";
   try {
-    const response = await axios.post(`http://localhost:5000/users/register`, userData);
+    const response = await axios.post(APIdesdeBackUsersRegister, userData);
     return response.data;
   } catch (error) {
     console.error("Error al registrar usuario:", error);
