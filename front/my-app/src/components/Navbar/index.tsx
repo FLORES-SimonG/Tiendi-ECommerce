@@ -1,14 +1,14 @@
 "use client";
 import Link from "next/link";
-import { useContext } from "react";
-import { ShoppingCartContext } from "../../Context/index";
+// import { useContext } from "react";
+// import { ShoppingCartContext } from "../../Context/index";
 import { GiExitDoor } from "react-icons/gi";
 import { useRouter } from "next/navigation";
 import toast from "react-hot-toast";
 
 
 function Navbar() {
-  const context = useContext(ShoppingCartContext);
+  // const context = useContext(ShoppingCartContext);
   
   const router = useRouter()
   const logOutUser = () => {
