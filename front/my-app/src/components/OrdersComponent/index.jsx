@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { getOrders } from "../../Context/BaseDeDatos";
+import { getUsersOrders } from "../../Context/BaseDeDatos";
 
 import { ShoppingCartContext } from "../../Context";
 import Image from "next/image";
@@ -12,7 +12,7 @@ function OrdersComponent() {
 
   useEffect(() => {
     const fetchDataOrders = async () => {
-      const responseOrders = await getOrders(token);
+      const responseOrders = await getUsersOrders(token);
       setOrders(responseOrders);
     };
     fetchDataOrders();

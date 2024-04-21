@@ -1,13 +1,13 @@
 "use client";
 import BurgerMenu from "@/components/BurgerMenu";
-import Header from "../../components/Header/Header";
-import Navbar from "../../components/Navbar/Navbar";
+// import Header from "../../components/Header/index";
+import Navbar from "../../components/Navbar";
 
 import { ShoppingCartContext } from "../../Context/index";
 import { useContext } from "react";
-import toast, { Toaster } from "react-hot-toast";
+import toast from "react-hot-toast";
 import Link from "next/link";
-import { funcionParaEnviarAlBackend } from "../../Context/BaseDeDatos";
+import { postOrders } from "../../Context/BaseDeDatos";
 
 export default function Checkout() {
   const context = useContext(ShoppingCartContext);
@@ -27,7 +27,7 @@ export default function Checkout() {
           return producto.id;
         });
 
-        funcionParaEnviarAlBackend(productosParaBack, token);
+        postOrders(productosParaBack, token);
         context.setCartProducts([]);
         toast.success("COMPRADO! 🎉🎉🎉");
       } else {
@@ -44,10 +44,7 @@ export default function Checkout() {
 
   return (
     <div className=" font-sans leading-relaxed">
-      <div>
-        <Toaster />
-      </div>
-      {/* <Header /> */}
+ 
       <BurgerMenu />
       <Navbar />
 

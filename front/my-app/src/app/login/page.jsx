@@ -2,18 +2,17 @@
 
 import BurgerMenu from "@/components/BurgerMenu";
 
-import Navbar from "@/components/Navbar/Navbar";
-import { useContext, useState, useEffect } from "react";
+import Navbar from "@/components/Navbar/index";
+import { useContext, useEffect } from "react";
 import { ShoppingCartContext } from "@/Context";
 import Link from "next/link";
-import toast, { Toaster } from "react-hot-toast";
+import toast from "react-hot-toast";
 import { validateLogin } from "../../helpers/validateLogin";
-import axios from "axios";
+
 import { useRouter } from "next/navigation";
+import { postUsersLogin } from "../../Context/BaseDeDatos";
 
 export default function Login() {
-  //! http://localhost:5000/users/login => POST
-
   const context = useContext(ShoppingCartContext);
   const router = useRouter();
 
@@ -48,27 +47,30 @@ export default function Login() {
     if (Object.keys(newErrors).length > 0) {
       context.setErrors(newErrors);
 
-      return alert("Hay errores en el formulario, completa correctamente");
+      return toast.error(
+        "Hay errores en el formulario, completa correctamente"
+      );
     }
 
     try {
-      const response = await axios.post("http://localhost:5000/users/login", {
-        email: context.itemsFromLogin.email,
-        password: context.itemsFromLogin.password,
-      });
+      const response = await postUsersLogin(
+        context.itemsFromLogin.email,
+        context.itemsFromLogin.password
+      );
 
-      context.setUserData(response.data);
-
-      localStorage.setItem("token", response.data.token); //! Guardé token en el localstorage y no en context
+      context.setUserData(response);
+      localStorage.setItem("token", response.token);
       router.push("/orders");
+      return toast.success("Usuario logueado correctamente");
     } catch (error) {
-      alert("Error al iniciar sesion, usuario o contraseña incorrectos.");
+      return toast.error(
+        "Error al iniciar sesión, usuario o contraseña incorrectos."
+      );
     }
   };
 
   return (
     <div className="font-sans">
-      {/* <Header /> */}
       <BurgerMenu />
       <Navbar />
       <div className=" flex flex-row items-center content-center justify-center my-6">
@@ -77,7 +79,7 @@ export default function Login() {
           bg-gradient-to-b from-customColorPrimary from-10% via-customColorPrimary via-25% to-transparent 
           rounded-lg shadow-xl overflow-hidden"
         >
-          <div className="pt-8 px-8">
+          <div className="pt-8 px-8 w-80">
             <h2 className="text-center text-3xl font-bold text-white">
               ¡ Hola de nuevo !
             </h2>

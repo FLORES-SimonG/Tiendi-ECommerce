@@ -2,15 +2,15 @@
 import { ShoppingCartContext } from "@/Context";
 import Image from "next/image";
 import BurgerMenu from "@/components/BurgerMenu";
-import Header from "@/components/Header/Header";
-import Navbar from "@/components/Navbar/Navbar";
+import Header from "@/components/Header";
+import Navbar from "@/components/Navbar";
 import Link from "next/link";
 
 import Footer from "@/components/footer/Footer";
 import { useContext } from "react";
 import { imagenDeEjemplo } from "../../../../public/variablesGlobales";
 import Error from "../../Error"
-import PreFooter from "@/components/PreFooter/PreFooter";
+import PreFooter from "@/components/PreFooter";
 
 // interface CategoryProps {
 //     params:{category: string;}

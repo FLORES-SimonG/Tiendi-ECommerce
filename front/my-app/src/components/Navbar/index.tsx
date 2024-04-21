@@ -4,16 +4,18 @@ import { useContext } from "react";
 import { ShoppingCartContext } from "../../Context/index";
 import { GiExitDoor } from "react-icons/gi";
 import { useRouter } from "next/navigation";
+import toast from "react-hot-toast";
 
 
 function Navbar() {
   const context = useContext(ShoppingCartContext);
-  // console.log(localStorage.getItem("token"));
+  
   const router = useRouter()
   const logOutUser = () => {
     localStorage.removeItem("token");
     // context.setUserData({})
     router.push("/")
+    return toast.success("Sesión cerrada con éxito");
 
   }
 
@@ -22,6 +24,7 @@ function Navbar() {
       className=" flex justify-center items-center bg-gradient-to-b from-customColorSecondary to-white
      px-4 py-4 flex-row flex-nowrap content-center"
     >
+      
       <ul className=" hidden md:flex lg:flex flex-row flex-wrap list-none p-0 mt-1 gap-4  content-center justify-center items-center">
         <Link href="/home">
           <li className="cursor-pointer  p-2 rounded-3xl text-gray-100 bg-gradient-to-b from-transparent from-5% to-customColorPrimary to-60% transition-colors hover:bg-customColorTertiary  font-semibold">

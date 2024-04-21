@@ -1,20 +1,21 @@
 import React, { useState, useEffect } from "react";
-import Product_card from "../product_card/Product_card";
-import { fetchProducts } from "./../../Context/BaseDeDatos"; // Asegúrate de importar el método correcto
+import ProductCard from "../ProductCard/index";
+import { getProducts } from "../../Context/BaseDeDatos";
+import { Product } from "../../Context/interface";
 
-function ProductsCards() {
-  const [items, setItems] = useState([]);
+
+const ProductsCards: React.FC = () => {
+  
+  const [items, setItems] = useState<Product[]>([]);
 
   useEffect(() => {
     const fetchData = async () => {
-      const products = await fetchProducts();
-      setItems(products);
+      const products = await getProducts(); 
+      setItems(products); 
     };
 
-    fetchData();
+    fetchData(); 
   }, []);
-
-
 
   return (
     <>
@@ -22,22 +23,16 @@ function ProductsCards() {
         NUESTROS PRODUCTOS
       </h2>
       <div className="bg-transparent grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 items-stretch justify-center content-center justify-items-center mb-8">
-        {items.map((item: { id: number }) => (
-          <Product_card key={item.id} data={item} />
+        {items.map((item) => (
+          
+          <ProductCard key={item.id} producto={{ data: item }} />
         ))}
       </div>
     </>
   );
-}
+};
 
 export default ProductsCards;
-
-
-
-
-
-
-
 
 
 

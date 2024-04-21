@@ -1,6 +1,6 @@
 "use client";
-// import { LuMenuSquare } from "react-icons/lu";
-import { ShoppingCart } from "../cart/ShoppingCart";
+
+import { ShoppingCart } from "../Cart/index";
 import { useContext } from "react";
 import { ShoppingCartContext } from "../../Context/index";
 import Link from "next/link";

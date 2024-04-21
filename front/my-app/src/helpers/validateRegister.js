@@ -9,20 +9,20 @@ export const validateRegister =(input)=>{
 
 
     if (!expresionRegularNombre.test(input.name)) {
-         errors.name = 'El nombre es incorrecto';
+         errors.name = true;
     }
     if (!expresionRegularCorreo.test(input.email)) {
-         errors.email = 'El email es incorrecto';
+         errors.email = true;
     }
 
     if (input.phone !== undefined && !expresionRegularPhone.test(input.phone.toString())) {
-         errors.phone = 'El DNI es incorrecto';
+         errors.phone = true;
     }
     if (!expresionRegularDireccion.test(input.username)) {
-         errors.address = 'El usuario es incorrecto';
+         errors.address = true;
     }
     if (!expresionRegularPassword.test(input.password)) {
-         errors.password = 'La contraseña es incorrecta';
+         errors.password = true;
     }
     
     return errors;

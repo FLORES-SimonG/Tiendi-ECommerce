@@ -1,9 +1,9 @@
 'use client';
 import Footer from "@/components/footer/Footer";
-import Header from "@/components/Header/Header";
-import Navbar from "@/components/Navbar/Navbar";
+import Header from "@/components/Header";
+import Navbar from "@/components/Navbar";
 import { CardInformation, DivEquipo, ListItem } from "./about";
-import PreFooter from "@/components/PreFooter/PreFooter";
+import PreFooter from "@/components/PreFooter";
 import BurgerMenu from "@/components/BurgerMenu";
 
 
