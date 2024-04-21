@@ -6,14 +6,13 @@ import { LuPin } from "react-icons/lu";
 function HomeConteiner() {
   return (
     // esto es una ecommerce que se llama Tiendi
-    <div className="bg-gradient-to-b from-transparent   via-customColorSecondary via-10% to-transparent to-100%">
-      <h2 className="p-3 font-sans bg-gradient-to-b from-transparent from-5% via-customColorSecondary via-90% to-transparent to-100% text-center shadow-xl text-xl ">
+    <div className="bg-transparent">
+      <h2 className="p-3 font-sans bg-transparent text-center  text-xl ">
         ¡Bienvenido/a a nuestra Home! Dirígete a Productos para descubrir lo que
         tenemos para ti.
       </h2>
-      <div className=" text-base font-light leading-relaxed my-6 gap-6 flex flex-row flex-wrap content-center justify-center items-center bg-gradient-to-b from-transparent  via-customColorSecondary via-10% to-transparent to-100% ">
+      <div className=" text-base font-light leading-relaxed my-6 gap-6 flex flex-row flex-wrap content-center justify-center items-center">
         <div className="transparent flex flex-col my-0  ">
-          
           <ul className=" transition w-96 h-40 p-3 m-0 bg-slate-100 rounded-3xl cursor-pointer flex flex-row flex-nowrap content-center justify-center items-center hover:scale-105">
             <li className="  p-3 m-2 inline-flex items-center rounded-2xl mt-1   text-white bg-black bg-opacity-70 ">
               {/* <li className="p-3 m-2 inline-flex items-center rounded-2xl mt-1   text-white bg-black bg-opacity-70"> */}
