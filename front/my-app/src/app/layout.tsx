@@ -3,7 +3,7 @@ import { Inter } from "next/font/google";
 import "./globals.css";
 import { ShoppingCartProvider } from "@/Context";
 import MenuCheckoutProductsDetail from "@/components/MenuCheckoutProductsDetail";
-import Footer from "@/components/footer/Footer";
+import Footer from "../components/Footer/Footer";
 
 import Header from "@/components/Header";
 import PreFooter from "@/components/PreFooter";

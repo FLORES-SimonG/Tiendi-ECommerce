@@ -33,12 +33,13 @@ export function CarouselTransition() {
       {/* Imagen 2 */}
       <div className="relative group">
         <Image
-          width={600}
-          height={600}
+          width={750}
+          height={1260}
           src="https://images.pexels.com/photos/7974/pexels-photo.jpg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
           alt="MacBook"
           title="MacBook"
-          loading="lazy"
+          priority={true}
+          // loading="lazy"
           className=" w-64 h-48 object-cover opacity-80 transition-opacity duration-100 cursor-pointer group-hover:opacity-100 group-hover:w-96 group-hover:filter group-hover:contrast-125"
         />
         <div className="absolute  inset-0 flex flex-col items-center justify-center opacity-0 transition-opacity duration-300 group-hover:opacity-100 bg-black bg-opacity-50 text-white">
@@ -71,9 +72,9 @@ export function CarouselTransition() {
       {/* Imagen 4 */}
       <div className="relative group">
         <Image
-          width={600}
-          loading="lazy"
-          height={600}
+          width={750}
+          priority={true}
+          height={1260}
           src="https://images.pexels.com/photos/437038/pexels-photo-437038.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
           alt="Apple Watch"
           title="Apple Watch"
@@ -90,9 +91,9 @@ export function CarouselTransition() {
       {/* Imagen 5 */}
       <div className="relative group">
         <Image
-          width={600}
-          height={600}
-          loading="lazy"
+          width={1260}
+          height={750}
+          priority={true}
           src="https://images.pexels.com/photos/1646704/pexels-photo-1646704.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
           alt="AirPods"
           title="AirPods"

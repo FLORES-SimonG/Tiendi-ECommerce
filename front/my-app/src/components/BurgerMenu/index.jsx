@@ -7,6 +7,10 @@ import toast from "react-hot-toast";
 
 const BurgerMenu = () => {
   const context = useContext(ShoppingCartContext);
+
+  
+
+
   const logOutUser = () => {
     // router.push("/")
     localStorage.removeItem("token");
