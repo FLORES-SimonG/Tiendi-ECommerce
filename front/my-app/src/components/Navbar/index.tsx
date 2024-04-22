@@ -21,34 +21,34 @@ function Navbar() {
 
   return (
     <nav
-      className=" flex justify-center items-center bg-gradient-to-b from-customColorSecondary to-white
+      className=" flex justify-center items-center 
      px-4 py-4 flex-row flex-nowrap content-center"
     >
       
       <ul className=" hidden md:flex lg:flex flex-row flex-wrap list-none p-0 mt-1 gap-4  content-center justify-center items-center">
         <Link href="/home">
-          <li className="cursor-pointer  p-2 rounded-3xl text-gray-100 bg-gradient-to-b from-transparent from-5% to-customColorPrimary to-60% transition-colors hover:bg-customColorTertiary  font-semibold">
+          <li className="cursor-pointer  p-2 rounded-3xl text-gray-100 bg-customColorPrimary  transition-colors hover:bg-customColorTertiary  font-semibold">
             Home
           </li>
         </Link>
         <Link href="/register" 
         className={`${!localStorage.getItem("token") ? "block" : "hidden"}`}> 
-          <li className="cursor-pointer  p-2 rounded-3xl text-gray-100 bg-gradient-to-b from-transparent from-5% to-customColorPrimary to-60% transition-colors hover:bg-customColorTertiary  font-semibold">
+          <li className="cursor-pointer  p-2 rounded-3xl text-gray-100 bg-customColorPrimary  transition-colors hover:bg-customColorTertiary  font-semibold">
             Registrate
           </li>
         </Link>
         <Link href="/store">
-          <li className="cursor-pointer  p-2 rounded-3xl text-gray-100 bg-gradient-to-b from-transparent from-5% to-customColorPrimary to-60% transition-colors hover:bg-customColorTertiary  font-semibold">
+          <li className="cursor-pointer  p-2 rounded-3xl text-gray-100 bg-customColorPrimary  transition-colors hover:bg-customColorTertiary  font-semibold">
             Productos
           </li>
         </Link>
         <Link href="/login" className={`${!localStorage.getItem("token")  ? "block" : "hidden"}`}>
-          <li className="cursor-pointer  p-2 rounded-3xl text-gray-100 bg-gradient-to-b from-transparent from-5% to-customColorPrimary to-60% transition-colors hover:bg-customColorTertiary  font-semibold">
+          <li className="cursor-pointer  p-2 rounded-3xl text-gray-100 bg-customColorPrimary  transition-colors hover:bg-customColorTertiary  font-semibold">
             Ingresa
           </li>
         </Link>
         <Link href="/about">
-          <li className="cursor-pointer  p-2 rounded-3xl text-gray-100 bg-gradient-to-b from-transparent from-5% to-customColorPrimary to-60% transition-colors hover:bg-customColorTertiary  font-semibold">
+          <li className="cursor-pointer  p-2 rounded-3xl text-gray-100 bg-customColorPrimary  transition-colors hover:bg-customColorTertiary  font-semibold">
             Nosotros
           </li>
         </Link>

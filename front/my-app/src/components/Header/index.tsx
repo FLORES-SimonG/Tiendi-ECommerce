@@ -9,7 +9,7 @@ function Header() {
   const context: any = useContext(ShoppingCartContext);
   return (
     <nav
-      className="h-3 p-8 bg-gradient-to-b from-customColorPrimary via-customColorPrimary to-gray-300 
+      className="h-3 p-8 bg-customColorPrimary shadow-xl 
     flex justify-between items-center flex-row flex-nowrap "
     >
       <div className=" flex md:hidden lg:hidden  absolute left-36 top-9">
