@@ -31,7 +31,6 @@ export const ShoppingCartProvider = ({ children }) => {
   let [productData, setProductData] = useState({});
 
   let [loginDelUsuario, setLoginDelUsuario] = useState(false);
-  // const [productsFromBackend, setProductsFromBackend] = useState([]); //! No borrar, puede ser de ayuda futura
 
   const [itemsFromLogin, setItemsFromLogin] = useState({
     email: "",
@@ -63,8 +62,6 @@ export const ShoppingCartProvider = ({ children }) => {
         closeBurgerMenu,
         setProductData,
         productData,
-        // productsFromBackend, //! No borrar, puede ser de ayuda futura
-        // setProductsFromBackend, //! No borrar, puede ser de ayuda futura
         itemsFromLogin,
         setItemsFromLogin,
         errors,

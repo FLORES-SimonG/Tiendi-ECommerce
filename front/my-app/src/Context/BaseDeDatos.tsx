@@ -13,7 +13,7 @@ export async function getProducts() {
   }
 }
 
-export async function getUsersOrders(token) {
+export async function getUsersOrders(token:string) {
   const APIdesdeBackUsersOrders = "http://localhost:5000/users/orders";
 
   try {
@@ -29,7 +29,7 @@ export async function getUsersOrders(token) {
   }
 }
 
-export async function postOrders(productosParaBack, token) {
+export async function postOrders(productosParaBack:any, token:string) {
   const APIdesdeBackOrders = "http://localhost:5000/orders";
 
   try {
@@ -50,7 +50,7 @@ export async function postOrders(productosParaBack, token) {
   }
 }
 
-export async function postUsersLogin(email, password) {
+export async function postUsersLogin(email:string, password:string) {
   const APIdesdeBackUsersLogin = "http://localhost:5000/users/login";
 
   try {
@@ -66,7 +66,7 @@ export async function postUsersLogin(email, password) {
 }
 
 
-export async function postUsersRegister(userData) {
+export async function postUsersRegister(userData:any) {
   const APIdesdeBackUsersRegister = "http://localhost:5000/users/register";
   try {
     const response = await axios.post(APIdesdeBackUsersRegister, userData);

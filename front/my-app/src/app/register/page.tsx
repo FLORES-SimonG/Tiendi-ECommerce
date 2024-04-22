@@ -15,7 +15,9 @@ export default function Register() {
   const context = useContext(ShoppingCartContext);
   const router = useRouter();
 
-  const handlerInputChangeFromRegister = (evento) => {
+  
+
+  const handlerInputChangeFromRegister = (evento:any) => {
     const { name, value } = evento.target;
     context.setItemsFromRegister({
       ...context.itemsFromRegister,
@@ -26,7 +28,7 @@ export default function Register() {
       ...context.itemsFromRegister,
       [name]: value,
     };
-    const newErrors = validateRegister(itemsActualizadoFromRegister);
+    const newErrors:any = validateRegister(itemsActualizadoFromRegister);
     if (newErrors[name]) {
       context.setErrors({ ...context.errors, [name]: newErrors[name] });
     } else {
@@ -35,7 +37,7 @@ export default function Register() {
     }
   };
 
-  const handleOnSubmitFromRegister = async (evento) => {
+  const handleOnSubmitFromRegister = async (evento:any) => {
     evento.preventDefault();
     const newErrors = validateRegister(context.itemsFromRegister);
     if (Object.keys(newErrors).length > 0) {
@@ -56,7 +58,9 @@ export default function Register() {
       console.error("Error al registrar usuario", error);
       return toast.error("Error al registrar usuario");
     }
-  };
+    
+  }
+  
 
   return (
     <div className="font-sans">

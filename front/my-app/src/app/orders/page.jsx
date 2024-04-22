@@ -1,4 +1,4 @@
-'use client';
+"use client";
 import React, { useContext } from "react";
 import { ShoppingCartContext } from "@/Context";
 // import Header from "@/components/Header/Header";
@@ -9,32 +9,37 @@ import Error from "../Error";
 import OrdersComponent from "../../components/OrdersComponent/index";
 import { getUsersOrders } from "@/Context/BaseDeDatos";
 // import Footer from "../../components/footer/Footer";
+import { Suspense } from "react";
 
 function Orders() {
   const context = useContext(ShoppingCartContext);
-  const token = context.userData.token; 
+  const token = context.userData.token;
   let orders = [];
+  function Loading() {
+    return <h2>Cargando, espere por favor...</h2>;
+  }
 
   if (token) {
-    orders =  getUsersOrders(token); 
+    orders = getUsersOrders(token);
   }
   const isUserActive = localStorage.getItem("token");
 
-  if (!isUserActive) { 
+  if (!isUserActive) {
     return (
       <div>
-        <Error />
+        <Suspense fallback={<Loading />}>
+          <Error />
+        </Suspense>
       </div>
     );
   } else {
     return (
       <div>
-        {/* <Header /> */}
         <Navbar />
         <BurgerMenu />
-        <OrdersComponent/>
-        {/* <PreFooter /> */}
-        {/* <Footer /> */}
+        <Suspense fallback={<Loading />}>
+          <OrdersComponent />
+        </Suspense>
       </div>
     );
   }

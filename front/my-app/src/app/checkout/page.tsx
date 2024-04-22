@@ -23,7 +23,7 @@ export default function Checkout() {
       toast.error("No hay productos en el carrito");
     } else {
       if (localStorage.getItem("token") !== null) {
-        let productosParaBack = context.cartProducts.map((producto) => {
+        let productosParaBack = context.cartProducts.map((producto:any) => {
           return producto.id;
         });
 
@@ -38,7 +38,7 @@ export default function Checkout() {
 
   const productosParaFinalizarCompra = context.cartProducts;
   let total = 0;
-  productosParaFinalizarCompra.forEach((producto) => {
+  productosParaFinalizarCompra.forEach((producto:any) => {
     total += producto.price * (10 - producto.stock);
   });
 
@@ -57,7 +57,7 @@ export default function Checkout() {
           </div>
 
           <div className="flex flex-col justify-between content-center items-stretch">
-            {productosParaFinalizarCompra.map((productoEnElCarrito) => (
+            {productosParaFinalizarCompra.map((productoEnElCarrito:any) => (
               <div
                 className="flex flex-row bg-customColorSecondary last:rounded-b-xl gap-12 justify-between items-center p-4 border-b-2 border-black border-opacity-10"
                 key={productoEnElCarrito.id}

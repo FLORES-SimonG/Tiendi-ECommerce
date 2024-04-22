@@ -18,7 +18,7 @@ export default function Login() {
 
   useEffect(() => {}, [context.userData]);
 
-  const handlerInputChangeFromLogin = (evento) => {
+  const handlerInputChangeFromLogin = (evento:any) => {
     const { name, value } = evento.target;
     context.setItemsFromLogin({ ...context.itemsFromLogin, [name]: value });
 
@@ -26,7 +26,7 @@ export default function Login() {
       ...context.itemsFromLogin,
       [name]: value,
     };
-    const newErrors = validateLogin(itemsActualizadoFromLogin);
+    const newErrors:any = validateLogin(itemsActualizadoFromLogin);
     context.setErrors(newErrors);
 
     if (newErrors[name] === true) {
@@ -39,7 +39,7 @@ export default function Login() {
     }
   };
 
-  const handlerSubmitFromLogin = async (evento) => {
+  const handlerSubmitFromLogin = async (evento:any) => {
     evento.preventDefault();
 
     const newErrors = validateLogin(context.itemsFromLogin);
