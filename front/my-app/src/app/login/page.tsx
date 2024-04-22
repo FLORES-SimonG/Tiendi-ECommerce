@@ -11,6 +11,8 @@ import { validateLogin } from "../../helpers/validateLogin";
 
 import { useRouter } from "next/navigation";
 import { postUsersLogin } from "../../Context/BaseDeDatos";
+// import { ImLab } from "react-icons/im";
+import { ILogin } from "@/Context/interface";
 
 export default function Login() {
   const context = useContext(ShoppingCartContext);
@@ -18,7 +20,7 @@ export default function Login() {
 
   useEffect(() => {}, [context.userData]);
 
-  const handlerInputChangeFromLogin = (evento:any) => {
+  const handlerInputChangeFromLogin = (evento: any) => {
     const { name, value } = evento.target;
     context.setItemsFromLogin({ ...context.itemsFromLogin, [name]: value });
 
@@ -26,7 +28,7 @@ export default function Login() {
       ...context.itemsFromLogin,
       [name]: value,
     };
-    const newErrors:any = validateLogin(itemsActualizadoFromLogin);
+    const newErrors: any = validateLogin(itemsActualizadoFromLogin);
     context.setErrors(newErrors);
 
     if (newErrors[name] === true) {
@@ -39,7 +41,7 @@ export default function Login() {
     }
   };
 
-  const handlerSubmitFromLogin = async (evento:any) => {
+  const handlerSubmitFromLogin = async (evento: any) => {
     evento.preventDefault();
 
     const newErrors = validateLogin(context.itemsFromLogin);
@@ -51,12 +53,14 @@ export default function Login() {
         "Hay errores en el formulario, completa correctamente"
       );
     }
+    const objetoParaEnviarDesdeLogin:ILogin = {
+      email: context.itemsFromLogin.email,
+      password: context.itemsFromLogin.password,
+    };
 
     try {
-      const response = await postUsersLogin(
-        context.itemsFromLogin.email,
-        context.itemsFromLogin.password
-      );
+
+      const response = await postUsersLogin(objetoParaEnviarDesdeLogin);
 
       context.setUserData(response);
       localStorage.setItem("token", response.token);

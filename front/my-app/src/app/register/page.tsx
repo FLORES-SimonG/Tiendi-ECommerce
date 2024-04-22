@@ -10,14 +10,15 @@ import { validateRegister } from "../../helpers/validateRegister";
 import toast from "react-hot-toast";
 import { useRouter } from "next/navigation";
 import { postUsersRegister } from "../../Context/BaseDeDatos";
+import { IUser } from "@/Context/interface";
 
 export default function Register() {
   const context = useContext(ShoppingCartContext);
   const router = useRouter();
 
-  
 
-  const handlerInputChangeFromRegister = (evento:any) => {
+
+  const handlerInputChangeFromRegister = (evento:any):void => {
     const { name, value } = evento.target;
     context.setItemsFromRegister({
       ...context.itemsFromRegister,
@@ -50,8 +51,9 @@ export default function Register() {
         "Hay errores en el formulario, completa correctamente"
       );
     }
+    const objetoParaEnviarDesdeRegister:IUser = context.itemsFromRegister;
     try {
-      const response = await postUsersRegister(context.itemsFromRegister);
+      const response = await postUsersRegister(objetoParaEnviarDesdeRegister);
       router.push("/login");
       return toast.success("Usuario registrado correctamente");
     } catch (error) {

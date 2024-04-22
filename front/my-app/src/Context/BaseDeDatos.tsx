@@ -1,5 +1,6 @@
 // 'use client';
 import axios from "axios";
+import { ILogin, IUser } from "./interface";
 
 export async function getProducts() {
   const APIdesdeBackProducts = "http://localhost:5000/products";
@@ -29,9 +30,10 @@ export async function getUsersOrders(token:string) {
   }
 }
 
-export async function postOrders(productosParaBack:any, token:string) {
+export async function postOrders(productosParaBack:Array<number>, token:string) {
   const APIdesdeBackOrders = "http://localhost:5000/orders";
-
+  console.log("esto es productosParaBack de postOrders:", productosParaBack)
+  
   try {
     const response = await axios.post(
       APIdesdeBackOrders,
@@ -50,13 +52,15 @@ export async function postOrders(productosParaBack:any, token:string) {
   }
 }
 
-export async function postUsersLogin(email:string, password:string) {
+
+
+export async function postUsersLogin(login:ILogin) {
   const APIdesdeBackUsersLogin = "http://localhost:5000/users/login";
 
   try {
     const response = await axios.post(APIdesdeBackUsersLogin, {
-      email,
-      password,
+      email:login.email,
+      password:login.password,
     });
     return response.data;
   } catch (error) {
@@ -66,8 +70,9 @@ export async function postUsersLogin(email:string, password:string) {
 }
 
 
-export async function postUsersRegister(userData:any) {
+export async function postUsersRegister(userData:IUser) {
   const APIdesdeBackUsersRegister = "http://localhost:5000/users/register";
+  console.log("esto es userdata de postUserRegister:", userData);
   try {
     const response = await axios.post(APIdesdeBackUsersRegister, userData);
     return response.data;
