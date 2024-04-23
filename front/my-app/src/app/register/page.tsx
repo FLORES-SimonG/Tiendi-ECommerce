@@ -1,9 +1,8 @@
 "use client";
 
 import BurgerMenu from "@/components/BurgerMenu";
-
 import Navbar from "@/components/Navbar";
-import { useContext} from "react";
+import { useContext } from "react";
 import { ShoppingCartContext } from "@/Context";
 import Link from "next/link";
 import { validateRegister } from "../../helpers/validateRegister";
@@ -16,9 +15,7 @@ export default function Register() {
   const context = useContext(ShoppingCartContext);
   const router = useRouter();
 
-
-
-  const handlerInputChangeFromRegister = (evento:any):void => {
+  const handlerInputChangeFromRegister = (evento: any): void => {
     const { name, value } = evento.target;
     context.setItemsFromRegister({
       ...context.itemsFromRegister,
@@ -29,7 +26,7 @@ export default function Register() {
       ...context.itemsFromRegister,
       [name]: value,
     };
-    const newErrors:any = validateRegister(itemsActualizadoFromRegister);
+    const newErrors: any = validateRegister(itemsActualizadoFromRegister);
     if (newErrors[name]) {
       context.setErrors({ ...context.errors, [name]: newErrors[name] });
     } else {
@@ -38,7 +35,7 @@ export default function Register() {
     }
   };
 
-  const handleOnSubmitFromRegister = async (evento:any) => {
+  const handleOnSubmitFromRegister = async (evento: any) => {
     evento.preventDefault();
     const newErrors = validateRegister(context.itemsFromRegister);
     if (Object.keys(newErrors).length > 0) {
@@ -51,7 +48,7 @@ export default function Register() {
         "Hay errores en el formulario, completa correctamente"
       );
     }
-    const objetoParaEnviarDesdeRegister:IUser = context.itemsFromRegister;
+    const objetoParaEnviarDesdeRegister: IUser = context.itemsFromRegister;
     try {
       const response = await postUsersRegister(objetoParaEnviarDesdeRegister);
       router.push("/login");
@@ -60,9 +57,7 @@ export default function Register() {
       console.error("Error al registrar usuario", error);
       return toast.error("Error al registrar usuario");
     }
-    
-  }
-  
+  };
 
   return (
     <div className="font-sans">
@@ -167,7 +162,6 @@ export default function Register() {
           </div>
         </div>
       </div>
-      {/* <Footer /> */}
     </div>
   );
 }

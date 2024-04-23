@@ -11,7 +11,7 @@ import { validateLogin } from "../../helpers/validateLogin";
 
 import { useRouter } from "next/navigation";
 import { postUsersLogin } from "../../Context/BaseDeDatos";
-// import { ImLab } from "react-icons/im";
+
 import { ILogin } from "@/Context/interface";
 
 export default function Login() {
@@ -53,13 +53,12 @@ export default function Login() {
         "Hay errores en el formulario, completa correctamente"
       );
     }
-    const objetoParaEnviarDesdeLogin:ILogin = {
+    const objetoParaEnviarDesdeLogin: ILogin = {
       email: context.itemsFromLogin.email,
       password: context.itemsFromLogin.password,
     };
 
     try {
-
       const response = await postUsersLogin(objetoParaEnviarDesdeLogin);
 
       context.setUserData(response);

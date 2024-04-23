@@ -11,7 +11,7 @@ import Error from "../../Error";
 
 export default function Category(props: any) {
   const { category } = props.params;
-  console.log("category", category)
+  console.log("category", category);
 
   const context = useContext(ShoppingCartContext);
   const detalleIndividualDelProucto = context.productData;
@@ -83,7 +83,6 @@ export default function Category(props: any) {
             </p>
           </div>
           <div className="p-6 pt-0 flex flex-row flex-nowrap items-center justify-around content-center">
-            {/* <Link href={"/checkout"}> */}
             <button
               onClick={paraCheckout}
               data-ripple-light="true"
@@ -92,7 +91,7 @@ export default function Category(props: any) {
             >
               Agregar
             </button>
-            {/* </Link> */}
+
             <Link href={"/store"}>
               <button
                 data-ripple-light="true"

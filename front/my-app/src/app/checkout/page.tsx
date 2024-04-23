@@ -1,6 +1,5 @@
 "use client";
 import BurgerMenu from "@/components/BurgerMenu";
-// import Header from "../../components/Header/index";
 import Navbar from "../../components/Navbar";
 
 import { ShoppingCartContext } from "../../Context/index";
@@ -8,9 +7,12 @@ import { useContext } from "react";
 import toast from "react-hot-toast";
 import Link from "next/link";
 import { postOrders } from "../../Context/BaseDeDatos";
+import { ICartProduct } from "@/Context/interface";
 
 export default function Checkout() {
   const context = useContext(ShoppingCartContext);
+  const productosParaFinalizarCompra: ICartProduct[] = context.cartProducts;
+  let total = 0;
 
   const token: string | null = localStorage.getItem("token");
   const cancelar = () => {
@@ -19,15 +21,17 @@ export default function Checkout() {
   };
 
   const chequeoDeUsuario = () => {
-    if (context.cartProducts.length === 0) {
+    if (productosParaFinalizarCompra.length === 0) {
       toast.error("No hay productos en el carrito");
     } else {
       if (localStorage.getItem("token") !== null) {
-        let productosParaBack = context.cartProducts.map((producto: any) => {
-          return producto.id;
-        });
+        let productosParaBack = productosParaFinalizarCompra.map(
+          (producto: ICartProduct) => {
+            return Number(producto.id);
+          }
+        );
 
-        postOrders(productosParaBack, token ?? "");
+        postOrders(productosParaBack, token!);
         context.setCartProducts([]);
         toast.success("COMPRADO! 🎉🎉🎉");
       } else {
@@ -36,9 +40,7 @@ export default function Checkout() {
     }
   };
 
-  const productosParaFinalizarCompra = context.cartProducts;
-  let total = 0;
-  productosParaFinalizarCompra.forEach((producto: any) => {
+  productosParaFinalizarCompra.forEach((producto: ICartProduct) => {
     total += producto.price * (10 - producto.stock);
   });
 
