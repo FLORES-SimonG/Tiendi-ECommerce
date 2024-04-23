@@ -6,7 +6,7 @@ import { Product } from "../../Context/interface";
 
 const ProductsCards: React.FC = () => {
   
-  const [items, setItems] = useState<Product[]>([]);
+  const [items, setItems] = useState<Product[]|[]>([]);
 
   useEffect(() => {
     const fetchData = async () => {
@@ -23,7 +23,7 @@ const ProductsCards: React.FC = () => {
         NUESTROS PRODUCTOS
       </h2>
       <div className="bg-transparent grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 items-stretch justify-center content-center justify-items-center mb-8">
-        {items.map((item) => (
+        {items.map((item:Product) => (
           
           <ProductCard key={item.id} producto={{ data: item }} />
         ))}

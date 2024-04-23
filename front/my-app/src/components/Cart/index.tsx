@@ -1,15 +1,15 @@
 import { useContext } from "react";
 import { ShoppingCartContext } from "../../Context/index";
+import { Product } from "@/Context/interface";
 
 
 export const ShoppingCart = () => {
   const context = useContext(ShoppingCartContext);
-  const productosEnElCarrito = context.cartProducts;
-  let total = 0;
+  const productosEnElCarrito:Product[] = context.cartProducts;
+  console.log("esto es productosEnElCarrito:", productosEnElCarrito)
+  
 
-  productosEnElCarrito.forEach((producto: any) => {
-    total += producto.quantity;
-  });
+  const total = productosEnElCarrito.reduce((acc, producto) => acc + (producto.quantity || 0), 0);
  
   return (
     <div>

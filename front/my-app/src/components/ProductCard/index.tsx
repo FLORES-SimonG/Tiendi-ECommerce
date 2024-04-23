@@ -8,7 +8,7 @@ import { FaPlus } from "react-icons/fa";
 import { Product, ProductCardProps } from "../../Context/interface";
 
 
-const Product_card: FC<ProductCardProps> = ({ producto }) => {
+const Product_card: React.FC<ProductCardProps> = ({ producto }:ProductCardProps) => {
   const context = useContext(ShoppingCartContext);
 
 
@@ -16,8 +16,8 @@ const Product_card: FC<ProductCardProps> = ({ producto }) => {
     return <div>Estamos en mantenimiento en nuestra web, después podrás ver nuestros Productos!</div>;
   }
 
-  const objetoIndividual = producto.data;
-  const nombreProductoSinEspacios = objetoIndividual.name.replace(/\s/g, "-");
+  const objetoIndividual:Product = producto.data;
+  const nombreProductoSinEspacios:String = objetoIndividual.name.replace(/\s/g, "-");
 
   const masDetalles = (productoDataIndividual: Product) => {
     context.setProductData(productoDataIndividual);
