@@ -5,6 +5,7 @@ import { Suspense } from "react";
 import BurgerMenu from "@/components/BurgerMenu/index";
 import CarouselFilter from "@/components/CarouselFilter/index";
 import dynamic from "next/dynamic";
+import Header from "@/components/Header";
 
 const ProductsCardsDynamic = dynamic(
   () => import("@/components/products_cards/Procucts_cards"),
@@ -18,6 +19,7 @@ export default function Store() {
   return (
     <div className="font-sans">
       <BurgerMenu />
+      <Header />
       <Navbar />
       <Suspense fallback={<Loading />}>
         <CarouselFilter />

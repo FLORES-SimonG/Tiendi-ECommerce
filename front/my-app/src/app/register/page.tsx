@@ -10,6 +10,7 @@ import toast from "react-hot-toast";
 import { useRouter } from "next/navigation";
 import { postUsersRegister } from "../../Context/BaseDeDatos";
 import { IUser } from "@/Context/interface";
+import Header from "@/components/Header";
 
 export default function Register() {
   const context = useContext(ShoppingCartContext);
@@ -61,6 +62,7 @@ export default function Register() {
 
   return (
     <div className="font-sans">
+      <Header />
       <BurgerMenu />
       <Navbar />
       <div className=" flex flex-row items-center content-center justify-center my-6">

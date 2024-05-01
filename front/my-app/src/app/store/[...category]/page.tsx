@@ -8,6 +8,7 @@ import Link from "next/link";
 import { useContext } from "react";
 import { imagenDeEjemplo } from "../../../../public/variablesGlobales";
 import Error from "../../Error";
+import Header from "@/components/Header";
 
 export default function Category(props: any) {
   const { category } = props.params;
@@ -34,9 +35,8 @@ export default function Category(props: any) {
     if (existingProductIndex !== -1) {
       const updatedCartProducts = [...context.cartProducts];
       const existingProduct = updatedCartProducts[existingProductIndex];
-      existingProduct.quantity += 1; // Aumento la cantidad en 1
-      existingProduct.stock -= 1; // Restar 1 al stock
-      //  y actualizo el estado del carrito
+      existingProduct.quantity += 1; 
+      existingProduct.stock -= 1; 
       context.setCartProducts(updatedCartProducts);
     } else {
       context.setCartProducts([
@@ -55,6 +55,7 @@ export default function Category(props: any) {
 
   return (
     <div>
+      <Header />
       <Navbar />
       <BurgerMenu />
 

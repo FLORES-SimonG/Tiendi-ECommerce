@@ -8,6 +8,7 @@ import toast from "react-hot-toast";
 import Link from "next/link";
 import { postOrders } from "../../Context/BaseDeDatos";
 import { ICartProduct } from "@/Context/interface";
+import Header from "@/components/Header";
 
 export default function Checkout() {
   const context = useContext(ShoppingCartContext);
@@ -47,6 +48,7 @@ export default function Checkout() {
   return (
     <div className=" font-sans leading-relaxed">
       <BurgerMenu />
+      <Header />
       <Navbar />
 
       <div className="flex flex-row flex-nowrap content-center justify-center items-center my-6">

@@ -13,6 +13,7 @@ import { useRouter } from "next/navigation";
 import { postUsersLogin } from "../../Context/BaseDeDatos";
 
 import { ILogin } from "@/Context/interface";
+import Header from "@/components/Header";
 
 export default function Login() {
   const context = useContext(ShoppingCartContext);
@@ -75,6 +76,7 @@ export default function Login() {
   return (
     <div className="font-sans">
       <BurgerMenu />
+      <Header />
       <Navbar />
       <div className=" flex flex-row items-center content-center justify-center my-6">
         <div

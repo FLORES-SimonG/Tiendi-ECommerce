@@ -63,7 +63,7 @@ function Navbar() {
           </li>
         </Link>
         <Link href="/ " className={`${localStorage.getItem("token")  ? "block" : "hidden"}`} onClick={logOutUser}>
-          <li className={`${localStorage.getItem("token")? "block" : "hidden"} cursor-pointer text-xl  p-3 rounded-3xl text-gray-100 bg-gradient-to-b from-transparent from-5% to-customColorTertiary to-60% hover:scale-105 transition-all  font-semibold`} onClick={logOutUser}>
+          <li className={`${localStorage.getItem("token")? "block" : "hidden"} cursor-pointer text-xl  p-3 rounded-3xl text-gray-100 bg-gradient-to-b from-transparent from-5% to-customColorTertiary to-60% hover:scale-105 transition-all  font-semibold`} >
             <GiExitDoor />
           </li>
         </Link>

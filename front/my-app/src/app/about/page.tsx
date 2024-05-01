@@ -4,11 +4,12 @@ import Navbar from "@/components/Navbar";
 import { CardInformation, DivEquipo, ListItem } from "./about";
 
 import BurgerMenu from "@/components/BurgerMenu";
+import Header from "@/components/Header";
 
 export default function About(): JSX.Element{
   return (
     <>
-      {/* <Header /> */}
+      <Header />
       <BurgerMenu />
       <Navbar />
       <CardInformation>

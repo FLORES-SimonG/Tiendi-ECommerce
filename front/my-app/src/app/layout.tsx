@@ -4,18 +4,12 @@ import "./globals.css";
 import { ShoppingCartProvider } from "@/Context";
 import MenuCheckoutProductsDetail from "@/components/MenuCheckoutProductsDetail";
 import Footer from "../components/Footer/Footer";
-import dynamic from "next/dynamic";
+
 
 import Header from "@/components/Header";
 import PreFooter from "@/components/PreFooter";
 import { Toaster } from "react-hot-toast";
 
-const FooterDynamic = dynamic(() => import("@/components/Footer/Footer"), {
-  ssr: false,
-});
-const PrefooterDynamic = dynamic(() => import("@/components/PreFooter"), {
-  ssr: false,
-});
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -36,13 +30,13 @@ export default function RootLayout({
       <body className={inter.className}>
        
       <MenuCheckoutProductsDetail />
-      <Header />
+      {/* <Header /> */}
       <Toaster>
       </Toaster>
       {/* <Navbar /> */}
         {children}
-        <PrefooterDynamic />
-        <FooterDynamic />
+        <PreFooter />
+        <Footer />
         </body>
     </html>
     </ShoppingCartProvider>
