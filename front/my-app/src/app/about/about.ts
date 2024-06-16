@@ -1,10 +1,9 @@
-import styled from 'styled-components';
+import styled from "styled-components";
 import {
-    customColorPrimary,
-    customColorSecondary,
-    customColorTertiary,
-  } from "../../../public/variablesGlobales";
-
+  customColorPrimary,
+  customColorSecondary,
+  customColorTertiary,
+} from "../../../public/variablesGlobales";
 
 export const CardInformation = styled.div`
   display: grid;
@@ -37,14 +36,13 @@ export const CardInformation = styled.div`
   &:hover {
     .texto {
       background-color: ${customColorPrimary};
-      
+
       scale: 1.05;
       color: whitesmoke;
 
       .textTitle {
         background-color: #323232;
         color: whitesmoke;
-        
       }
     }
   }
@@ -68,7 +66,12 @@ export const DivEquipo = styled.div`
     width: 50%;
     height: 50%;
     border-radius: 25px;
-    background: linear-gradient(180grad, ${customColorSecondary},${customColorTertiary}, ${customColorSecondary}); 
+    background: linear-gradient(
+      180grad,
+      ${customColorSecondary},
+      ${customColorTertiary},
+      ${customColorSecondary}
+    );
     /* ${customColorSecondary}; */
     padding: 20px;
     margin: 2rem;
@@ -78,7 +81,6 @@ export const DivEquipo = styled.div`
       transform: scale(1.05);
       /* transition: 0.3s; */
       cursor: pointer;
-      
     }
   }
 `;

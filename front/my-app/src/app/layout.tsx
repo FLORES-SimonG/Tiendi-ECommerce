@@ -4,12 +4,8 @@ import "./globals.css";
 import { ShoppingCartProvider } from "@/Context";
 import MenuCheckoutProductsDetail from "@/components/MenuCheckoutProductsDetail";
 import Footer from "../components/Footer/Footer";
-
-
-import Header from "@/components/Header";
 import PreFooter from "@/components/PreFooter";
 import { Toaster } from "react-hot-toast";
-
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -25,20 +21,17 @@ export default function RootLayout({
 }>) {
   return (
     <ShoppingCartProvider>
-      
-    <html lang="en">
-      <body className={inter.className}>
-       
-      <MenuCheckoutProductsDetail />
-      {/* <Header /> */}
-      <Toaster>
-      </Toaster>
-      {/* <Navbar /> */}
-        {children}
-        <PreFooter />
-        <Footer />
+      <html lang="en">
+        <body className={inter.className}>
+          <MenuCheckoutProductsDetail />
+
+          <Toaster></Toaster>
+
+          {children}
+          <PreFooter />
+          <Footer />
         </body>
-    </html>
+      </html>
     </ShoppingCartProvider>
   );
 }

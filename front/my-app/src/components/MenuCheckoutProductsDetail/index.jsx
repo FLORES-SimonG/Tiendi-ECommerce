@@ -7,16 +7,13 @@ import { IoIosRemove } from "react-icons/io";
 
 import { IoIosCard } from "react-icons/io";
 
-// import { imagenDeEjemplo } from "../../../public/variablesGlobales"; // ! NO BORRAR
-
 export const MenuCheckoutProductsDetail = () => {
   const context = useContext(ShoppingCartContext);
 
-  const productosParaFinalizarCompra = context.cartProducts
-  ;
+  const productosParaFinalizarCompra = context.cartProducts;
   let total = 0;
   productosParaFinalizarCompra.forEach((producto) => {
-    total += (producto.price * (10-producto.stock));
+    total += producto.price * (10 - producto.stock);
   });
 
   return (
@@ -52,22 +49,15 @@ export const MenuCheckoutProductsDetail = () => {
               {productoEnElCarrito.name}
             </p>
             <div className="flex flex-row items-center gap-3">
-                {/* <input type="number" max={productoEnElCarrito.stock} min={10-productoEnElCarrito.stock} className="w-9 bg-customColorSecondary text-end rounded-lg" placeholder={10-productoEnElCarrito.stock} inputMode="numeric" ></input> */}
-                <p className=" text-gray-400 font-semibold"  >{productoEnElCarrito.quantity} u.</p>
-                <p className="text-gray-400">
-                  x
-                </p>
-                
-                {/* <p className="text-black font-semibold  text-sm ">
-                  $ {productoEnElCarrito.price }
-                </p> */}
-            <p className="text-black text-balance  text-sm ">
-              $ {productoEnElCarrito.price}
-            </p>
-                </div>
+              <p className=" text-gray-400 font-semibold">
+                {productoEnElCarrito.quantity} u.
+              </p>
+              <p className="text-gray-400">x</p>
 
-
-
+              <p className="text-black text-balance  text-sm ">
+                $ {productoEnElCarrito.price}
+              </p>
+            </div>
           </div>
         ))}
       </div>

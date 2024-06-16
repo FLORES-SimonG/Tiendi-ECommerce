@@ -14,7 +14,7 @@ export async function getProducts() {
   }
 }
 
-export async function getUsersOrders(token:string) {
+export async function getUsersOrders(token: string) {
   const APIdesdeBackUsersOrders = "http://localhost:5000/users/orders";
 
   try {
@@ -30,10 +30,13 @@ export async function getUsersOrders(token:string) {
   }
 }
 
-export async function postOrders(productosParaBack:Array<number>, token:string) {
+export async function postOrders(
+  productosParaBack: Array<number>,
+  token: string
+) {
   const APIdesdeBackOrders = "http://localhost:5000/orders";
-  console.log("esto es productosParaBack de postOrders:", productosParaBack)
-  
+  console.log("esto es productosParaBack de postOrders:", productosParaBack);
+
   try {
     const response = await axios.post(
       APIdesdeBackOrders,
@@ -52,15 +55,13 @@ export async function postOrders(productosParaBack:Array<number>, token:string) 
   }
 }
 
-
-
-export async function postUsersLogin(login:ILogin) {
+export async function postUsersLogin(login: ILogin) {
   const APIdesdeBackUsersLogin = "http://localhost:5000/users/login";
 
   try {
     const response = await axios.post(APIdesdeBackUsersLogin, {
-      email:login.email,
-      password:login.password,
+      email: login.email,
+      password: login.password,
     });
     return response.data;
   } catch (error) {
@@ -69,8 +70,7 @@ export async function postUsersLogin(login:ILogin) {
   }
 }
 
-
-export async function postUsersRegister(userData:IUser) {
+export async function postUsersRegister(userData: IUser) {
   const APIdesdeBackUsersRegister = "http://localhost:5000/users/register";
   console.log("esto es userdata de postUserRegister:", userData);
   try {
@@ -81,7 +81,6 @@ export async function postUsersRegister(userData:IUser) {
     throw error;
   }
 }
-
 
 //! Otra forma de hacerlo pero me siento más comodo con try-catch.
 // const APIdesdeBack = "http://localhost:5000/products";

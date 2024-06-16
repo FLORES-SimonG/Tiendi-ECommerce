@@ -35,8 +35,8 @@ export default function Category(props: any) {
     if (existingProductIndex !== -1) {
       const updatedCartProducts = [...context.cartProducts];
       const existingProduct = updatedCartProducts[existingProductIndex];
-      existingProduct.quantity += 1; 
-      existingProduct.stock -= 1; 
+      existingProduct.quantity += 1;
+      existingProduct.stock -= 1;
       context.setCartProducts(updatedCartProducts);
     } else {
       context.setCartProducts([

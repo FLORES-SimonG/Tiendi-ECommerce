@@ -1,6 +1,6 @@
 "use client";
 
-import { FC, useContext } from "react";
+import { useContext } from "react";
 import { ShoppingCartContext } from "../../Context/index";
 import { imagenDeEjemplo } from "../../../public/variablesGlobales";
 import Link from "next/link";
@@ -8,36 +8,43 @@ import { FaPlus } from "react-icons/fa";
 import { Product, ProductCardProps } from "../../Context/interface";
 import { toast } from "react-hot-toast";
 
-
-const Product_card: React.FC<ProductCardProps> = ({ producto }:ProductCardProps) => {
+const Product_card: React.FC<ProductCardProps> = ({
+  producto,
+}: ProductCardProps) => {
   const context = useContext(ShoppingCartContext);
 
-
   if (!producto || !producto.data) {
-    return <div>Estamos en mantenimiento en nuestra web, después podrás ver nuestros Productos!</div>;
+    return (
+      <div>
+        Estamos en mantenimiento en nuestra web, después podrás ver nuestros
+        Productos!
+      </div>
+    );
   }
 
-  const objetoIndividual:Product = producto.data;
-  const nombreProductoSinEspacios:String = objetoIndividual.name.replace(/\s/g, "-");
+  const objetoIndividual: Product = producto.data;
+  const nombreProductoSinEspacios: String = objetoIndividual.name.replace(
+    /\s/g,
+    "-"
+  );
 
   const masDetalles = (productoDataIndividual: Product) => {
     const promesaGuardarDatos = new Promise((resolve, reject) => {
       try {
         context.setProductData(productoDataIndividual);
-        setTimeout(() => { resolve(true);}, 1000); 
+        setTimeout(() => {
+          resolve(true);
+        }, 1000);
       } catch (error) {
         reject(error);
       }
     });
-    
-    toast.promise(
-      promesaGuardarDatos,
-      {
-        loading: 'Paciencia, estamos cargando el producto',
-        success: <b>Producto seleccionado con éxito!</b>,
-        error: <b>No se pudo seleccionar el producto.</b>,
-      }
-    );
+
+    toast.promise(promesaGuardarDatos, {
+      loading: "Paciencia, estamos cargando el producto",
+      success: <b>Producto seleccionado con éxito!</b>,
+      error: <b>No se pudo seleccionar el producto.</b>,
+    });
   };
 
   return (
@@ -54,11 +61,11 @@ const Product_card: React.FC<ProductCardProps> = ({ producto }:ProductCardProps)
         <p className="mt-1 text-md font-semibold">${objetoIndividual.price}</p>
       </div>
       <div className="flex justify-center space-x-3">
-        <span
-          
-          className="cursor-pointer p-2 bg-white rounded-full text-gray-700 hover:bg-customColorQuaternary hover:text-white transition duration-200 ease-in-out"
-        >
-          <Link onClick={() => masDetalles(objetoIndividual)} href={`store/${nombreProductoSinEspacios}`}>
+        <span className="cursor-pointer p-2 bg-white rounded-full text-gray-700 hover:bg-customColorQuaternary hover:text-white transition duration-200 ease-in-out">
+          <Link
+            onClick={() => masDetalles(objetoIndividual)}
+            href={`store/${nombreProductoSinEspacios}`}
+          >
             <FaPlus />
           </Link>
         </span>

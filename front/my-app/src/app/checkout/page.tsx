@@ -19,7 +19,7 @@ export default function Checkout() {
   const [token, setToken] = useState<string | null>(null);
 
   useEffect(() => {
-    if (typeof window !== 'undefined') {
+    if (typeof window !== "undefined") {
       setToken(localStorage.getItem("token"));
     }
   }, []);
@@ -39,7 +39,7 @@ export default function Checkout() {
             return Number(producto.id);
           }
         );
-  
+
         postOrders(productosParaBack, token!);
         context.setCartProducts([]);
         toast.success("COMPRADO! 🎉🎉🎉");
@@ -47,7 +47,7 @@ export default function Checkout() {
         toast.error("Compra Denegada, necesitas estar logueado");
       }
     }
-  }
+  };
 
   productosParaFinalizarCompra.forEach((producto: ICartProduct) => {
     total += producto.price * (10 - producto.stock);

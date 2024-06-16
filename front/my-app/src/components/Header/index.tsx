@@ -16,11 +16,11 @@ function Header() {
         <p className="text-black font-bold text-xs">v 2.0.24</p>
       </div>
       <Link href="/store">
-      <img
-        className=" h-11 cursor-pointer  m-0"
-        src="/Tiendi.svg"
-        alt="Tiendi"
-      />
+        <img
+          className=" h-11 cursor-pointer  m-0"
+          src="/Tiendi.svg"
+          alt="Tiendi"
+        />
       </Link>
       <div className="flex justify-center items-center m-0 p-0 list-none">
         <div

@@ -3,11 +3,6 @@
 import Link from "next/link";
 import Image from "next/image";
 
-// interface ErrorProps {
-//     error:Error;
-//     reset: ()=>void;
-// }
-
 export default function Error() {
   return (
     <main>

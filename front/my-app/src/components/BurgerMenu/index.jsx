@@ -10,14 +10,12 @@ const BurgerMenu = () => {
   const context = useContext(ShoppingCartContext);
   const [tokenStorage, setTokenStorage] = useState(null);
   useEffect(() => {
-    // Esto se ejecuta solo en el lado del cliente
-    setTokenStorage(localStorage.getItem('token'));
+    //! Esto se ejecuta solo en el lado del cliente
+    setTokenStorage(localStorage.getItem("token"));
   }, []);
 
   const logOutUser = () => {
-    // router.push("/")
     localStorage.removeItem("token");
-    // context.setUserData({})
     return toast.success("Sesión cerrada con éxito");
   };
   const actionMenuBurger = () => {
@@ -27,8 +25,6 @@ const BurgerMenu = () => {
       context.openBurgerMenu();
     }
   };
-
-  // let tokenStorage = localStorage.getItem("token")
 
   return (
     <div>
