@@ -1,5 +1,5 @@
 "use client";
-// import { GiExitDoor } from "react-icons/gi";
+import { GiExitDoor } from "react-icons/gi";
 import { useContext } from "react";
 import { ShoppingCartContext } from "../../Context/index.jsx";
 import Link from "next/link.js";
@@ -112,8 +112,7 @@ const BurgerMenu = () => {
           text-gray-100 bg-gradient-to-b from-transparent from-5% to-customColorTertiary to-60% flex flex-row items-center content-center justify-center h-16   transition-all  font-semibold`}
             onClick={logOutUser}
           >
-            {/* <GiExitDoor className="text-3xl" /> */}
-            <p className="ml-2">Cerrar Sesión</p>
+            <GiExitDoor className="text-3xl" />
           </Link>
         </div>
       </aside>

@@ -1,5 +1,5 @@
 import Image from "next/image";
-// import { IoIosSearch } from "react-icons/io";
+import { IoIosSearch } from "react-icons/io";
 
 export function CarouselTransition() {
   return (
@@ -16,8 +16,7 @@ export function CarouselTransition() {
         />
         <div className="absolute rounded-s-full inset-0 flex flex-col items-center justify-center opacity-0 transition-opacity duration-300 group-hover:opacity-100 bg-black bg-opacity-50 text-white">
           <div>iPhone</div>
-          {/* <IoIosSearch className=" text-xl" /> */}
-          +Info
+          <IoIosSearch className=" text-xl" />
         </div>
       </div>
 
@@ -33,8 +32,7 @@ export function CarouselTransition() {
         />
         <div className="absolute  inset-0 flex flex-col items-center justify-center opacity-0 transition-opacity duration-300 group-hover:opacity-100 bg-black bg-opacity-50 text-white">
           <div>MacBook</div>
-           {/* <IoIosSearch className=" text-xl" /> */}
-           +Info
+          <IoIosSearch className=" text-xl" />
         </div>
       </div>
 
@@ -50,8 +48,7 @@ export function CarouselTransition() {
         />
         <div className="absolute  inset-0 flex flex-col items-center justify-center opacity-0 transition-opacity duration-300 group-hover:opacity-100 bg-black bg-opacity-50 text-white">
           <div>iPad</div>
-           {/* <IoIosSearch className=" text-xl" /> */}
-           +Info
+          <IoIosSearch className=" text-xl" />
         </div>
       </div>
 
@@ -67,8 +64,7 @@ export function CarouselTransition() {
         />
         <div className="absolute  inset-0 flex flex-col items-center justify-center opacity-0 transition-opacity duration-300 group-hover:opacity-100 bg-black bg-opacity-50 text-white">
           <div>Apple Watch</div>
-           {/* <IoIosSearch className=" text-xl" /> */}
-           +Info
+          <IoIosSearch className=" text-xl" />
         </div>
       </div>
 
@@ -84,8 +80,7 @@ export function CarouselTransition() {
         />
         <div className="absolute  inset-0 flex flex-col items-center justify-center opacity-0 transition-opacity duration-300 group-hover:opacity-100 bg-black bg-opacity-50 text-white">
           <div>AirPods</div>
-           {/* <IoIosSearch className=" text-xl" /> */}
-           +Info
+          <IoIosSearch className=" text-xl" />
         </div>
       </div>
 
@@ -101,8 +96,7 @@ export function CarouselTransition() {
         />
         <div className="absolute rounded-e-full inset-0 flex flex-col items-center justify-center opacity-0 transition-opacity duration-300 group-hover:opacity-100 bg-black bg-opacity-50 text-white">
           <div>HomePod</div>
-           {/* <IoIosSearch className=" text-xl" /> */}
-           +Info
+          <IoIosSearch className=" text-xl" />
         </div>
       </div>
     </div>

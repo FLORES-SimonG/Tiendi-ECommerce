@@ -4,7 +4,7 @@ import { useContext } from "react";
 import { ShoppingCartContext } from "../../Context/index";
 // import { imagenDeEjemplo } from "../../../public/variablesGlobales";
 import Link from "next/link";
-// import { FaPlus } from "react-icons/fa";
+import { FaPlus } from "react-icons/fa";
 import { Product, ProductCardProps } from "../../Context/interface";
 import { toast } from "react-hot-toast";
 
@@ -68,8 +68,7 @@ const Product_card: React.FC<ProductCardProps> = ({
             onClick={() => masDetalles(objetoIndividual)}
             href={`store/${nombreProductoSinEspacios}`}
           >
-            {/* <FaPlus /> */}
-            FaPlus
+            <FaPlus />
           </Link>
         </span>
       </div>
