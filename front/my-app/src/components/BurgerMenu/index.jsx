@@ -4,20 +4,22 @@ import { useContext } from "react";
 import { ShoppingCartContext } from "../../Context/index.jsx";
 import Link from "next/link.js";
 import toast from "react-hot-toast";
+import { useEffect, useState } from "react";
 
 const BurgerMenu = () => {
   const context = useContext(ShoppingCartContext);
-
-  
-
+  const [tokenStorage, setTokenStorage] = useState(null);
+  useEffect(() => {
+    // Esto se ejecuta solo en el lado del cliente
+    setTokenStorage(localStorage.getItem('token'));
+  }, []);
 
   const logOutUser = () => {
     // router.push("/")
     localStorage.removeItem("token");
     // context.setUserData({})
     return toast.success("Sesión cerrada con éxito");
-
-  }
+  };
   const actionMenuBurger = () => {
     if (context.isBurgerMenuOpen) {
       context.closeBurgerMenu();
@@ -25,6 +27,8 @@ const BurgerMenu = () => {
       context.openBurgerMenu();
     }
   };
+
+  // let tokenStorage = localStorage.getItem("token")
 
   return (
     <div>
@@ -52,34 +56,66 @@ const BurgerMenu = () => {
         </div>
         <hr className="border-white" />
         <div className="flex flex-col justify-stretch text-center p-6">
-          <Link href="/home" className="cursor-pointer  p-2 rounded-3xl text-gray-100 bg-gradient-to-b from-transparent from-5% to-customColorPrimary to-60% transition-colors hover:bg-customColorTertiary  font-semibold">
+          <Link
+            href="/home"
+            className="cursor-pointer  p-2 rounded-3xl text-gray-100 bg-gradient-to-b from-transparent from-5% to-customColorPrimary to-60% transition-colors hover:bg-customColorTertiary  font-semibold"
+          >
             Home
           </Link>
-          <Link href="/about" className="cursor-pointer  p-2 rounded-3xl text-gray-100 bg-gradient-to-b from-transparent from-5% to-customColorPrimary to-60% transition-colors hover:bg-customColorTertiary  font-semibold">
+          <Link
+            href="/about"
+            className="cursor-pointer  p-2 rounded-3xl text-gray-100 bg-gradient-to-b from-transparent from-5% to-customColorPrimary to-60% transition-colors hover:bg-customColorTertiary  font-semibold"
+          >
             Nosotros
           </Link>
-          <Link href="/login" className={`${!localStorage.getItem("token") ? "block" : "hidden"}`}>
-          <li className="cursor-pointer list-none p-2 rounded-3xl text-gray-100 bg-gradient-to-b from-transparent from-5% to-customColorPrimary to-60% transition-colors hover:bg-customColorTertiary  font-semibold">
-            Ingresa</li>
+          <Link
+            href="/login"
+            className={`${!tokenStorage ? "block" : "hidden"}`}
+          >
+            <li className="cursor-pointer list-none p-2 rounded-3xl text-gray-100 bg-gradient-to-b from-transparent from-5% to-customColorPrimary to-60% transition-colors hover:bg-customColorTertiary  font-semibold">
+              Ingresa
+            </li>
           </Link>
-          <Link href="/register" className={`${!localStorage.getItem("token") ? "block" : "hidden"}`}>
-          <li className=" list-none cursor-pointer  p-2 rounded-3xl text-gray-100 bg-gradient-to-b from-transparent from-5% to-customColorPrimary to-60% transition-colors hover:bg-customColorTertiary  font-semibold">
-            Regístrate</li>
+          <Link
+            href="/register"
+            className={`${!tokenStorage ? "block" : "hidden"}`}
+          >
+            <li className=" list-none cursor-pointer  p-2 rounded-3xl text-gray-100 bg-gradient-to-b from-transparent from-5% to-customColorPrimary to-60% transition-colors hover:bg-customColorTertiary  font-semibold">
+              Regístrate
+            </li>
           </Link>
-          <Link href="/store" className="cursor-pointer  p-2 rounded-3xl text-gray-100 bg-gradient-to-b from-transparent from-5% to-customColorPrimary to-60% transition-colors hover:bg-customColorTertiary  font-semibold">
+          <Link
+            href="/store"
+            className="cursor-pointer  p-2 rounded-3xl text-gray-100 bg-gradient-to-b from-transparent from-5% to-customColorPrimary to-60% transition-colors hover:bg-customColorTertiary  font-semibold"
+          >
             Productos
           </Link>
-          <Link href="/orders" className={`${localStorage.getItem("token")  ? "block" : "hidden"} cursor-pointer  p-2 rounded-3xl text-gray-100 bg-gradient-to-b from-transparent from-5% to-customColorTertiary to-60% hover:scale-105 transition-all  font-semibold`}>
+          <Link
+            href="/orders"
+            className={`${
+              tokenStorage ? "block" : "hidden"
+            } cursor-pointer  p-2 rounded-3xl text-gray-100 bg-gradient-to-b from-transparent from-5% to-customColorTertiary to-60% hover:scale-105 transition-all  font-semibold`}
+          >
             Comprobantes
           </Link>
-          <Link href="/checkout" className={`${localStorage.getItem("token")  ? "block" : "hidden"} cursor-pointer  p-2 rounded-3xl text-gray-100 bg-gradient-to-b from-transparent from-5% to-customColorTertiary to-60% hover:scale-105 transition-all  font-semibold`}>
+          <Link
+            href="/checkout"
+            className={`${
+              tokenStorage ? "block" : "hidden"
+            } cursor-pointer  p-2 rounded-3xl text-gray-100 bg-gradient-to-b from-transparent from-5% to-customColorTertiary to-60% hover:scale-105 transition-all  font-semibold`}
+          >
             Carrito de Compras
           </Link>
         </div>
         <div className=" justify-center">
-
-          <Link href="/" className={`${localStorage.getItem("token") ? "block" : "hidden"}  cursor-pointer text-xl  p-5  
-          text-gray-100 bg-gradient-to-b from-transparent from-5% to-customColorTertiary to-60% flex flex-row items-center content-center justify-center h-16   transition-all  font-semibold`} onClick={logOutUser}>
+          <Link
+            href="/"
+            className={`${
+              tokenStorage ? "block" : "hidden"
+            }  cursor-pointer text-xl  p-5  
+          text-gray-100 bg-gradient-to-b from-transparent from-5% to-customColorTertiary to-60% flex flex-row items-center content-center justify-center h-16   transition-all  font-semibold`}
+            onClick={logOutUser}
+          >
             <GiExitDoor className="text-3xl" />
           </Link>
         </div>
