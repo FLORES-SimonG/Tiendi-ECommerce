@@ -3,9 +3,9 @@
 import { useContext } from "react";
 import { ShoppingCartContext } from "../../Context/index.jsx";
 import Link from "next/link.js";
-import { IoIosRemove } from "react-icons/io";
+// import { IoIosRemove } from "react-icons/io";
 
-import { IoIosCard } from "react-icons/io";
+// import { IoIosCard } from "react-icons/io";
 
 export const MenuCheckoutProductsDetail = () => {
   const context = useContext(ShoppingCartContext);
@@ -31,12 +31,12 @@ export const MenuCheckoutProductsDetail = () => {
       <div className="flex justify-between items-center p-4  ">
         <h2 className="text-2xl font-bold text-black">Mis Ordenes</h2>
 
-        <IoIosRemove
+      <p>REMOVE</p>  {/* <IoIosRemove
           className="text-white text-3xl transition-colors  font-bold cursor-pointer hover:text-customColorTertiary"
           onClick={() => {
             context.closeMenuCheckoutProducts();
           }}
-        />
+        /> */}
       </div>
       <hr className="border-b-2 border-black border-opacity-10" />
       <div className="flex flex-col justify-between content-center items-stretch">
@@ -64,12 +64,13 @@ export const MenuCheckoutProductsDetail = () => {
       <Link href={"/checkout"} onClick={context.closeMenuCheckoutProducts}>
         <div className="flex flex-row justify-between mx-6 my-2  items-center transition-transform hover:scale-105 ">
           <div className="flex flex-row items-center gap-2 ">
-            <IoIosCard
+           <p>IoIosCard</p>
+            {/* <IoIosCard
               className="md:text-white lg:text-white text-green-600 text-3xl transition-colors  font-bold cursor-pointer hover:text-green-600"
               onClick={() => {
                 context.closeMenuCheckoutProducts();
               }}
-            />
+            /> */}
 
             <p className="text-black md:text-md lg:text-md text-sm font-semibold  hover:text-green-600">
               Finalizar compra

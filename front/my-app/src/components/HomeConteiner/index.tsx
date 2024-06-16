@@ -1,7 +1,7 @@
 "use client";
 import Image from "next/image";
 
-import { LuPin } from "react-icons/lu";
+// import { LuPin } from "react-icons/lu";
 
 function HomeConteiner() {
   return (
@@ -16,7 +16,10 @@ function HomeConteiner() {
           <ul className=" transition w-96 h-40 p-3 m-0 bg-slate-100 rounded-3xl cursor-pointer flex flex-row flex-nowrap content-center justify-center items-center hover:scale-105">
             <li className="  p-3 m-2 inline-flex items-center rounded-2xl mt-1   text-white bg-black bg-opacity-70 ">
               {/* <li className="p-3 m-2 inline-flex items-center rounded-2xl mt-1   text-white bg-black bg-opacity-70"> */}
-              <LuPin />
+              {/* <LuPin /> */}
+              <p>
+                LuPin
+              </p>
             </li>
 
             <li className="p-1 list-none text-xs">
@@ -36,7 +39,10 @@ function HomeConteiner() {
         <div>
           <ul className=" transition w-96 h-40 p-3 m-0 bg-slate-100 rounded-3xl cursor-pointer flex flex-row flex-nowrap content-center justify-center items-center hover:scale-105">
             <li className="p-3 m-2 inline-flex items-center rounded-2xl mt-1   text-white bg-black bg-opacity-70">
-              <LuPin />
+              {/* <LuPin /> */}
+              <p>
+                LuPin
+              </p>
             </li>
 
             <li className="p-1 list-none text-xs">
@@ -56,7 +62,10 @@ function HomeConteiner() {
         <div>
           <ul className=" transition w-96 h-40 p-3 m-0 bg-slate-100 rounded-3xl cursor-pointer flex flex-row flex-nowrap content-center justify-center items-center hover:scale-105">
             <li className="p-3 m-2 inline-flex items-center rounded-2xl mt-1   text-white bg-black bg-opacity-70">
-              <LuPin />
+              {/* <LuPin /> */}
+              <p>
+                LuPin
+              </p>
             </li>
 
             <li className="p-1 list-none text-xs">
@@ -75,7 +84,10 @@ function HomeConteiner() {
         <div>
           <ul className=" transition w-96 h-40 p-3 m-0 bg-slate-100 rounded-3xl cursor-pointer flex flex-row flex-nowrap content-center justify-center items-center hover:scale-105">
             <li className="p-3 m-2 inline-flex items-center rounded-2xl mt-1   text-white bg-black bg-opacity-70">
-              <LuPin />
+              {/* <LuPin /> */}
+              <p>
+                LuPin
+              </p>
             </li>
 
             <li className="p-1 list-none text-xs">
@@ -95,7 +107,10 @@ function HomeConteiner() {
         <div>
           <ul className=" transition w-96 h-40 p-3 m-0 bg-slate-100 rounded-3xl cursor-pointer flex flex-row flex-nowrap content-center justify-center items-center hover:scale-105">
             <li className="p-3 m-2 inline-flex items-center rounded-2xl mt-1   text-white bg-black bg-opacity-70">
-              <LuPin />
+              {/* <LuPin /> */}
+              <p>
+                LuPin
+              </p>
             </li>
 
             <li className="p-1 list-none text-xs">
@@ -116,7 +131,10 @@ function HomeConteiner() {
         <div>
           <ul className=" transition w-96 h-40 p-3 m-0 bg-slate-100 rounded-3xl cursor-pointer flex flex-row flex-nowrap content-center justify-center items-center hover:scale-105">
             <li className="p-3 m-2 inline-flex items-center rounded-2xl mt-1   text-white bg-black bg-opacity-70">
-              <LuPin />
+              {/* <LuPin /> */}
+              <p>
+                LuPin
+              </p>
             </li>
 
             <li className="p-1 list-none text-xs">
