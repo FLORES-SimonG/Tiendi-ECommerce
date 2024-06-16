@@ -52,11 +52,6 @@ function Orders() {
 
 export default Orders;
 
-
-
-
-
-
 // "use client";
 // import Navbar from "@/components/Navbar/index";
 // import BurgerMenu from "@/components/BurgerMenu";
