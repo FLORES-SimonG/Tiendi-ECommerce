@@ -5,19 +5,28 @@ import Link from "next/link";
 import { GiExitDoor } from "react-icons/gi";
 import { useRouter } from "next/navigation";
 import toast from "react-hot-toast";
+import { useEffect, useState } from "react";
+
 
 
 function Navbar() {
-  // const context = useContext(ShoppingCartContext);
-  
-  const router = useRouter()
-  const logOutUser = () => {
-    localStorage.removeItem("token");
-    // context.setUserData({})
-    router.push("/")
-    return toast.success("Sesión cerrada con éxito");
+  const [tokenStorage, setTokenStorage] = useState<string | null>(null);
+  const router = useRouter();
 
-  }
+  useEffect(() => {
+    // Esto se ejecuta solo en el lado del cliente
+    setTokenStorage(localStorage.getItem('token'));
+  }, []);
+
+  const logOutUser = () => {
+    localStorage.removeItem('token');
+    setTokenStorage(null);
+    router.push('/');
+    return toast.success('Sesión cerrada con éxito');
+  };
+
+// let tokenStorage = localStorage.getItem("token")
+
 
   return (
     <nav
@@ -32,7 +41,7 @@ function Navbar() {
           </li>
         </Link>
         <Link href="/register" 
-        className={`${!localStorage.getItem("token") ? "block" : "hidden"}`}> 
+        className={`${!tokenStorage ? "block" : "hidden"}`}> 
           <li className="cursor-pointer  p-2 rounded-3xl text-gray-100 bg-customColorPrimary  transition-colors hover:bg-customColorTertiary  font-semibold">
             Registrate
           </li>
@@ -42,7 +51,7 @@ function Navbar() {
             Productos
           </li>
         </Link>
-        <Link href="/login" className={`${!localStorage.getItem("token")  ? "block" : "hidden"}`}>
+        <Link href="/login" className={`${!tokenStorage  ? "block" : "hidden"}`}>
           <li className="cursor-pointer  p-2 rounded-3xl text-gray-100 bg-customColorPrimary  transition-colors hover:bg-customColorTertiary  font-semibold">
             Ingresa
           </li>
@@ -52,18 +61,18 @@ function Navbar() {
             Nosotros
           </li>
         </Link>
-        <Link href="/orders" className={`${localStorage.getItem("token")  ? "block" : "hidden"}`}> 
+        <Link href="/orders" className={`${tokenStorage  ? "block" : "hidden"}`}> 
           <li className="cursor-pointer  p-2 rounded-3xl text-gray-100 bg-gradient-to-b from-transparent from-5% to-customColorTertiary to-60% hover:scale-105 transition-all  font-semibold">
             Orden de Compras
           </li>
         </Link>
-        <Link href="/checkout" className={`${localStorage.getItem("token")  ? "block" : "hidden"}`}> 
+        <Link href="/checkout" className={`${tokenStorage  ? "block" : "hidden"}`}> 
           <li className="cursor-pointer  p-2 rounded-3xl text-gray-100 bg-gradient-to-b from-transparent from-5% to-customColorTertiary to-60% hover:scale-105 transition-all  font-semibold">
             Carrito de Compras
           </li>
         </Link>
-        <Link href="/ " className={`${localStorage.getItem("token")  ? "block" : "hidden"}`} onClick={logOutUser}>
-          <li className={`${localStorage.getItem("token")? "block" : "hidden"} cursor-pointer text-xl  p-3 rounded-3xl text-gray-100 bg-gradient-to-b from-transparent from-5% to-customColorTertiary to-60% hover:scale-105 transition-all  font-semibold`} >
+        <Link href="/ " className={`${tokenStorage  ? "block" : "hidden"}`} onClick={logOutUser}>
+          <li className={`${tokenStorage? "block" : "hidden"} cursor-pointer text-xl  p-3 rounded-3xl text-gray-100 bg-gradient-to-b from-transparent from-5% to-customColorTertiary to-60% hover:scale-105 transition-all  font-semibold`} >
             <GiExitDoor />
           </li>
         </Link>
