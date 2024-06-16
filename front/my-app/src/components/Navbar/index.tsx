@@ -1,7 +1,7 @@
 "use client";
 import Link from "next/link";
 
-// import { GiExitDoor } from "react-icons/gi";
+import { GiExitDoor } from "react-icons/gi";
 import { useRouter } from "next/navigation";
 import toast from "react-hot-toast";
 import { useEffect, useState } from "react";
@@ -79,8 +79,7 @@ function Navbar() {
               tokenStorage ? "block" : "hidden"
             } cursor-pointer text-xl  p-3 rounded-3xl text-gray-100 bg-gradient-to-b from-transparent from-5% to-customColorTertiary to-60% hover:scale-105 transition-all  font-semibold`}
           >
-            {/* <GiExitDoor /> */}
-            Salir
+            <GiExitDoor />
           </li>
         </Link>
       </ul>

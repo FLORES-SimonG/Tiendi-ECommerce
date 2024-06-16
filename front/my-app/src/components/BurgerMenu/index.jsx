@@ -112,8 +112,7 @@ const BurgerMenu = () => {
           text-gray-100 bg-gradient-to-b from-transparent from-5% to-customColorTertiary to-60% flex flex-row items-center content-center justify-center h-16   transition-all  font-semibold`}
             onClick={logOutUser}
           >
-            {/* <GiExitDoor className="text-3xl" /> */}
-            <p>salir</p>
+            <GiExitDoor className="text-3xl" />
           </Link>
         </div>
       </aside>
