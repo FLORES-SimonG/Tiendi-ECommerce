@@ -1,6 +1,7 @@
 "use client";
 import BurgerMenu from "@/components/BurgerMenu";
 import Navbar from "../../components/Navbar";
+import { useEffect, useState } from "react";
 
 import { ShoppingCartContext } from "../../Context/index";
 import { useContext } from "react";
@@ -15,7 +16,14 @@ export default function Checkout() {
   const productosParaFinalizarCompra: ICartProduct[] = context.cartProducts;
   let total = 0;
 
-  const token: string | null = localStorage.getItem("token");
+  const [token, setToken] = useState<string | null>(null);
+
+  useEffect(() => {
+    if (typeof window !== 'undefined') {
+      setToken(localStorage.getItem("token"));
+    }
+  }, []);
+
   const cancelar = () => {
     toast.error("Compra Cancelada");
     context.setCartProducts([]);
@@ -25,13 +33,13 @@ export default function Checkout() {
     if (productosParaFinalizarCompra.length === 0) {
       toast.error("No hay productos en el carrito");
     } else {
-      if (localStorage.getItem("token") !== null) {
+      if (token !== null) {
         let productosParaBack = productosParaFinalizarCompra.map(
           (producto: ICartProduct) => {
             return Number(producto.id);
           }
         );
-
+  
         postOrders(productosParaBack, token!);
         context.setCartProducts([]);
         toast.success("COMPRADO! 🎉🎉🎉");
@@ -39,7 +47,7 @@ export default function Checkout() {
         toast.error("Compra Denegada, necesitas estar logueado");
       }
     }
-  };
+  }
 
   productosParaFinalizarCompra.forEach((producto: ICartProduct) => {
     total += producto.price * (10 - producto.stock);
