@@ -15,6 +15,7 @@ const ProductsCards: React.FC = () => {
     fetchData();
   }, []);
 
+  // console.log(items)
   return (
     <>
       <h2 className="mb-4 text-white text-ssxl font-bold px-6 py-3 bg-gradient-to-r from-customColorPrimary via-customColorPrimary via-10% to-transparent">

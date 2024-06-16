@@ -20,9 +20,9 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <ShoppingCartProvider>
-      <html lang="en">
-        <body className={inter.className}>
+    <html lang="en">
+      <body className={inter.className}>
+        <ShoppingCartProvider>
           <MenuCheckoutProductsDetail />
 
           <Toaster></Toaster>
@@ -30,8 +30,8 @@ export default function RootLayout({
           {children}
           <PreFooter />
           <Footer />
-        </body>
-      </html>
-    </ShoppingCartProvider>
+        </ShoppingCartProvider>
+      </body>
+    </html>
   );
 }

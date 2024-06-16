@@ -6,13 +6,13 @@ import Navbar from "@/components/Navbar";
 import Link from "next/link";
 
 import { useContext } from "react";
-import { imagenDeEjemplo } from "../../../../public/variablesGlobales";
+// import { imagenDeEjemplo } from "../../../../public/variablesGlobales";
 import Error from "../../Error";
 import Header from "@/components/Header";
 
 export default function Category(props: any) {
   const { category } = props.params;
-  console.log("category", category);
+  // console.log("category", category);
 
   const context = useContext(ShoppingCartContext);
   const detalleIndividualDelProucto = context.productData;
@@ -66,7 +66,7 @@ export default function Category(props: any) {
               width={600}
               height={600}
               className="object-cover w-40 h-40  mr-3 rounded-full p-2"
-              src={imagenDeEjemplo}
+              src={detalleIndividualDelProucto?.image}
               alt="Imagen de ejemplo"
             />
             <div>

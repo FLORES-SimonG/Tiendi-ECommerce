@@ -2,7 +2,7 @@
 
 import { useContext } from "react";
 import { ShoppingCartContext } from "../../Context/index";
-import { imagenDeEjemplo } from "../../../public/variablesGlobales";
+// import { imagenDeEjemplo } from "../../../public/variablesGlobales";
 import Link from "next/link";
 import { FaPlus } from "react-icons/fa";
 import { Product, ProductCardProps } from "../../Context/interface";
@@ -45,13 +45,15 @@ const Product_card: React.FC<ProductCardProps> = ({
       success: <b>Producto seleccionado con éxito!</b>,
       error: <b>No se pudo seleccionar el producto.</b>,
     });
+
+    
   };
 
   return (
     <div className="border-2 border-customColorPrimary w-44 md:w-48 lg:w-52 h-72 m-2 rounded-lg flex flex-col justify-center items-center overflow-hidden transition-all duration-300 ease-in-out transform hover:shadow-lg hover:bg-customColorPrimary">
       <div className="w-36 h-36 rounded-full overflow-hidden">
         <img
-          src={imagenDeEjemplo}
+          src={objetoIndividual.image}
           alt={objetoIndividual.name}
           className="w-full h-full object-cover cursor-pointer"
         />
