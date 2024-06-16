@@ -49,7 +49,7 @@ export async function postOrders(
         },
       }
     );
-    console.log(response.data);
+    // console.log(response.data);
   } catch (error) {
     console.error("Hubo un error al enviar los datos:", error);
   }
@@ -72,7 +72,7 @@ export async function postUsersLogin(login: ILogin) {
 
 export async function postUsersRegister(userData: IUser) {
   const APIdesdeBackUsersRegister = "http://localhost:5000/users/register";
-  console.log("esto es userdata de postUserRegister:", userData);
+  // console.log("esto es userdata de postUserRegister:", userData);
   try {
     const response = await axios.post(APIdesdeBackUsersRegister, userData);
     return response.data;
